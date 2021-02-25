@@ -1,0 +1,24 @@
+.transition-all-colors {
+  -webkit-transition: background-color 0.25s ease-in, color 0.25s ease-in, border-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in, color 0.25s ease-in, border-color 0.25s ease-in;
+  -ms-transition: background-color 0.25s ease-in, color 0.25s ease-in, border-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in, color 0.25s ease-in, border-color 0.25s ease-in;
+}
+.transition-color {
+  -webkit-transition: color 0.25s ease-in;
+  -moz-transition: color 0.25s ease-in;
+  -ms-transition: color 0.25s ease-in;
+  transition: color 0.25s ease-in;
+}
+.transition-background-color {
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -ms-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
+}
+.transition-border-color {
+  -webkit-transition: border-color 0.25s ease-in;
+  -moz-transition: border-color 0.25s ease-in;
+  -ms-transition: border-color 0.25s ease-in;
+  transition: border-color 0.25s ease-in;
+}

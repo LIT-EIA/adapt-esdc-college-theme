@@ -1,0 +1,157 @@
+// Custom Colors
+// =============
+
+@esdc-white: #FFF;
+@esdc-white-hover: #DEDEDE;
+@esdc-black: #000;
+@esdc-blue: #26374A;
+@esdc-pink: #CD1C6A;
+@esdc-purple: #69459C;
+@esdc-lightgrey: #E6E6E6;
+
+@esdc-interactive-blue: #1C578A;
+@esdc-int-hover-color: #2572B4;
+@esdc-disabled: #666666;
+@esdc-disabled-text: #f8f8f8;
+
+@esdc-correct: #56cdb0;
+@esdc-incorrect: @esdc-pink;
+
+@transparency: rgba(255,255,255,0.8);
+@transparency-fallback-png: url('assets/transparency-light.png');
+
+// Main Colors
+// ===========
+
+// Buttons
+@primary-color: @esdc-interactive-blue;
+@primary-color-inverted: @esdc-white;
+
+// Buttons 2
+@secondary-color: @esdc-interactive-blue;
+@secondary-color-inverted: @esdc-white;
+
+// Navigation Bar, components
+@tertiary-color: @esdc-white;
+@tertiary-color-inverted: @esdc-black;
+
+// ToC
+@quaternary-color: @esdc-lightgrey;
+@quaternary-color-inverted: @esdc-white;
+
+// Body stuff
+@foreground-color: @esdc-black;
+@background-color: @esdc-white;
+@foreground-color-inverted: @esdc-white;
+@background-color-inverted: @esdc-blue;
+
+// Validation States
+@validation-error: @esdc-incorrect;
+@validation-success: @esdc-correct;
+
+// Disabled States
+@disabled-color: @esdc-disabled;
+@disabled-color-inverted: @esdc-disabled-text;
+
+
+// Detailed Color setup
+// ====================
+
+// Body
+@font-color: @esdc-black;
+@font-color-inverted: @esdc-black;
+@title-color: @esdc-interactive-blue;
+@title-color-inverted: @esdc-white;
+
+// Buttons
+@button-color: @esdc-interactive-blue;
+@button-color-hover: @esdc-int-hover-color;
+@button-color-disabled: @esdc-disabled;
+
+@button-text-color: @esdc-white;
+@button-text-color-hover: @esdc-white;
+@button-text-color-disabled: @disabled-color-inverted;
+
+@button-border-color: @esdc-interactive-blue;
+@button-border-color-hover: @esdc-int-hover-color;
+@button-border-color-disabled: @esdc-disabled;
+
+// Navigation
+@navigation-color: @esdc-white;
+
+@navigation-icon-color: @esdc-black;
+@navigation-icon-color-hover: @esdc-interactive-blue;
+
+@navigation-progress-color: @esdc-pink;
+@navigation-progress-color-hover: @esdc-purple;
+
+@navigation-progress-background-color: @esdc-white;
+@navigation-progress-background-color-hover: darken(@esdc-white, 20%);
+
+@navigation-progress-border-color: @esdc-black;
+
+// Drawer
+@drawer-color: @esdc-blue;
+@drawer-border-color: darken(@drawer-color, 20%);
+
+@drawer-icon-color: @esdc-white;
+@drawer-icon-color-hover: darken(@drawer-icon-color, 30%);
+
+@drawer-item-color: @drawer-color;
+@drawer-item-color-hover: darken(@drawer-item-color, 20%);
+@drawer-item-color-selected: @drawer-item-color-hover;
+@drawer-item-color-disabled: @esdc-disabled;
+
+@drawer-item-text-color: @drawer-icon-color;
+@drawer-item-text-color-hover: @drawer-icon-color-hover;
+@drawer-item-text-color-selected: @drawer-icon-color;
+@drawer-item-text-color-disabled: @esdc-disabled-text;
+
+@drawer-progress-color: @esdc-pink;
+@drawer-progress-color-hover: @esdc-purple;
+@drawer-progress-border-color: darken(@drawer-item-color, 20%);
+
+// Components
+@component-background-color: @esdc-white;
+
+@item-color: @esdc-interactive-blue;
+@item-color-hover: @esdc-int-hover-color;
+@item-color-disabled: @esdc-disabled;
+@item-color-visited: @esdc-blue;
+@item-color-selected: @esdc-int-hover-color;
+
+@item-text-color: @esdc-white;
+@item-text-color-hover: @esdc-white;
+@item-text-color-disabled: @esdc-white;
+@item-text-color-visited: @esdc-white;
+@item-text-color-selected: @esdc-white;
+
+@item-body-color: @esdc-white;
+@item-body-text-color: @esdc-black;
+
+@item-border-color: @item-color;
+@item-border-color-hover: @item-color-hover;
+@item-border-color-disabled: @item-color-disabled;
+@item-border-color-visited: @item-color-visited;
+@item-border-color-selected: @item-color-selected;
+@item-border-color-inverted: @item-text-color;
+
+// Menu
+@menu-item-color: @esdc-lightgrey;
+@menu-item-text-color: @esdc-black;
+@menu-item-progress-color: @esdc-lightgrey;
+@menu-item-progress-fill-color: @esdc-pink;
+@menu-item-progress-border-color: @esdc-black;
+
+// Notify
+@notify-color: @esdc-blue;
+@notify-text-color: @esdc-white;
+
+@notify-icon-color: @esdc-white;
+@notify-icon-color-hover: @esdc-white-hover;
+
+@notify-button-color: @esdc-white;
+@notify-button-color-hover: @esdc-white-hover;
+
+@notify-button-text-color: @esdc-interactive-blue;
+@notify-button-text-color-hover: @esdc-int-hover-color;
