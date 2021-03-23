@@ -1,5 +1,15 @@
 # College@ESDC's official Adapt theme!
 
+## ESDC Theme Colors:
+
+| Color Name | Hex |
+| :------------- |:-------------|
+|Main blue color|![#26374A](https://via.placeholder.com/15/26374A/000000?text=+) `#26374A`|
+|accent blue|![#1C578A](https://via.placeholder.com/15/1C578A/000000?text=+) `#1C578A`|
+|Bright highlights pink|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/000000?text=+) `#CD1C6A`|
+|Lesser highlights purple|![#69459C](https://via.placeholder.com/15/69459C/000000?text=+) `#69459C`|
+|Background alternate|![#E6E6E6](https://via.placeholder.com/15/E6E6E6/000000?text=+) `#E6E6E6`|
+
 ## Settings overview
 
 Unlike most Adapt plug-ins, the **Vanilla** theme has no attributes that are required to be configured in the course JSON files. There is, however, an option to alter the background color of blocks as desired. Configure the attributes highlighted below in *blocks.json*. These attributes are properly formatted as JSON in [*example.json*](https://github.com/adaptlearning/adapt-contrib-vanilla/blob/master/example.json).
