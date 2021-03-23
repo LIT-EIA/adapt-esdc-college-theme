@@ -6,15 +6,22 @@
 @esdc-white: #FFF;
 @esdc-white-hover: #DEDEDE;
 @esdc-black: #000;
-@esdc-blue: #26374A;
+@esdc-text: #171717;
+@esdc-dark-blue: #0f2a4a;
+@esdc-cyan: #1f7c9b;
 @esdc-pink: #CD1C6A;
 @esdc-purple: #69459C;
 @esdc-lightgrey: #E6E6E6;
+@esdc-instructions: #333333;
 
-@esdc-interactive-blue: #1C578A;
-@esdc-int-hover-color: #2572B4;
+@esdc-interactive-blue: #1c4e8a;
+@esdc-int-hover-color: #173E6D;
+@esdc-cyan-text: #0077c8;
+
 @esdc-disabled: #666666;
-@esdc-disabled-text: #f8f8f8;
+@esdc-disabled-hover: #666666;
+@esdc-disabled-text: #E6E6E6;
+
 
 @esdc-correct: #56cdb0;
 @esdc-incorrect: @esdc-pink;
@@ -45,7 +52,7 @@
 @foreground-color: @esdc-black;
 @background-color: @esdc-white;
 @foreground-color-inverted: @esdc-white;
-@background-color-inverted: @esdc-blue;
+@background-color-inverted: @esdc-dark-blue;
 
 // Validation States
 @validation-error: @esdc-incorrect;
@@ -62,7 +69,7 @@
 // Body
 @font-color: @esdc-black;
 @font-color-inverted: @esdc-black;
-@title-color: @esdc-interactive-blue;
+@title-color: @esdc-cyan-text;
 @title-color-inverted: @esdc-white;
 
 // Buttons
@@ -84,16 +91,16 @@
 @navigation-icon-color: @esdc-black;
 @navigation-icon-color-hover: @esdc-interactive-blue;
 
-@navigation-progress-color: @esdc-pink;
-@navigation-progress-color-hover: @esdc-purple;
+@navigation-progress-color: @esdc-purple;
+@navigation-progress-color-hover: @esdc-pink;
 
 @navigation-progress-background-color: @esdc-white;
-@navigation-progress-background-color-hover: darken(@esdc-white, 20%);
+@navigation-progress-background-color-hover: @esdc-white;
 
-@navigation-progress-border-color: @esdc-black;
+@navigation-progress-border-color: @esdc-dark-blue;
 
 // Drawer
-@drawer-color: @esdc-blue;
+@drawer-color: @esdc-dark-blue;
 @drawer-border-color: darken(@drawer-color, 20%);
 
 @drawer-icon-color: @esdc-white;
@@ -109,9 +116,9 @@
 @drawer-item-text-color-selected: @drawer-icon-color;
 @drawer-item-text-color-disabled: @esdc-disabled-text;
 
-@drawer-progress-color: @esdc-pink;
-@drawer-progress-color-hover: @esdc-purple;
-@drawer-progress-border-color: darken(@drawer-item-color, 20%);
+@drawer-progress-color: @esdc-white;
+@drawer-progress-color-hover: @esdc-white;
+@drawer-progress-border-color: @esdc-purple;
 
 // Components
 @component-background-color: @esdc-white;
@@ -119,7 +126,7 @@
 @item-color: @esdc-interactive-blue;
 @item-color-hover: @esdc-int-hover-color;
 @item-color-disabled: @esdc-disabled;
-@item-color-visited: @esdc-blue;
+@item-color-visited: @esdc-dark-blue;
 @item-color-selected: @esdc-int-hover-color;
 
 @item-text-color: @esdc-white;
@@ -141,12 +148,12 @@
 // Menu
 @menu-item-color: @esdc-lightgrey;
 @menu-item-text-color: @esdc-black;
-@menu-item-progress-color: @esdc-lightgrey;
-@menu-item-progress-fill-color: @esdc-pink;
-@menu-item-progress-border-color: @esdc-black;
+@menu-item-progress-color: @esdc-white;
+@menu-item-progress-fill-color: @esdc-purple;
+@menu-item-progress-border-color: @esdc-dark-blue;
 
 // Notify
-@notify-color: @esdc-blue;
+@notify-color: @esdc-dark-blue;
 @notify-text-color: @esdc-white;
 
 @notify-icon-color: @esdc-white;
