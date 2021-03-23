@@ -2,13 +2,21 @@
 
 ## ESDC Theme Colors:
 
-| Color Name | Hex |
-| :------------- |:-------------|
-|Main blue color|![#26374A](https://via.placeholder.com/15/26374A/000000?text=+) `#26374A`|
-|accent blue|![#1C578A](https://via.placeholder.com/15/1C578A/000000?text=+) `#1C578A`|
-|Bright highlights pink|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/000000?text=+) `#CD1C6A`|
-|Lesser highlights purple|![#69459C](https://via.placeholder.com/15/69459C/000000?text=+) `#69459C`|
-|Background alternate|![#E6E6E6](https://via.placeholder.com/15/E6E6E6/000000?text=+) `#E6E6E6`|
+| Color Name | Hex | Variable name |
+| :------------- | :------------- | :------------- |
+|Main blue color|![#26374A](https://via.placeholder.com/15/26374A/000000?text=+) `#26374A`| `@esdc-blue` |
+|Accent blue|![#1C578A](https://via.placeholder.com/15/1C578A/000000?text=+) `#1C578A`| `@esdc-interactive-blue` |
+|Accent blue hover|![#1C578A](https://via.placeholder.com/15/1C578A/000000?text=+) `#1C578A`| `@esdc-int-hover-color` |
+|Bright highlights pink|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/000000?text=+) `#CD1C6A`| `@esdc-pink` |
+|Lesser highlights purple|![#69459C](https://via.placeholder.com/15/69459C/000000?text=+) `#69459C`| `@esdc-purple` |
+|Background alternate|![#E6E6E6](https://via.placeholder.com/15/E6E6E6/000000?text=+) `#E6E6E6`| `@esdc-lightgrey` |
+
+|White|![#FFFFFF](https://via.placeholder.com/15/FFFFFF/000000?text=+) `#FFFFFF`| `@esdc-white` |
+|White Hover|![#DEDEDE](https://via.placeholder.com/15/DEDEDE/000000?text=+) `#DEDEDE`| `@esdc-white-hover` |
+|Black|![#000000](https://via.placeholder.com/15/000000/000000?text=+) `#000000`| `@esdc-black` |
+
+|Correct color|![#56cdb0](https://via.placeholder.com/15/56cdb0/000000?text=+) `#56cdb0`| `@esdc-correct` |
+|Incorrect color|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/000000?text=+) `#CD1C6A`| `@esdc-incorrect` |
 
 ## Settings overview
 
