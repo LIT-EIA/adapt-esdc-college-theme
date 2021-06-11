@@ -850,7 +850,7 @@ span.mejs-offscreen {
 .navigation-inner.clearfix button:not(.skip-nav-link) {
     float: left !important;
     margin: 20px;
-    }
+}
     
 .navigation .icon {
     padding:0 !important;
@@ -861,14 +861,24 @@ span.mejs-offscreen {
 }
     
 .pagelevelprogress-navigation.base {
-    padding:0 !important;
-}
-    
-.pagelevelprogress-navigation {
-    height:0 !important;
+    margin-left: auto !important;
+    height: 24px !important;
 }
     
 .navigation .navigation-drawer-toggle-button {
     float:unset !important;
 }
+
+.navigation {
+    min-height: 64px;
+}
+
+.navigation-inner.clearfix {
+    display: flex;
+    align-content: space-between;
+}
+
+
+
+
     
