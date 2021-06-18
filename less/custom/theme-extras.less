@@ -750,15 +750,10 @@ body{
 	}
 }
 
-// overflow for hotspots
-.notify.hotgraphic .notify-popup-content-inner .hotgraphic-popup-inner {
-    overflow-y: scroll;
-    height: 25vw;
-}
-// hotgrid overflow fix
-.notify.hotgrid .notify-popup-content-inner .hotgrid-popup-inner {
-    overflow-y: scroll;
-    height: 25vw;
+// overflow for hotspots & hotgrid
+.hotgraphic-popup, .hotgrid-popup {
+    overflow-y:auto;
+   height:400px !important;
 }
 
 .mejs-offscreen {
