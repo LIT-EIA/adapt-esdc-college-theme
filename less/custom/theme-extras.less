@@ -548,6 +548,19 @@ body{
     ol>li{text-indent: -1em;}
     ul>li{text-indent: -1.3em;}
     
+    //nested li
+    li {
+        list-style-type:disc;
+        li{ list-style-type:circle;
+            li{
+                list-style-type: square;
+                li{
+                    list-style-type:disc;
+                }
+            }
+        }
+    }
+
     .dropdown
     {
         li
@@ -616,16 +629,6 @@ body{
         }
     }
 
-}
-
-//CLF Icon box styles
-.text-body svg{
-    width: 2em;
-    height:2em;
-    margin:0px;
-}
-.text-body svg path{
-    fill: white;
 }
 
 //Table styles
