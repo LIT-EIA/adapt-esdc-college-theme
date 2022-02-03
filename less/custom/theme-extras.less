@@ -1,33 +1,95 @@
-// Additional theme classes or attributes to be applied in JSON for more custom style 
+// --------------------------------------------------------------------
+// TABLE OF CONTENTS
+// --------------------------------------------------------------------
+// [!!] - THEME
+//      [!!01] THEME - COLORS
+//      [!!02] THEME - LAYOUT
+//      [!!03] THEME - TYPOGRAPHY
+// [**] - A11Y
+// [&&] - SPECIFIC
+//      [&&01] SPECIFIC - LOADING FR
+//      [&&02] SPECIFIC - TEXT COMPONENT - ICONBOX
+//      [&&03] SPECIFIC - ASSESSMENT COMPONENT
+//      [&&04] SPECIFIC - MEDIA COMPONENT
+//      [&&05] SPECIFIC - QUESTION COMPONENT
+//      [&&06] SPECIFIC - STACKLIST COMPONENT
+//      [&&07] SPECIFIC - NARRATIVE COMPONENT
+//      [&&08] SPECIFIC - NARRATIVE + STACKLIST COMPONENT
+//      [&&09] SPECIFIC - HOT GRAPHIC COMPONENT
+//      [&&10] SPECIFIC - HOT GRID COMPONENT
+//      [&&11] SPECIFIC - HOT GRAPHIC + HOT GRID COMPONENT
+//      [&&12] SPECIFIC - IMAGE SLIDER COMPONENT
+//      [&&13] SPECIFIC - EXPOSE COMPONENT
+// [^^] - UTILITY
+// [//] - CUSTOM
+
+
+// ====================================================================
+//
+// [!!01] THEME - COLORS
+//
 // ====================================================================
 
-// Divider block - used to separate content or break up pages. 
-// =============
-
-// Class applies alternative background color and component styling
-
-.divider-block {
-    background-color: @background-color-inverted;
-    color: @foreground-color-inverted;
-    text-align: center;
-    .block-title,
-    .block-body,
-    .block-instruction,
-    .component-title,
-    .component-body,
-    .component-instruction {
-    	color: @foreground-color-inverted;
-    	text-align: center;
+// boxmenu
+.boxmenu-menu {
+    .menu-header {
+        background-color:@esdc-dark-blue;
     }
-    .component-inner {
-    	background-color: transparent;
+    .menu-header, .page .page-header{
+        background-color: @esdc-dark-blue;
+    }
+    .menu-item-inner{
+        background-color: @esdc-lightgrey;
+        color: @esdc-dark-blue;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.26);
+    }
+    .pagelevelprogress-indicator-inner {
+        background-color:@esdc-white;
+        border-color:@esdc-interactive-blue;
+    }
+    .pagelevelprogress-indicator {
+        background-color:@esdc-interactive-blue;
+   }
+   .pagelevelprogress-indicator-bar{
+        background-color:@esdc-interactive-blue;
+    }
+}
+.menu-item-body-inner p{
+    color: @esdc-dark-blue;
+    font-weight: 100;
+}
+.menu-item-button button {
+    background-color: @esdc-interactive-blue !important;
+    color: @esdc-white;
+    font-weight: 400;
+    max-width: 20em;;
+    &:hover{
+        background-color: @esdc-int-hover-color !important;
+    }
+    
+    &.visited
+    {
+        background-color:@esdc-disabled !important;
+        color: @esdc-disabled-text !important;
+        &:hover
+        {
+            background-color:darken(@esdc-disabled, 30%) !important;
+            color: @esdc-disabled-text !important;
+        }
     }
 }
 
-// Block background color - used to apply variable based background colors on blocks
-// ======================
+// Progress bar
+.drawer .pagelevelprogress-item-title .pagelevelprogress-indicator
+{
+	border-color:@esdc-purple;
+}
 
+// Block background color - used to apply variable based background colors on blocks
 .block {
+    &.block-inner{
+        background-color:@esdc-lightgrey;
+    }
 	&.primary-color {
 		background-color: @primary-color;
 	}
@@ -53,71 +115,354 @@
 	}
 }
 
-// Component background - used to apply variable based background color and padding on components
-// ====================
+// Class applies alternative background color and component styling
+.divider-block {
+    background-color: @background-color-inverted;
+    color: @foreground-color-inverted;
+    text-align: center;
+    .block-title,
+    .block-body,
+    .block-instruction,
+    .component-title,
+    .component-body,
+    .component-instruction {
+    	color: @foreground-color-inverted;
+    	text-align: center;
+    }
+    .component-inner {
+    	background-color: transparent;
+    }
+}
 
+// Component background - used to apply variable based background color and padding on components
 .component-background {
 	background-color: @component-background-color;
 	padding: @component-padding;
 }
+.component-container {background-color:@esdc-white};
 
-// Assessment - remove graphic components for mobile view (when components snap down to single span).
-// ==========
+// Button state styles
+.button[disabled="disabled"], button[disabled="disabled"] {
+	color: @esdc-disabled-text;
+	background-color: @esdc-disabled;
+	&:hover
+	{
+	    background-color: @esdc-disabled-hover;
+    }
+}
+.no-touch .button:hover, .no-touch button:hover {
+    background-color:@esdc-int-hover-color;
+}
 
-.assessment {
-	.graphic-component {
-		display: block;
+.buttons .buttons-marking-icon {
+    left:unset !important;
+    right:25px;
+}
 
-		@media all and (max-width: @device-width-medium) {
-			display: none;
+// ====================================================================
+//
+// [!!02] THEME - LAYOUT
+//
+// ====================================================================
+
+html{
+    margin:0;
+    padding: 0;
+}
+
+// NAVIGATION
+.navigation-inner.clearfix {
+    display: flex; 
+    button:not(.skip-nav-link) {
+        margin: 20px;
+    }
+}
+.navigation {
+    min-height: 64px;
+    .icon {
+        padding:0 !important;
+    }   
+} 
+
+// PAGE LEVEL PROGRESS
+.pagelevelprogress-navigation.base {
+    height: 24px !important;
+    padding:0 !important;
+}
+
+@media screen and (max-width: 600px)
+{
+    .navigation
+    {
+        height:34px;
+    }
+    
+    .navigation .icon {
+	padding:5px !important; 
+    }
+	
+    .pagelevelprogress-navigation.base
+    {
+        padding:5px !important; 
+        height:36px;
+    }
+	
+    .pagelevelprogress-navigation .pagelevelprogress-indicator {
+        width:13vw !important;
+    }
+    
+    #wrapper
+    {
+        padding-top:34px;
+    }
+}
+
+// ARTICLE LEVEL 
+.article {
+    .article-inner{
+        padding-bottom: 0;
+    }
+    .article-body{
+        margin-bottom: 0;
+    }
+    .article-title-inner, .block-title-inner{
+        font-size: 36px;
+    }  
+    &.nth-child-1, &.nth-child-4, &.nth-child-7, &.nth-child-10, &.nth-child-13, &.nth-child-16
+	{
+		.article-title:before
+		{
+			content: '';
+			height: 29px;
+			width: 29px;
+			margin-top: 6px;
+			margin-left: -1 * 60px;
+			float: left;
+			background: -ms-linear-gradient(-45deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
+			background: linear-gradient(135deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
 		}
 	}
-}
 
-// THIS CLASS IS FOR THE PURPOSE OF THE ADAPT DEMO 
-// blank component demo - applied at block level to add a background image in place of a blank component
-// ====================
-
-.blank-background {
-	background-image: url(assets/blank-bg.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-
-	@media all and (max-width: @device-width-large) {
-		background-image: url(assets/blank-bg-900.jpg);
-		background-position: right;
+	&.nth-child-2, &.nth-child-5, &.nth-child-8, &.nth-child-11, &.nth-child-14, &.nth-child-17
+	{
+		.article-title:before
+		{
+			content: '';
+			height: 29px;
+			width: 29px;
+			margin-top: 6px;
+			margin-left: -1 * 60px;
+			float: left;
+			background: -ms-linear-gradient(-45deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
+			background: linear-gradient(135deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
+		}
 	}
 
-	@media all and (max-width: @device-width-medium) {
-		background-image: none;
-	}
+	&.nth-child-3, &.nth-child-6, &.nth-child-9, &.nth-child-12, &.nth-child-15, &.nth-child-18
+	{
+		.article-title:before
+		{
+			content: '';
+			height: 29px;
+			width: 29px;
+			margin-top: 6px;
+			margin-left: -1 * 60px;
+			float: left;
+			background: -ms-linear-gradient(-45deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
+			background: linear-gradient(135deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
+		}
+	}  
 }
 
-// Adds styling to the blockquote element.
+// BLOCK LEVEL 
+.block  {
+    .block-body{
+        margin-bottom: 0;
+    }
+    .block-inner{
+        padding: 20px;
+        margin-top: 30px;
+        margin-top:60px !important;
+    }
+}
+.combineblock {  
+    .block-inner {
+        margin-top:0px !important;
+        padding-top:0px !important;
+    }        
+}
+// issue #36 - empty space between blocks
+.trickle-button-component {
+    padding-bottom: 0px !important;
+}
+
+.block:nth-child(2n) .block-title, .block:nth-child(2n+1) .block-title{
+    text-align: left;
+}
+
+@media screen and (max-width: 640px)
+{
+    .block .block-inner{
+        padding: 10px;
+    }
+}
+@media screen and (min-width: 641px)
+{
+    .block .block-inner{
+        padding: 60px;
+    }
+}
+
+// COMPONENT LEVEL 
+.component {
+    .component-body{
+        margin: 0;
+    }
+    .component-title-inner{
+        font-size: 24px;
+    }
+    .component-inner{
+        padding: 30px;
+    }
+}
+
+.component-container {
+        @media (min-width: 760px)
+        {
+            .component-left .component-inner 
+            {
+                margin-right: 0px;
+                padding-right: 15px;
+            }
+        }
+        @media (min-width: 760px)
+        {
+            .component-right .component-inner 
+            {
+                margin-left: 0px;
+                padding-left: 15px;
+            }
+        }
+}
+
+// ====================================================================
+//
+// [!!03] THEME - TYPOGRAPHY
+//
+// ====================================================================
+
+p{ margin: 0 0 14px 0; }
+
+// LISTS
+ul, ol {
+    padding: 0;
+    margin: 0;
+    margin-bottom:6px;
+}
+
+li {
+    padding-left: 1em;
+    margin-bottom: 8px;
+    list-style-position: inside;
+}
+ol>li{text-indent: -1em;}
+ul>li{text-indent: -1.3em;}
+
+//nested li
+li {
+    list-style-type:disc;
+    li{ list-style-type:circle;
+        li{
+            list-style-type: square;
+            li{
+                list-style-type:disc;
+            }
+        }
+    }
+}
+.dropdown>li {
+    padding-left: 0em; 
+    text-indent: 0em;
+}
+
+a {
+    &:link{color: blue !important}
+    &:visited{color: purple !important}
+}
 
 blockquote {
     border-left: 2px solid @primary-color;
     margin-left: 20px;
     padding-left: 20px;
+    font-style: normal; // issue #40
+} 
+
+// TITLES
+.block .block-title, .component .component-title{
+    margin-bottom: 10px;
+}
+
+// COMPONENT LEVEL
+.component .component-instruction-inner.validation-error {
+    color: #a94442;
+    border: 2px solid #a94442;
+    padding: 5px;
 }
 
 
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
-// MED OLD CSS =================================================
+// Table styles
+[class$="-body"] table th, [class$="-body"] table td {
+    border:  2px solid @esdc-dark-blue;
+    border-spacing: 0;
+    padding: 10px;
+}
+[class$="-body"] table th {
+    background-color: @esdc-dark-blue;
+    color: @esdc-white;
+}
 
+// ====================================================================
+//
+// [**] - A11Y
+//
+// ====================================================================
 
-html:lang(fr)
+// pop up
+.notify  {
+    .notify-popup {
+        background-color:@esdc-dark-blue;
+    }
+    .notify-popup-done:hover {
+        border-color:@esdc-cyan !important;
+    }
+    .notify-popup-icon-close:hover {
+        color:@esdc-cyan !important;
+    }
+}
+
+// non interactive box
+div, p
 {
+    &:focus
+    {
+        outline:1px dotted rgba(170,170,170, 0.7) !important;
+    }
+}
+
+// interactive box
+button, label, input, .mcq-item input:focus + label {
+    &:focus
+    {
+        outline:3px solid @esdc-pink !important;
+    }
+}
+
+// ====================================================================
+//
+// [&&01] SPECIFIC - LOADING FR
+//
+// ====================================================================
+html:lang(fr) {
     .loader-gif
     {
         div { 
@@ -134,37 +479,297 @@ html:lang(fr)
     }
 }
 
-body{
-    	.expose-item-inner .expose-item-cover .text
-    	{
-        	width:90% !important;
-       	 	line-height:28px !important;
-    	}
-	
-	.button[disabled="disabled"], button[disabled="disabled"]
-	{
-		color: @esdc-disabled-text;
-		background-color: @esdc-disabled;
-		&:hover
-		{
-			background-color: @esdc-disabled-hover;
+// ====================================================================
+//
+// [&&02] SPECIFIC - TEXT COMPONENT - ICONBOX
+//
+// ====================================================================
+.iconbox{
+    .text-title.component-title {
+        background-color: @esdc-dark-blue;
+        padding: 0.2em 0.6em;
+        color: @esdc-white;
+   }
+}
+.text-header-inner.component-header-inner {
+    border: 1px solid @esdc-dark-blue;
+}
+.text-body.component-body {
+    padding: 1em;
+}
+.component .component-inner {
+    padding: 0;
+}
+
+// ====================================================================
+//
+// [&&02] SPECIFIC - GRAPHIC COMPONENT
+//
+// ====================================================================
+.graphic-widget.component-widget {
+    text-align: center;
+}
+
+
+// ====================================================================
+//
+// [&&03] SPECIFIC - ASSESSEMENT COMPONENT
+//
+// ====================================================================
+// remove graphic components for mobile view (when components snap down to single span).
+.assessment {
+	.graphic-component {
+		display: block;
+		@media all and (max-width: @device-width-medium) {
+			display: none;
 		}
-	}	
-	.component a:link 
-	{
-	    color: blue !important;
-	}  
-	.component a:visited 
-	{
-	    color: purple !important;
 	}
 }
 
-.boxmenu-menu .menu-header
-{
-	background-color:@esdc-dark-blue;
+// ====================================================================
+//
+// [&&04] SPECIFIC - MEDIA COMPONENT
+//
+// ====================================================================
+.mejs-offscreen {
+    clip: unset !important;
+    clip-path: unset !important;
+    overflow: unset;
+}
+.mejs-overlay-button {
+    background-color:rgba(0,0,0,0.8);
+    border-radius:999px;
+}
+// FIX FOR MEDIA CC SELECTOR
+.mejs-controls .mejs-captions-button .mejs-captions-selector {
+    width: 120px !important;
+    right:-120px;
+    label
+    {
+        margin-left: 18px;    
+        width:48px !important;
+    }
+}
+// fix captions button keypresses
+.mejs-captions-text {
+    font-size: 2vw;
+    line-height: 1.2;
+}
+.mejs-captions-position-hover {
+    bottom: 0 !important;
+}
+.mejs-controls .mejs-captions-button .mejs-captions-selector {
+    visibility: visible;
+    overflow: unset !important;
+}
+span.mejs-offscreen {
+    overflow: hidden;
+}
+.media-transcript-container {
+    margin-top: 30px !important;
 }
 
+.mejs-controls {
+	margin-bottom:-30px !important;
+}
+// fix for cc overlap
+video::cue {
+    line-height: 160%;
+}
+
+// ====================================================================
+//
+// [&&05] SPECIFIC - QUESTION COMPONENT
+//
+// ====================================================================
+//Fix for MCQ colored X and check
+.component .question-component .mcq-component .buttons-marking-icon .icon 
+{
+    .icon-tick, .icon-cross
+    {
+        color:black !important;
+    }
+    
+}
+/* DUPLICATE
+.buttons-marking-icon .icon
+{
+    .icon-cross, .icon-tick
+    {
+        color:@esdc-black;
+    }
+}*/
+
+.correct, .show-correct-answer
+{
+    .slider-scale-marker
+    {
+        color:black !important;
+        font-weight:bold !important;
+    }
+}
+// ====================================================================
+//
+// [&&06] SPECIFIC - STACKLIST COMPONENT
+//
+// ====================================================================
+.stacklist-item{
+    background-color:@esdc-dark-blue;
+}
+
+.stacklist-next {
+    background-color:@esdc-interactive-blue;
+}
+// ====================================================================
+//
+// [&&07] SPECIFIC - NARRATIVE COMPONENT
+//
+// ====================================================================
+.narrative-component .narrative-text-controls .narrative-content .narrative-content-inner .narrative-controls-container .narrative-indicators .narrative-progress
+{ background-color:grey; }
+
+.narrative-content-inner{
+    background-color: @esdc-dark-blue; 
+    a {
+        &:link { color: #9EC3FF !important; }
+        &:visited { color: #DEADFF !important; }
+    }
+}
+.narrative-content a:link { color: #9FD9FF !important; } // issue #41
+
+// ====================================================================
+//
+// [&&08] SPECIFIC - NARRATIVE + STACKLIST COMPONENT
+//
+// ====================================================================
+.narrative-content-inner, .stacklist-items-inner {
+    a {
+        color:#00E9FA !important; // @esdc-cyan-text
+        &:visited
+        {
+            color:#e9e9f8 !important; // @esdc-white
+        }
+        &:hover
+        {
+              color:#BDFFEB !important; // @esdc-cyan
+        }
+    }
+}
+
+// ====================================================================
+//
+// [&&09] SPECIFIC - HOT GRAPHIC COMPONENT
+//
+// ====================================================================
+//visited pins not using the default pin icon
+.hotgraphic-graphic-pin-list-item .hotgraphic-graphic-pin 
+{
+    &.visited img
+    {
+       -webkit-filter:  drop-shadow(0px 0px 2px purple);
+    }
+}    
+
+// ====================================================================
+//
+// [&&10] SPECIFIC - HOT GRID COMPONENT
+//
+// ====================================================================
+// Hot grid item title style - issue #45
+button.hotgrid-grid-item .hotgrid-item-title{
+    color: #333;
+}
+
+// ====================================================================
+//
+// [&&11] SPECIFIC - HOT GRAPHIC + HOT GRID COMPONENT
+//
+// ====================================================================
+// Hotgraphic and hot grid distinct title styles
+.hotgraphic-content-title, .hotgrid-content-title {
+    font-size: 22px;
+    line-height: @component-title-line-height;
+    margin-bottom: 10px;
+    color: @esdc-cyan-text;
+}
+// overflow for hotspots & hotgrid
+.hotgraphic-popup, .hotgrid-popup {
+    overflow-y:auto;
+    height:400px !important;
+ }
+
+// ====================================================================
+//
+// [&&12] SPECIFIC - IMAGE SLIDER
+//
+// ====================================================================
+.slider-widget input:focus + div .rangeslider__handle {
+    background-color: 3px solid @esdc-cyan !important;
+    border:2px solid @esdc-pink !important;
+    top:-12px;
+}
+
+// ====================================================================
+//
+// [&&13] SPECIFIC - EXPOSE COMPONENT
+//
+// ====================================================================
+.expose-item-inner .expose-item-cover  {
+    .front {
+        background-color:@esdc-interactive-blue;
+        &:hover
+        {
+            background-color:@esdc-int-hover-color;
+        }
+    }    
+    .text
+    {
+        width:90% !important;
+        line-height:28px !important;
+    }	
+}
+
+// ====================================================================
+//
+// [^^] - UTILITY
+//
+// ====================================================================
+.important-box { border:6px solid @esdc-dark-blue !important; }
+.biggerfont { font-size:22px; }
+.center-image {
+    img{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+/* duplicate 
+//Image styles
+.image img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+    
+.invert-link {
+    a {
+        color:#00E9FA !important; // @esdc-cyan-text
+        &:visited {
+            color:#e9e9f8 !important; // @esdc-white
+        }
+        &:hover {
+            color:#BDFFEB !important; // @esdc-cyan
+        }
+    }
+}
+
+// ====================================================================
+//
+// [//] - CUSTOM
+//
+// ====================================================================
+
+// SPEECHBUBBLES
 .speechbubbles
 {
     .component-container
@@ -285,615 +890,36 @@ body{
     }
 }
 
+// THIS CLASS IS FOR THE PURPOSE OF THE ADAPT DEMO 
+// blank component demo - applied at block level to add a background image in place of a blank component
+.blank-background {
+	background-image: url(assets/blank-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
 
-.important-box
-{
-    border:6px solid @esdc-dark-blue !important;
-}
+	@media all and (max-width: @device-width-large) {
+		background-image: url(assets/blank-bg-900.jpg);
+		background-position: right;
+	}
 
-html{
-    margin:0;
-    padding: 0;
-}
-
-.biggerfont
-{
-    font-size:22px;
-}
-
-
-
-//ADDED FOR ACCESSIBILITY ----------------
-
-body
-{
-    button, label, input
-    {
-        &:focus
-        {
-            outline:3px solid @esdc-pink !important;
-        }
-    }
-    
-    div, p
-    {
-        &:focus
-        {
-            outline:1px dotted rgba(170,170,170, 0.7) !important;
-        }
-    }
-    
-    .mcq-item input:focus + label
-    {
-        outline:3px solid @esdc-pink !important;
-    }
-    
-    .slider-widget input:focus + div .rangeslider__handle
-    {
-        background-color: 3px solid @esdc-cyan !important;
-        border:2px solid @esdc-pink !important;
-        top:-12px;
-    }
-    
-    .mejs-overlay-button
-    {
-        background-color:rgba(0,0,0,0.8);
-        border-radius:999px;
-    }
-    
-    //visited pins not using the default pin icon
-    
-    .hotgraphic-graphic-pin-list-item .hotgraphic-graphic-pin 
-    {
-        &.visited img
-        {
-           -webkit-filter:  drop-shadow(0px 0px 2px purple);
-        }
-    }
-    
-}
-
-body .notify .notify-popup-done
-{
-    &:hover
-    {
-        border-color:@esdc-cyan !important;
-    }
-}
-body #app .notify .notify-popup-icon-close
-{
-    &:hover
-    {
-         color:@esdc-cyan !important;
-    }
-}
-
-
-body 
-{
-    
-    // FIX FOR MEDIA CC SELECTOR
-    .mejs-controls .mejs-captions-button .mejs-captions-selector
-    {
-        width: 120px !important;
-        right:-120px;
-        label
-        {
-            margin-left: 18px;    
-            width:48px !important;
-        }
-    }
-    
-    // fix for cc overlap
-    video::cue{
-        line-height: 160%;
-    }
-    
-    //Fix for MCQ colored X and check
-    component question-component mcq-component buttons-marking-icon icon 
-    {
-        icon-tick, icon-cross
-        {
-            color:black !important;
-        }
-    }
-}
-
-.expose-item-inner .expose-item-cover .front {
-    background-color:@esdc-interactive-blue;
-}
-.expose-item-inner .expose-item-cover .front {
-	&:hover
-	{
-		background-color:@esdc-int-hover-color;
+	@media all and (max-width: @device-width-medium) {
+		background-image: none;
 	}
 }
 
 
-//Block Styles
-.block .block-title, .component .component-title{
-    margin-bottom: 10px;
-}
-.block .block-body{
-    margin-bottom: 0;
-}
-.block .block-inner{
-    background-color:@esdc-lightgrey;
-    padding: 20px;
-    margin-top: 30px;
-}
-.block:nth-child(2n) .block-title, .block:nth-child(2n+1) .block-title{
-    text-align: left;
-}
 
-@media screen and (max-width: 640px)
-{
-    .block .block-inner{
-        padding: 10px;
-    }
-}
-@media screen and (min-width: 641px)
-{
-    .block .block-inner{
-        padding: 60px;
-    }
-}
 
-//New 2021 fixes
-body
-{
-	.drawer .pagelevelprogress-item-title .pagelevelprogress-indicator
-	{
-		border-color:@esdc-purple;
-	}
-	
-	.buttons-marking-icon .icon
-	{
-		.icon-cross, .icon-tick
-		{
-			color:black;
-		}
-	}
-	
-	.correct, .show-correct-answer
-	{
-		.slider-scale-marker
-		{
-			color:black !important;
-			font-weight:bold !important;
-		}
-	}
-}
-body{
+
+
+
+
+
+
+
+
     
-    .narrative-component .narrative-text-controls .narrative-content .narrative-content-inner .narrative-controls-container .narrative-indicators .narrative-progress
-    {
-        background-color:grey;
-    }
 
-    .narrative-content-inner{
-        a:link { color: #9EC3FF !important; }
-        a:visited { color: #DEADFF !important; }
-    }
-}
-
-
-//Component Styles
-.component .component-body{
-    margin: 0;
-}
-
-.component-title-inner{
-    font-size: 24px;
-}
-.component .component-inner{
-    padding: 30px;
-}
-
-//Body styles
-body{
-
-    .block-inner
-    {
-        margin-top:60px !important;
-    }
-    
-    .center-image
-    {
-        img{
-            display:block;
-            margin-left:auto;
-            margin-right:auto;
-        }
-    }
-    
-    .invert-link
-    {
-        a
-        {
-            color:#00E9FA !important;
-            &:visited
-            {
-                color:#e9e9f8 !important;
-            }
-            &:hover
-            {
-                  color:#BDFFEB !important;
-            }
-        }
-    }
-    
-    .narrative-content-inner, .stacklist-items-inner
-    {
-        a
-        {
-            color:#00E9FA !important;
-            &:visited
-            {
-                color:#e9e9f8 !important;
-            }
-            &:hover
-            {
-                  color:#BDFFEB !important;
-            }
-        }
-    }
-
-    ul, ol {
-      padding: 0;
-      margin: 0;
-      margin-bottom:6px;
-    }
-    
-    li {
-        padding-left: 1em;
-        margin-bottom: 8px;
-        list-style-position: inside;
-    }
-    ol>li{text-indent: -1em;}
-    ul>li{text-indent: -1.3em;}
-    
-    //nested li
-    li {
-        list-style-type:disc;
-        li{ list-style-type:circle;
-            li{
-                list-style-type: square;
-                li{
-                    list-style-type:disc;
-                }
-            }
-        }
-    }
-
-    .dropdown
-    {
-        li
-        {
-            padding-left: 0em; 
-            text-indent: 0em;
-        }
-    }
-     p{
-    margin: 0 0 14px 0;
-    }
-    .iconbox{
-        .text-title.component-title {
-        background-color:  @esdc-dark-blue;
-        padding: 0.2em 0.6em;
-        color: @esdc-white;
-    }
-    }.text-header-inner.component-header-inner {
-        border: 1px solid  @esdc-dark-blue;
-    }.text-body.component-body {
-        padding: 1em;
-    }.component .component-inner {
-        padding: 0;
-    }
-    
-    .combineblock
-    {
-        .block-inner
-        {
-            margin-top:0px !important;
-            padding-top:0px !important;
-        }        
-    }
-    
-    .component-container
-    {
-        background-color:white;
-        
-        @media (min-width: 760px)
-        {
-            .component-left .component-inner 
-            {
-                margin-right: 0px;
-                padding-right: 15px;
-            }
-        }
-        @media (min-width: 760px)
-        {
-            .component-right .component-inner 
-            {
-                margin-left: 0px;
-                padding-left: 15px;
-            }
-        }
-    }
-    
-    // FIX FOR MEDIA CC SELECTOR
-    .mejs-controls .mejs-captions-button .mejs-captions-selector
-    {
-        width: 120px !important;
-        right:-120px;
-        label
-        {
-            margin-left: 18px;    
-            width:48px !important;
-        }
-    }
-
-}
-
-//Table styles
-[class$="-body"] table th, [class$="-body"] table td {
-    border:  2px solid @esdc-dark-blue;
-    border-spacing: 0;
-    padding: 10px;
-}
-[class$="-body"] table th {
-    background-color: @esdc-dark-blue;
-    color: @esdc-white;
-}
-
-//Image styles
-.image img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-//Graphic component style
-.graphic-widget.component-widget {
-    text-align: center;
-}
-
-//Stacklist component styles
-.stacklist-item{
-    background-color:@esdc-dark-blue;
-}
-.stacklist-next {
-    background-color:@esdc-interactive-blue;
-}
-.no-touch .button:hover, .no-touch button:hover {
-    background-color:@esdc-int-hover-color;
-}
-
-//Carousel component styles
-
-.narrative-content-inner{ 
-    background-color: @esdc-dark-blue; 
-} //Take note box
-
-
-//Feedback popup
-.notify .notify-popup {
-    background-color:@esdc-dark-blue;
-}
-
-// Hotgraphic and hot grid distinct title styles
-.hotgraphic-content-title, .hotgrid-content-title {
-    font-size: 22px;
-    line-height: @component-title-line-height;
-    margin-bottom: 10px;
-    color: @esdc-cyan-text;
-}
-
-//Splash page boxmenu styles
-.boxmenu-menu .pagelevelprogress-indicator-inner {
-    background-color:@esdc-white;
-    border-color:@esdc-interactive-blue;
-}
-.boxmenu-menu .pagelevelprogress-indicator {
-     background-color:@esdc-interactive-blue;
-}
-.boxmenu-menu .pagelevelprogress-indicator-bar{
-    background-color:@esdc-interactive-blue;
-}
-.boxmenu-menu .menu-header, .page .page-header{
-    background-color: @esdc-dark-blue;
-}
-.boxmenu-menu .menu-item-inner{
-    background-color: @esdc-lightgrey;
-    color: @esdc-dark-blue;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.26);
-}
-.menu-item-body-inner p{
-    color: @esdc-dark-blue;
-    font-weight: 100;
-}
-.menu-item-button button {
-    background-color: @esdc-interactive-blue !important;
-    color: @esdc-white;
-    font-weight: 400;
-    max-width: 20em;;
-    &:hover{
-        background-color: @esdc-int-hover-color !important;
-    }
-    
-    &.visited
-    {
-        background-color:@esdc-disabled !important;
-        color: @esdc-disabled-text !important;
-        &:hover
-        {
-            background-color:darken(@esdc-disabled, 30%) !important;
-            color: @esdc-disabled-text !important;
-        }
-    }
-}
-
-
-
-//Article Styles
-
-.article .article-inner{
-    padding-bottom: 0;
-}
-.article .article-body{
-    margin-bottom: 0;
-}
-.article-title-inner, .block-title-inner{
-    font-size: 36px;
-}
-
-.article 
-{
-	&.nth-child-1, &.nth-child-4, &.nth-child-7, &.nth-child-10, &.nth-child-13, &.nth-child-16
-	{
-		.article-title:before
-		{
-			content: '';
-			height: 29px;
-			width: 29px;
-			margin-top: 6px;
-			margin-left: -1 * 60px;
-			float: left;
-			background: -ms-linear-gradient(-45deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
-			background: linear-gradient(135deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
-		}
-	}
-
-	&.nth-child-2, &.nth-child-5, &.nth-child-8, &.nth-child-11, &.nth-child-14, &.nth-child-17
-	{
-		.article-title:before
-		{
-			content: '';
-			height: 29px;
-			width: 29px;
-			margin-top: 6px;
-			margin-left: -1 * 60px;
-			float: left;
-			background: -ms-linear-gradient(-45deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
-			background: linear-gradient(135deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
-		}
-	}
-
-	&.nth-child-3, &.nth-child-6, &.nth-child-9, &.nth-child-12, &.nth-child-15, &.nth-child-18
-	{
-		.article-title:before
-		{
-			content: '';
-			height: 29px;
-			width: 29px;
-			margin-top: 6px;
-			margin-left: -1 * 60px;
-			float: left;
-			background: -ms-linear-gradient(-45deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
-			background: linear-gradient(135deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
-		}
-	}
-}
-
-// overflow for hotspots & hotgrid
-.hotgraphic-popup, .hotgrid-popup {
-   overflow-y:auto;
-   height:400px !important;
-}
-
-.mejs-offscreen {
-    clip: unset !important;
-    clip-path: unset !important;
-}
-.component .component-instruction-inner.validation-error {
-    color: #a94442;
-    border: 2px solid #a94442;
-    padding: 5px;
-}
-
-.mejs-captions-text {
-    font-size: 2vw;
-    line-height: 1.2;
-}
-
-.mejs-captions-position-hover {
-    bottom: 0 !important;
-}
-
-
-@media screen and (max-width: 600px)
-{
-    .navigation
-    {
-        height:34px;
-    }
-    
-    .navigation .icon {
-	padding:5px !important; 
-    }
-	
-    .pagelevelprogress-navigation.base
-    {
-        padding:5px !important; 
-        height:36px;
-    }
-	
-    .pagelevelprogress-navigation .pagelevelprogress-indicator {
-        width:13vw !important;
-    }
-    
-    #wrapper
-    {
-        padding-top:34px;
-    }
-}
-
-// fix captions button keypresses
-.mejs-controls .mejs-captions-button .mejs-captions-selector {
-    visibility: visible;
-    overflow: unset !important;
-}
-.mejs-offscreen {
-    overflow: unset;
-}
-span.mejs-offscreen {
-    overflow: hidden;
-}
-
-
-.media-transcript-container {
-    margin-top: 30px !important;
-}
-.mejs-controls {
-	margin-bottom:-30px !important;
-}
-
-.navigation-inner.clearfix button:not(.skip-nav-link) {
-    margin: 20px;
-}
-    
-.navigation .icon {
-    padding:0 !important;
- }
-    
-.pagelevelprogress-navigation.base {
-    height: 24px !important;
-    padding:0 !important;
-}
-
-.navigation {
-    min-height: 64px;
-}
-
-.navigation-inner.clearfix {
-    display: flex;
-}
-.buttons .buttons-marking-icon {
-    left:unset !important;
-    right:25px;
-}
 
 
 
