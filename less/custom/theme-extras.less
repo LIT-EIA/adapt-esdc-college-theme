@@ -394,15 +394,24 @@ ul {
     }
 }
 ol {
+    @ol-indenter: -1em;
     counter-reset: banana;
     list-style-type: none;
     li{
-        text-indent: -1.1em;
+        text-indent: ~"calc(@{ol-indenter} - 0.1em)";
+        li{
+            text-indent: ~"calc(@{ol-indenter} * 2)";
+            li{
+                text-indent: ~"calc(@{ol-indenter} * 3 + 0.1em)";
+            }
+        }
         counter-increment: banana;
         &::before{
+            font-weight: bold;
             content: counters(banana, '.') '. ';
         }
     }
+
 }
 
 .dropdown>li {
@@ -700,7 +709,15 @@ video::cue {
 // Hot grid item title style - issue #45
 button.hotgrid-grid-item .hotgrid-item-title{
     color: #333;
+    font-weight: 500;
 }
+.hotgrid-component .visited:after {
+    background-color: rgba(172,172,172,0.2);
+    button.hotgrid-grid-item .hotgrid-item-title{
+        color: #000;
+    }
+}
+
 
 // ====================================================================
 //
