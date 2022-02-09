@@ -1,23 +1,23 @@
 {
-  "name": "adapt-contrib-esdc-college-theme",
-  "version": "1.6.1",
-  "framework": ">=4",
-  "homepage": "https://github.com/MeD-DMC/adapt-esdc-college-theme",
-  "issues": "https://github.com/MeD-DMC/adapt-esdc-college-theme/issues",
-  "displayName": "College@ESDC",
-  "theme": "College@ESDC",
-  "description": "College@ESDC's official Adapt theme",
-  "main": "js/esdc.js",
-  "keywords": [
-    "adapt-plugin",
-    "adapt-theme"
-  ],
-  "license": "GPLv3",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+    "name": "adapt-contrib-esdc-college-theme",
+    "version": "1.6.2",
+    "framework": ">=4",
+    "homepage": "https://github.com/MeD-DMC/adapt-esdc-college-theme",
+    "issues": "https://github.com/MeD-DMC/adapt-esdc-college-theme/issues",
+    "displayName": "College@ESDC",
+    "theme": "College@ESDC",
+    "description": "College@ESDC's official Adapt theme",
+    "main": "js/esdc.js",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-theme"
+    ],
+    "license": "GPLv3",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
 }
