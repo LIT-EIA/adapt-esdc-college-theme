@@ -353,38 +353,6 @@ html{
 
 p{ margin: 0 0 14px 0; }
 
-// LISTS
-ul, ol {
-    padding: 0;
-    margin: 0;
-    margin-bottom:6px;
-}
-
-li {
-    padding-left: 1em;
-    margin-bottom: 8px;
-    list-style-position: inside;
-}
-ol>li{text-indent: -1em;}
-ul>li{text-indent: -1.3em;}
-
-//nested li
-li {
-    list-style-type:disc;
-    li{ list-style-type:circle;
-        li{
-            list-style-type: square;
-            li{
-                list-style-type:disc;
-            }
-        }
-    }
-}
-.dropdown>li {
-    padding-left: 0em; 
-    text-indent: 0em;
-}
-
 [class$="-body"] a {
     &:link{color: blue }
     &:visited{color: purple }
@@ -397,9 +365,63 @@ blockquote {
     font-style: normal; // issue #40
 } 
 
+
+// LISTS
+ul, ol {
+    padding: 0;
+    margin: 0;
+    margin-bottom:6px;
+    li {
+        padding-left: 1em;
+        margin-bottom: 8px;
+        list-style-position: inside;
+        ul,ol {padding-top:3px;}
+    }
+}
+// nested ul bullet styles
+ul {
+    li {
+        text-indent: -1.4em;
+        list-style-type:disc;
+        li{ list-style-type:circle;
+            li{
+                list-style-type: square;
+                li{
+                    list-style-type:disc;
+                }
+            }
+        }
+    }
+}
+ol {
+    counter-reset: banana;
+    list-style-type: none;
+    li{
+        text-indent: -1.1em;
+        counter-increment: banana;
+        &::before{
+            content: counters(banana, '.') '. ';
+        }
+    }
+}
+
+.dropdown>li {
+    padding-left: 0em; 
+    text-indent: 0em;
+}
+
+
 // TITLES
 .block .block-title, .component .component-title{
     margin-bottom: 10px;
+}
+
+// DRAWER TITLES
+.drawer-item-title-inner {
+    font-weight: 700;
+}
+.drawer-item-description-inner{
+    font-weight:100;
 }
 
 // COMPONENT LEVEL
@@ -408,7 +430,6 @@ blockquote {
     border: 2px solid #a94442;
     padding: 5px;
 }
-
 
 // Table styles
 [class$="-body"] table th, [class$="-body"] table td {
@@ -420,6 +441,7 @@ blockquote {
     background-color: @esdc-dark-blue;
     color: @esdc-white;
 }
+
 
 // ====================================================================
 //
