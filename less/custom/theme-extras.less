@@ -367,52 +367,38 @@ blockquote {
 
 
 // LISTS
-ul, ol {
-    padding: 0;
-    margin: 0;
-    margin-bottom:6px;
-    li {
-        padding-left: 1em;
-        margin-bottom: 8px;
-        list-style-position: inside;
-        ul,ol {padding-top:3px;}
-    }
-}
 // nested ul bullet styles
-ul {
-    li {
-        text-indent: -1.4em;
-        list-style-type:disc;
-        li{ list-style-type:circle;
-            li{
-                list-style-type: square;
-                li{
-                    list-style-type:disc;
-                }
-            }
-        }
-    }
+ul li{
+    text-indent: -1.4em;
 }
-ol {
-    @ol-indenter: -1em;
+// first level ul
+ul>li, ol>li>ul>li{list-style-type: disc;}
+// second level ul
+ul>li>ul>li{list-style-type:circle;}
+// third level ul 
+ul>li>ul>li>ul>li {list-style-type:square;}
+
+// ol counter
+ol{
     counter-reset: banana;
     list-style-type: none;
-    li{
-        text-indent: ~"calc(@{ol-indenter} - 0.1em)";
-        li{
-            text-indent: ~"calc(@{ol-indenter} * 2)";
-            li{
-                text-indent: ~"calc(@{ol-indenter} * 3 + 0.1em)";
-            }
-        }
-        counter-increment: banana;
-        &::before{
-            font-weight: bold;
-            content: counters(banana, '.') '. ';
-        }
-    }
-
 }
+ol>li{
+    counter-increment: banana;
+    &::before{
+        font-weight: bold;
+        content: counters(banana, '.') '. ';
+    }
+}
+
+// first level ol
+ol>li{text-indent: -1.2em;}
+// second level ol
+ol>li>ol>li {text-indent: -2em;}
+// third level ol
+ol>li>ol>li>ol>li {text-indent: -3em;}
+// fourth level ol
+ol>li>ol>li>ol>li>ol>li {text-indent: -3.7em;}
 
 .dropdown>li {
     padding-left: 0em; 
