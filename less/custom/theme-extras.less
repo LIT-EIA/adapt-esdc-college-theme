@@ -403,6 +403,15 @@ blockquote {
             content: counters(banana, '.') '. ';
         }
     }
+    // simple ol under ul
+    ul>li>ol>li, ul>li>ol>li>ol>li{
+        text-indent: -1.1em;
+        counter-increment: banana;
+        &::before{
+            font-weight: bold;
+            content: counter(banana) '. ';
+        }
+    }
     
     // first level ol
     ol>li{text-indent: -1.2em;}
@@ -413,7 +422,6 @@ blockquote {
     // fourth level ol
     ol>li>ol>li>ol>li>ol>li {text-indent: -3.7em;}
 }
-
 
 // TITLES
 .block .block-title, .component .component-title{
