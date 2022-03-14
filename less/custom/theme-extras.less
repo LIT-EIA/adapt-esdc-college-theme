@@ -648,6 +648,14 @@ video::cue {
     outline: 2px solid red;
 }
 
+// secondary focus for radio buttons
+.mcq-component .mcq-item label.selected .mcq-answer-icon.radio:before{
+    background-color: lighten(@esdc-pink, 20%);
+    border: 1px solid lighten(@esdc-pink, 20%);
+    border-radius: 1em;
+    color: @esdc-white;
+}
+
 // ====================================================================
 //
 // [&&06] SPECIFIC - STACKLIST COMPONENT
