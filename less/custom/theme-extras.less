@@ -355,11 +355,6 @@ html{
 
 p{ margin: 0 0 14px 0; }
 
-[class$="-body"] a {
-    &:link{color: blue }
-    &:visited{color: purple }
-}
-
 blockquote {
     border-left: 2px solid @primary-color;
     margin-left: 20px;
@@ -455,6 +450,20 @@ blockquote {
     color: @esdc-white;
 }
 
+// Link styles
+// default
+[class$="-body"] a {
+    &:link{color: blue }
+    &:visited{color: purple }
+}
+// dark blue bg
+// a styles with dark blue background
+.notify-popup-body-inner, .narrative-content-inner, .stacklist-items-inner {
+    a {
+        &:link { color: #9EC3FF !important; }
+        &:visited { color: #DEADFF !important; }
+    }
+}
 
 // ====================================================================
 //
@@ -678,19 +687,14 @@ video::cue {
 
 .narrative-content-inner{
     background-color: @esdc-dark-blue; 
-    a {
-        &:link { color: #9EC3FF !important; }
-        &:visited { color: #DEADFF !important; }
-    }
 }
-.narrative-content a:link { color: #9FD9FF !important; } // issue #41
 
 // ====================================================================
 //
 // [&&08] SPECIFIC - NARRATIVE + STACKLIST COMPONENT
 //
 // ====================================================================
-.narrative-content-inner, .stacklist-items-inner {
+/*.narrative-content-inner, .stacklist-items-inner {
     a {
         color:#00E9FA !important; // @esdc-cyan-text
         &:visited
@@ -702,7 +706,7 @@ video::cue {
               color:#BDFFEB !important; // @esdc-cyan
         }
     }
-}
+}*/
 
 // ====================================================================
 //
