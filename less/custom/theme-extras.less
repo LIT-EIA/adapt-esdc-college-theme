@@ -5,6 +5,7 @@
 //      [!!01] THEME - COLORS
 //      [!!02] THEME - LAYOUT
 //      [!!03] THEME - TYPOGRAPHY
+//      [!!04] THEME - DARK BLUE BG
 // [**] - A11Y
 // [&&] - SPECIFIC
 //      [&&01] SPECIFIC - LOADING FR
@@ -84,7 +85,7 @@
 // Progress bar
 .drawer .pagelevelprogress-item-title .pagelevelprogress-indicator
 {
-	border-color:@esdc-purple;
+    border-color:@esdc-purple;
 }
 
 // Block background color - used to apply variable based background colors on blocks
@@ -92,29 +93,29 @@
     .block-inner{
         background-color:@esdc-lightgrey;
     }
-	.primary-color {
-		background-color: @primary-color;
-	}
+    .primary-color {
+        background-color: @primary-color;
+    }
 
-	.secondary-color {
-		background-color: @secondary-color;
-	}
+    .secondary-color {
+        background-color: @secondary-color;
+    }
 
-	.tertiary-color {
-		background-color: @tertiary-color;
-	}
+    .tertiary-color {
+        background-color: @tertiary-color;
+    }
 
-	.background-color {
-		background-color: @background-color;
-	}
+    .background-color {
+        background-color: @background-color;
+    }
 
-	.background-color-inverted {
-		background-color: @background-color-inverted;
-		color: @font-color-inverted;
-		.component-inner {
-			background-color: transparent;
-		}
-	}
+    .background-color-inverted {
+        background-color: @background-color-inverted;
+        color: @font-color-inverted;
+        .component-inner {
+            background-color: transparent;
+        }
+    }
 }
 
 // Class applies alternative background color and component styling
@@ -128,28 +129,28 @@
     .component-title,
     .component-body,
     .component-instruction {
-    	color: @foreground-color-inverted;
-    	text-align: center;
+        color: @foreground-color-inverted;
+        text-align: center;
     }
     .component-inner {
-    	background-color: transparent;
+        background-color: transparent;
     }
 }
 
 // Component background - used to apply variable based background color and padding on components
 .component-background {
-	background-color: @component-background-color;
-	padding: @component-padding;
+    background-color: @component-background-color;
+    padding: @component-padding;
 }
 .component-container {background-color:@esdc-white};
 
 // Button state styles
 .button[disabled="disabled"], button[disabled="disabled"] {
-	color: @esdc-disabled-text;
-	background-color: @esdc-disabled;
-	&:hover
-	{
-	    background-color: @esdc-disabled-hover;
+    color: @esdc-disabled-text;
+    background-color: @esdc-disabled;
+    &:hover
+    {
+        background-color: @esdc-disabled-hover;
     }
 }
 .no-touch .button:hover, .no-touch button:hover {
@@ -200,15 +201,15 @@ html{
     }
     
     .navigation .icon {
-	padding:5px !important; 
+    padding:5px !important; 
     }
-	
+    
     .pagelevelprogress-navigation.base
     {
         padding:5px !important; 
         height:36px;
     }
-	
+    
     .pagelevelprogress-navigation .pagelevelprogress-indicator {
         width:13vw !important;
     }
@@ -231,49 +232,49 @@ html{
         font-size: 36px;
     }  
     &.nth-child-1, &.nth-child-4, &.nth-child-7, &.nth-child-10, &.nth-child-13, &.nth-child-16
-	{
-		.article-title:before
-		{
-			content: '';
-			height: 29px;
-			width: 29px;
-			margin-top: 6px;
-			margin-left: -1 * 60px;
-			float: left;
-			background: -ms-linear-gradient(-45deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
-			background: linear-gradient(135deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
-		}
-	}
+    {
+        .article-title:before
+        {
+            content: '';
+            height: 29px;
+            width: 29px;
+            margin-top: 6px;
+            margin-left: -1 * 60px;
+            float: left;
+            background: -ms-linear-gradient(-45deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
+            background: linear-gradient(135deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
+        }
+    }
 
-	&.nth-child-2, &.nth-child-5, &.nth-child-8, &.nth-child-11, &.nth-child-14, &.nth-child-17
-	{
-		.article-title:before
-		{
-			content: '';
-			height: 29px;
-			width: 29px;
-			margin-top: 6px;
-			margin-left: -1 * 60px;
-			float: left;
-			background: -ms-linear-gradient(-45deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
-			background: linear-gradient(135deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
-		}
-	}
+    &.nth-child-2, &.nth-child-5, &.nth-child-8, &.nth-child-11, &.nth-child-14, &.nth-child-17
+    {
+        .article-title:before
+        {
+            content: '';
+            height: 29px;
+            width: 29px;
+            margin-top: 6px;
+            margin-left: -1 * 60px;
+            float: left;
+            background: -ms-linear-gradient(-45deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
+            background: linear-gradient(135deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
+        }
+    }
 
-	&.nth-child-3, &.nth-child-6, &.nth-child-9, &.nth-child-12, &.nth-child-15, &.nth-child-18
-	{
-		.article-title:before
-		{
-			content: '';
-			height: 29px;
-			width: 29px;
-			margin-top: 6px;
-			margin-left: -1 * 60px;
-			float: left;
-			background: -ms-linear-gradient(-45deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
-			background: linear-gradient(135deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
-		}
-	}  
+    &.nth-child-3, &.nth-child-6, &.nth-child-9, &.nth-child-12, &.nth-child-15, &.nth-child-18
+    {
+        .article-title:before
+        {
+            content: '';
+            height: 29px;
+            width: 29px;
+            margin-top: 6px;
+            margin-left: -1 * 60px;
+            float: left;
+            background: -ms-linear-gradient(-45deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
+            background: linear-gradient(135deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
+        }
+    }  
 }
 
 // BLOCK LEVEL 
@@ -282,9 +283,8 @@ html{
         margin-bottom: 0;
     }
     .block-inner{
-        padding: 20px;
-        margin-top: 30px;
-        margin-top:60px !important;
+        padding: 40px 60px !important;
+        margin-top: 60px !important;
     }
 }
 .combineblock {  
@@ -347,6 +347,23 @@ html{
         }
 }
 
+// ELEMENT LEVEL
+
+// Table styles
+[class$="-body"] table th, [class$="-body"] table td , .openTextInput-item-modelanswer table th,  .openTextInput-item-modelanswer table td{
+    border: 2px solid @esdc-dark-blue;
+    border-spacing: 0;
+    padding: 10px;
+}
+
+[class$="-body"] table th , .openTextInput-item-modelanswer table th{
+    background-color: @esdc-dark-blue;
+    color: @esdc-white;
+    text-align: left;
+}
+[class$="-body"] table th[scope="row"] , .openTextInput-item-modelanswer table th[scope="row"]{
+    vertical-align: top;
+}
 // ====================================================================
 //
 // [!!03] THEME - TYPOGRAPHY
@@ -428,8 +445,7 @@ abbr[title] {
     margin-bottom: 10px;
 }
 .block .block-title {
-	margin-top: -20px;
-	margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 // DRAWER TITLES
@@ -447,31 +463,37 @@ abbr[title] {
     padding: 5px;
 }
 
-// Table styles
-[class$="-body"] table th, [class$="-body"] table td {
-    border:  2px solid @esdc-dark-blue;
-    border-spacing: 0;
-    padding: 10px;
-}
-[class$="-body"] table th {
-    background-color: @esdc-dark-blue;
-    color: @esdc-white;
-}
-
 // Link styles
 // default
 [class$="-body"] a {
     &:link{color: blue }
     &:visited{color: purple }
 }
+
+// ====================================================================
+//
+// [!!04] DARK BLUE BG
+//
+// ====================================================================
 // dark blue bg
-// a styles with dark blue background
 .notify-popup-body-inner, .narrative-content-inner, .stacklist-items-inner, .page-body-inner {
+    // a styles with dark blue background
     a {
         &:link { color: #9EC3FF !important; }
         &:visited { color: #DEADFF !important; }
     }
+    // white table border
+    table th, table td {
+        border: 1px solid @esdc-white;
+        border-spacing: 0;
+        padding:10px;
+    }
+    table th {
+        background-color: @esdc-white;
+        color: @esdc-dark-blue;
+    }
 }
+
 
 // ====================================================================
 //
@@ -485,10 +507,10 @@ abbr[title] {
         background-color:@esdc-dark-blue;
     }
     .notify-popup-done:hover {
-        border-color:@esdc-cyan !important;
+        border-color: lighten(@esdc-pink,20%) !important;
     }
     .notify-popup-icon-close:hover {
-        color:@esdc-cyan !important;
+        color:lighten(@esdc-pink,20%) !important;
     }
 }
 
@@ -564,12 +586,12 @@ html:lang(fr) {
 // ====================================================================
 // remove graphic components for mobile view (when components snap down to single span).
 .assessment {
-	.graphic-component {
-		display: block;
-		@media all and (max-width: @device-width-medium) {
-			display: none;
-		}
-	}
+    .graphic-component {
+        display: block;
+        @media all and (max-width: @device-width-medium) {
+            display: none;
+        }
+    }
 }
 
 // ====================================================================
@@ -616,7 +638,7 @@ span.mejs-offscreen {
 }
 
 .mejs-controls {
-	margin-bottom:-30px !important;
+    margin-bottom:-30px !important;
 }
 // fix for cc overlap
 video::cue {
@@ -788,7 +810,7 @@ button.hotgrid-grid-item .hotgrid-item-title{
     {
         width:90% !important;
         line-height:28px !important;
-    }	
+    }   
 }
 
 
@@ -808,14 +830,17 @@ button.hotgrid-grid-item .hotgrid-item-title{
 // [&&15] SPECIFIC - OPEN TEXT COMPONENT
 //
 // ====================================================================
-.openTextInput-inner{
-    textarea, .openTextInput-item-modelanswer{
-        border:1px solid;
+.openTextInput-component{
+    .openTextInput-item-textbox, .openTextInput-answer-container{
+        border:1px solid @esdc-dark-blue;
     }
     .openTextInput-count-characters{
         background-color: transparent;
         color: @esdc-black;
         padding: 0;
+    }
+    .buttons .buttons-marking-icon {
+        left: 90% !important;
     }
 }
 
@@ -889,7 +914,7 @@ button.hotgrid-grid-item .hotgrid-item-title{
             content: '';
             position: relative;
             bottom: 0px;
-        	width: 0;
+            width: 0;
             height: 0;
             border: 40px solid transparent;
             border-top-color: @esdc-dark-blue;
@@ -913,14 +938,14 @@ button.hotgrid-grid-item .hotgrid-item-title{
         }
         &.component-left .component-body:after
         {
-        	left: 10%;  
+            left: 10%;  
             border-bottom: 0;
             border-right: 0;
         }
         
         &.component-right .component-body:after
         {
-        	left: 80%;   
+            left: 80%;   
             border-bottom: 0;
             border-left: 0;
         } 
@@ -931,16 +956,16 @@ button.hotgrid-grid-item .hotgrid-item-title{
            .component-body:after {
                 content: "OO";
                 background-color: @esdc-dark-blue;
-            	width: 20px;
-            	height: 20px;
-            	left: 10%;
-            	bottom: 47px;
-            	border-radius: 50%;
-            	border-left: 2px solid @esdc-dark-blue;
-            	border-top:2px solid @esdc-dark-blue;
-            	border-right: 2px solid @esdc-dark-blue;
-            	border-bottom:2px solid @esdc-dark-blue;
-            	box-shadow: 20px 20px  @esdc-dark-blue;
+                width: 20px;
+                height: 20px;
+                left: 10%;
+                bottom: 47px;
+                border-radius: 50%;
+                border-left: 2px solid @esdc-dark-blue;
+                border-top:2px solid @esdc-dark-blue;
+                border-right: 2px solid @esdc-dark-blue;
+                border-bottom:2px solid @esdc-dark-blue;
+                box-shadow: 20px 20px  @esdc-dark-blue;
             }
         }
         &.component-right.thoughtbubble
@@ -948,16 +973,16 @@ button.hotgrid-grid-item .hotgrid-item-title{
            .component-body:after {
                 content: "OO";
                 background-color: @esdc-dark-blue;
-            	width: 20px;
-            	height: 20px;
-            	right: 10%;
-            	bottom: 47px;
-            	border-radius: 50%;
-            	border-left: 2px solid @esdc-dark-blue;
-            	border-top:2px solid @esdc-dark-blue;
-            	border-right: 2px solid @esdc-dark-blue;
-            	border-bottom:2px solid @esdc-dark-blue;
-            	box-shadow: -20px 20px  @esdc-dark-blue;
+                width: 20px;
+                height: 20px;
+                right: 10%;
+                bottom: 47px;
+                border-radius: 50%;
+                border-left: 2px solid @esdc-dark-blue;
+                border-top:2px solid @esdc-dark-blue;
+                border-right: 2px solid @esdc-dark-blue;
+                border-bottom:2px solid @esdc-dark-blue;
+                box-shadow: -20px 20px  @esdc-dark-blue;
             }
         }
         &.component-full.thoughtbubble
@@ -965,16 +990,16 @@ button.hotgrid-grid-item .hotgrid-item-title{
            .component-body:after {
                 content: "OO";
                 background-color: @esdc-dark-blue;
-            	width: 20px;
-            	height: 20px;
-            	left: 20%;
-            	bottom: 47px;
-            	border-radius: 50%;
-            	border-left: 2px solid @esdc-dark-blue;
-            	border-top:2px solid @esdc-dark-blue;
-            	border-right: 2px solid @esdc-dark-blue;
-            	border-bottom:2px solid @esdc-dark-blue;
-            	box-shadow: 20px 20px  @esdc-dark-blue;
+                width: 20px;
+                height: 20px;
+                left: 20%;
+                bottom: 47px;
+                border-radius: 50%;
+                border-left: 2px solid @esdc-dark-blue;
+                border-top:2px solid @esdc-dark-blue;
+                border-right: 2px solid @esdc-dark-blue;
+                border-bottom:2px solid @esdc-dark-blue;
+                box-shadow: 20px 20px  @esdc-dark-blue;
             }
         }
     }
@@ -983,34 +1008,16 @@ button.hotgrid-grid-item .hotgrid-item-title{
 // THIS CLASS IS FOR THE PURPOSE OF THE ADAPT DEMO 
 // blank component demo - applied at block level to add a background image in place of a blank component
 .blank-background {
-	background-image: url(assets/blank-bg.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
+    background-image: url(assets/blank-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
 
-	@media all and (max-width: @device-width-large) {
-		background-image: url(assets/blank-bg-900.jpg);
-		background-position: right;
-	}
+    @media all and (max-width: @device-width-large) {
+        background-image: url(assets/blank-bg-900.jpg);
+        background-position: right;
+    }
 
-	@media all and (max-width: @device-width-medium) {
-		background-image: none;
-	}
+    @media all and (max-width: @device-width-medium) {
+        background-image: none;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    
