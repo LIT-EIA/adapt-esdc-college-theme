@@ -4,27 +4,27 @@
 
 | Color Name | Hex | Header level |
 | :------------- | :------------- | :------------- |
-|Near black|![#051c37](`https://via.placeholder.com/15/051c37/000000?text=+`) `#051c37`| Header level 1 |
-|Cyan|![#1f7c9b](https://via.placeholder.com/15/1f7c9b/000000?text=+) `#1f7c9b`| Header level 2 |
-|Purple|![#69459c](https://via.placeholder.com/15/69459c/000000?text=+) `#69459c`| Header level 3 |
-|Pink|![#cd1c69](https://via.placeholder.com/15/cd1c69/000000?text=+) `#cd1c69`| Header level 4 |
-|Grey|![#666666](https://via.placeholder.com/15/666666/000000?text=+) `#666666`| Header level 5 |
+|Near black|![#051c37](https://via.placeholder.com/15/051c37/051c37.png) `#051c37`| Header level 1 |
+|Cyan|![#1f7c9b](https://via.placeholder.com/15/1f7c9b/1f7c9b.png) `#1f7c9b`| Header level 2 |
+|Purple|![#69459c](https://via.placeholder.com/15/69459c/69459c.png) `#69459c`| Header level 3 |
+|Pink|![#cd1c69](https://via.placeholder.com/15/cd1c69/cd1c69.png) `#cd1c69`| Header level 4 |
+|Grey|![#666666](https://via.placeholder.com/15/666666/666666.png) `#666666`| Header level 5 |
 
 ## ESDC Theme Colors:
 
 | Color Name | Hex | Variable name |
 | :------------- | :------------- | :------------- |
-|Main blue color|![#26374A](https://via.placeholder.com/15/26374A/000000?text=+) `#26374A`| `@esdc-blue` |
-|Accent blue|![#1C578A](https://via.placeholder.com/15/1C578A/000000?text=+) `#1C578A`| `@esdc-interactive-blue` |
-|Accent blue hover|![#1C578A](https://via.placeholder.com/15/1C578A/000000?text=+) `#1C578A`| `@esdc-int-hover-color` |
-|Bright highlights pink|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/000000?text=+) `#CD1C6A`| `@esdc-pink` |
-|Lesser highlights purple|![#69459C](https://via.placeholder.com/15/69459C/000000?text=+) `#69459C`| `@esdc-purple` |
-|Background alternate|![#E6E6E6](https://via.placeholder.com/15/E6E6E6/000000?text=+) `#E6E6E6`| `@esdc-lightgrey` |
-|White|![#FFFFFF](https://via.placeholder.com/15/FFFFFF/000000?text=+) `#FFFFFF`| `@esdc-white` |
-|White Hover|![#DEDEDE](https://via.placeholder.com/15/DEDEDE/000000?text=+) `#DEDEDE`| `@esdc-white-hover` |
-|Black|![#000000](https://via.placeholder.com/15/000000/000000?text=+) `#000000`| `@esdc-black` |
-|Correct color|![#56cdb0](https://via.placeholder.com/15/56cdb0/000000?text=+) `#56cdb0`| `@esdc-correct` |
-|Incorrect color|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/000000?text=+) `#CD1C6A`| `@esdc-incorrect` |
+|Main blue color|![#26374A](https://via.placeholder.com/15/26374A/26374A.png) `#26374A`| `@esdc-blue` |
+|Accent blue|![#1C578A](https://via.placeholder.com/15/1C578A/1C578A.png) `#1C578A`| `@esdc-interactive-blue` |
+|Accent blue hover|![#1C578A](https://via.placeholder.com/15/1C578A/1C578A.png) `#1C578A`| `@esdc-int-hover-color` |
+|Bright highlights pink|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/CD1C6A.png) `#CD1C6A`| `@esdc-pink` |
+|Lesser highlights purple|![#69459C](https://via.placeholder.com/15/69459C/69459C.png) `#69459C`| `@esdc-purple` |
+|Background alternate|![#E6E6E6](https://via.placeholder.com/15/E6E6E6/E6E6E6.png) `#E6E6E6`| `@esdc-lightgrey` |
+|White|![#FFFFFF](https://via.placeholder.com/15/FFFFFF/FFFFFF.png) `#FFFFFF`| `@esdc-white` |
+|White Hover|![#DEDEDE](https://via.placeholder.com/15/DEDEDE/DEDEDE.png) `#DEDEDE`| `@esdc-white-hover` |
+|Black|![#000000](https://via.placeholder.com/15/000000/000000.png) `#000000`| `@esdc-black` |
+|Correct color|![#56cdb0](https://via.placeholder.com/15/56cdb0/56cdb0.png) `#56cdb0`| `@esdc-correct` |
+|Incorrect color|![#CD1C6A](https://via.placeholder.com/15/CD1C6A/CD1C6A.png) `#CD1C6A`| `@esdc-incorrect` |
 
 ## Settings overview
 
