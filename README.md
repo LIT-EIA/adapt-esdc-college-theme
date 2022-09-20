@@ -4,7 +4,7 @@
 
 | Color Name | Hex | Header level |
 | :------------- | :------------- | :------------- |
-|Near black|![#051c37](https://via.placeholder.com/15/051c37/000000?text=+) `#051c37`| Header level 1 |
+|Near black|![#051c37](`https://via.placeholder.com/15/051c37/000000?text=+`) `#051c37`| Header level 1 |
 |Cyan|![#1f7c9b](https://via.placeholder.com/15/1f7c9b/000000?text=+) `#1f7c9b`| Header level 2 |
 |Purple|![#69459c](https://via.placeholder.com/15/69459c/000000?text=+) `#69459c`| Header level 3 |
 |Pink|![#cd1c69](https://via.placeholder.com/15/cd1c69/000000?text=+) `#cd1c69`| Header level 4 |
