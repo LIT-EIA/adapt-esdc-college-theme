@@ -678,15 +678,16 @@ video::cue {
 }
 // focus outline
 .mcq-widget[role="radiogroup"]:focus-within, .mcq-widget[role="group"]>.mcq-item:focus-within {
-    outline: 2px solid @esdc-pink;
+    outline: 3px solid @esdc-pink;
 }
 
 // secondary focus for radio buttons
-.mcq-component .mcq-item label.selected .mcq-answer-icon.radio:before{
-    background-color: lighten(@esdc-pink, 20%);
-    border: 1px solid lighten(@esdc-pink, 20%);
-    border-radius: 1em;
-    color: @esdc-white;
+.mcq-component div[role="radiogroup"] {
+    outline: none!important;
+}
+
+.mcq-component div[role="radiogroup"] .highlighted {
+    outline: 3px solid @esdc-pink;
 }
 
 // ====================================================================
