@@ -277,14 +277,22 @@ html{
     }  
 }
 
-// BLOCK LEVEL 
+// BLOCK LEVEL
+.block-padding when (@improved-block-padding = Legacy) {
+    padding: 60px;
+ }
+ 
+.block-padding when (@improved-block-padding = Improved) {
+    padding: 40px 60px;
+}
+        
 .block  {
     .block-body{
         margin-bottom: 0;
     }
     .block-inner{
-        padding: 40px 60px !important;
-        margin-top: 60px !important;
+        .block-padding;
+        margin-top: 60px;
     }
 }
 .combineblock {  
@@ -304,14 +312,19 @@ html{
 
 @media screen and (max-width: 640px)
 {
-    .block .block-inner{
-        padding: 10px;
+    .block { 
+        .block-inner{
+            padding: 10px;
+        }
     }
 }
 @media screen and (min-width: 641px)
 {
-    .block .block-inner{
-        padding: 60px;
+    .block{ 
+        .block-inner{
+            .block-padding;
+            margin-top: 60px;
+        }
     }
 }
 
@@ -444,8 +457,27 @@ abbr[title] {
 .component .component-title{
     margin-bottom: 10px;
 }
-.block .block-title {
+
+.block-title-margin when (@improved-block-padding = Legacy) {
+    margin-bottom: 10px;
+ }
+ 
+.block-title-margin when (@improved-block-padding = Improved) {
     margin-bottom: 30px;
+}
+
+@media screen and (max-width: 640px)
+{
+    .block .block-title {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 641px)
+{
+    .block .block-title {
+        .block-title-margin;
+    }
 }
 
 // DRAWER TITLES

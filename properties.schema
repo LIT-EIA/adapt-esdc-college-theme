@@ -21,6 +21,28 @@
           "required":true
         }
       }
+    },
+    "variables": {
+      "_settings": {
+        "type": "object",
+        "title": "Options",
+        "properties" : {
+          "improved-block-padding": {
+            "type": "string",
+            "required": true,
+            "default" : "Improved",
+            "title" : "Block Padding",
+            "validators": [],
+            "inputType": {
+              "type": "Select",
+              "options": [
+                "Improved",
+                "Legacy"
+              ]
+            }
+          }
+        }
+      }
     }
   }
 }
