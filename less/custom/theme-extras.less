@@ -23,6 +23,7 @@
 //      [&&13] SPECIFIC - EXPOSE COMPONENT
 //      [&&14] SPECIFIC - MATCHING COMPONENT
 //      [&&15] SPECIFIC - OPEN TEXT COMPONENT
+//      [&&16] SPECIFIC - LEARNERS PICK
 // [^^] - UTILITY
 // [//] - CUSTOM
 
@@ -220,6 +221,17 @@ html{
     }
 }
 
+// MARGINS
+// Option to remove max-width on blocks
+.block .block-inner when (@margin-control = 'No Margin') {
+    max-width: 100%;  
+}
+ 
+.article .article-header when (@margin-control = 'No Margin') {
+    max-width: calc(100% - 150px);
+}
+
+
 // ARTICLE LEVEL 
 .article {
     .article-inner{
@@ -278,11 +290,11 @@ html{
 }
 
 // BLOCK LEVEL
-.block-padding when (@improved-block-padding = Legacy) {
+.block-padding when (@improved-block-padding = 'Legacy') {
     padding: 60px;
- }
- 
-.block-padding when (@improved-block-padding = Improved) {
+}
+
+.block-padding when (@improved-block-padding = 'Improved') {
     padding: 40px 60px;
 }
         
@@ -579,13 +591,22 @@ html *:focus, body div:focus, body p:focus, body button:focus, body label:focus,
     outline:3px solid #CD1C6A !important;
 }
 
-// visible focus indicator outline on title
-html:not(.a11y-disable-focusoutline) .js-heading-inner:focus {
-    outline: none!important;
-}
-
-html:not(.a11y-disable-focusoutline) .js-heading:focus-within ~ .component-title-inner {
-    outline: 3px solid #CD1C6A !important;
+//fixed visible focus indicator on titles (previously on invisible aria-label)
+html:not(.a11y-disable-focusoutline) {
+    .js-heading {
+        &:focus-within {
+            //focus indicator visible on component title when child aria-label is focused
+            ~.component-title-inner {
+                outline: 3px solid @esdc-pink !important;
+            }
+        }
+    }
+    .js-heading-inner {
+        // visible focus indicator outline on visible title instead of not visible aria-label
+        &:focus {
+            outline: none !important;
+        }
+    }
 }
 
 
@@ -842,6 +863,30 @@ button.hotgrid-grid-item .hotgrid-item-title{
     height:400px !important;
  }
 
+ // hotgrapgic and hotgrid focus indicator fixes for new popup focus
+html:not(.a11y-disable-focusoutline) {
+    .notify-popup {
+        /* adds focus indicator to hotgrid-popup instead of notify-popup when hotgrid or hotgraphic */
+        &:focus {
+            .hotgrid-popup , .hotgraphic-popup {
+                outline: 3px solid @esdc-pink !important;
+            }
+        }
+        /* removes focus indicator from notify-popup when hotgrid or hotgraphic */
+        &:has(.hotgrid-popup):focus, &:has(.hotgraphic-popup):focus {
+            outline: none !important;
+        }
+        /* adds focus indicator to hotgrid-popup instead of title when hotgrid or hotgraphic */
+        .hotgrid-popup:has(.hotgrid-content-title:focus), .hotgraphic-popup:has(.hotgraphic-content-title:focus) {
+            outline: 3px solid @esdc-pink !important;
+        }
+        /* removes focus indicator from content-title when hotgrid or hotgraphic */
+        .hotgrid-content-title:focus,.hotgraphic-content-title:focus {
+            outline: none !important;
+        }
+    }
+}
+
 // ====================================================================
 //
 // [&&12] SPECIFIC - IMAGE SLIDER
@@ -902,6 +947,33 @@ button.hotgrid-grid-item .hotgrid-item-title{
     .buttons .buttons-marking-icon {
         left: 90% !important;
     }
+}
+
+// ====================================================================
+//
+// [&&16] SPECIFIC - LEARNERS PICK
+//
+// ====================================================================
+.bubble-answer {
+    background: #fff;
+    color: #0F2A4A;
+    font-weight: bold;
+    padding: 7.5px 15px;
+    display: inline-block;
+    margin: 0;
+    border-radius: 20px;
+    font-size: 95%;
+}
+
+.icon-answer {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 95%;
+}
+
+.info-icon {
+    margin-right: 10px;
 }
 
 // ====================================================================

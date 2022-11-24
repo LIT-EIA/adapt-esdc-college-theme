@@ -30,16 +30,32 @@
           "improved-block-padding": {
             "type": "string",
             "required": true,
-            "default" : "Improved",
+            "default" : "'Legacy'",
             "title" : "Block Padding",
             "validators": [],
             "inputType": {
               "type": "Select",
               "options": [
-                "Improved",
-                "Legacy"
+                "'Legacy'",
+                "'Improved'"
               ]
-            }
+            },
+            "help": "The option Improved adjusts the spacing on top of block titles to make it even with the other sides. The option Legacy keeps Adapt's default spacing"
+          },
+          "margin-control": {
+            "type": "string",
+            "required": true,
+            "default" : "'Default Size'",
+            "title" : "Margin Size",
+            "validators": [],
+            "inputType": {
+              "type": "Select",
+              "options": [
+                "'Default Size'",
+                "'No Margin'"
+              ]
+            },
+            "help": "The option No Margin removes the left and right margin on the course. WARNING: If you activate this option on an existing course, images that are smaller will need to be replaced by larger ones. The pins in your hotgrid components may need repositioning."
           }
         }
       }
