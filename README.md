@@ -1,6 +1,6 @@
 # College@ESDC's official Adapt theme!
 
-## Word doc colors
+## Official ESDC colors
 
 | Color Name | Hex | Header level |
 | :------------- | :------------- | :------------- |
@@ -10,7 +10,7 @@
 |Pink|![#cd1c69](https://via.placeholder.com/15/cd1c69/cd1c69.png) `#cd1c69`| Header level 4 |
 |Grey|![#666666](https://via.placeholder.com/15/666666/666666.png) `#666666`| Header level 5 |
 
-## ESDC Theme Colors:
+## Adapt theme slightly altered ESDC colors (Only use in Adapt):
 
 | Color Name | Hex | Variable name |
 | :------------- | :------------- | :------------- |
