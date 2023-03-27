@@ -223,11 +223,11 @@ html{
 
 // MARGINS
 // Option to remove max-width on blocks
-.block .block-inner when (@margin-control = 'No Margin') {
+.block .block-inner when (@margin-control = noMargin) {
     max-width: 100%;  
 }
  
-.article .article-header when (@margin-control = 'No Margin') {
+.article .article-header when (@margin-control = noMargin) {
     max-width: calc(100% - 150px);
 }
 
@@ -290,11 +290,11 @@ html{
 }
 
 // BLOCK LEVEL
-.block-padding when (@improved-block-padding = 'Legacy') {
+.block-padding when (@improved-block-padding = legacy) {
     padding: 60px;
 }
 
-.block-padding when (@improved-block-padding = 'Improved') {
+.block-padding when (@improved-block-padding = improved) {
     padding: 40px 60px;
 }
         
