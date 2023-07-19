@@ -30,7 +30,7 @@
           "improved-block-padding": {
             "type": "string",
             "required": true,
-            "default" : "legacy",
+            "default" : "Legacy",
             "title" : "Block Padding",
             "validators": [],
             "inputType": {
@@ -45,7 +45,7 @@
           "margin-control": {
             "type": "string",
             "required": true,
-            "default" : "defaultSize",
+            "default" : "Default Size",
             "title" : "Margin Size",
             "validators": [],
             "inputType": {
