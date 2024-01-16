@@ -433,26 +433,9 @@ abbr[title] {
     // third level ul 
     ul>li>ul>li>ul>li {list-style-type:square;}
     
-    // ol counter
-    ol{
-        counter-reset: banana;
-        list-style-type: none;
-    }
-    ol>li{
-        counter-increment: banana;
-        &::before{
-            font-weight: bold;
-            content: counters(banana, '.') '. ';
-        }
-    }
     // simple ol under ul
     ul>li>ol>li, ul>li>ol>li>ol>li{
         text-indent: -1.1em;
-        counter-increment: banana;
-        &::before{
-            font-weight: bold;
-            content: counter(banana) '. ';
-        }
     }
     
     // first level ol
