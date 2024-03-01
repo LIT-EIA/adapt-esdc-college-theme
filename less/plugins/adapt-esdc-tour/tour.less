@@ -1,9 +1,9 @@
 .shepherd-header {
-    background: #0f2a4a !important;
+    background: @esdc-dark-blue !important;
 }
 
 .shepherd-cancel-icon {
-    color: #fff!important;
+    color: @white!important;
 }
 
 .shepherd-cancel-icon:hover {
@@ -15,12 +15,12 @@
 }
 
 .shepherd-button:hover {
-    background-color: #DEDEDE!important;
-    color: #173E6D!important;
+    background-color: @esdc-white-hover!important;
+    color: @esdc-int-hover-color!important;
 }
 .shepherd-button {
-    background-color: #FFF;
-    color: #1c4e8a;
+    background-color: @white;
+    color: @esdc-interactive-blue;
     border-radius: 0;
     padding: 10px;
     text-decoration: none;
@@ -37,23 +37,36 @@
 }
 
 .shepherd-content {
-    background: #e6e6e6;
+    background: @esdc-lightgrey;
     border-radius: 0!important;
 }
 
 .shepherd-header {
-    background: #0f2a4a !important;
+    background: @esdc-dark-blue !important;
     border-radius: 0;
 }
 
 .shepherd-title {
-    color: #fff!important;
+    color: @white!important;
 }
 
 .shepherd-arrow:before {
-    background: #e6e6e6;
+    background: @esdc-lightgrey;
 }
 
 .shepherd-arrow {
     filter: none!important;
+}
+
+.start-tour {
+    color: @white!important;
+    background-color: @esdc-interactive-blue!important;
+    &:hover {
+        background-color: @esdc-int-hover-color!important;
+    }
+    height: auto;
+}
+
+.shepherd-element.shepherd-has-title[data-popper-placement^=bottom]>.shepherd-arrow:before {
+    background-color: @esdc-dark-blue;
 }
