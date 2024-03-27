@@ -1146,3 +1146,8 @@ html:not(.a11y-disable-focusoutline) {
         background-image: none;
     }
 }
+
+// THIS IS TO FIX THE WORD COPY-PASTE FEATURE ON CKEDITOR5 THAT MIGHT CONTAIN SOME UNWANTED P TAGS IN BULLET LIST
+li p {
+  display: inline;
+}
