@@ -9,6 +9,7 @@
 |Purple|![#69459c](https://via.placeholder.com/15/69459c/69459c.png) `#69459c`| Header level 3 |
 |Pink|![#cd1c69](https://via.placeholder.com/15/cd1c69/cd1c69.png) `#cd1c69`| Header level 4 |
 |Grey|![#666666](https://via.placeholder.com/15/666666/666666.png) `#666666`| Header level 5 |
+|Orange|![#EB6B16](https://via.placeholder.com/15/EB6B16/EB6B16.png) `#EB6B16`| Use only when an extra color is needed |
 
 ## Adapt theme slightly altered ESDC colors (Only use in Adapt):
 
