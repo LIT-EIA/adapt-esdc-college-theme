@@ -2,23 +2,23 @@
 // ==============
 
 .drawer {
-    background-color: @drawer-color;
-    color: @drawer-item-text-color;
+    background-color: @color-background;
+    color: @color-primary;
+    box-shadow: 0px 0px 10px @color-secondary;
 
     .drawer-toolbar {
         position: absolute;
         width:100%;
         top:0;
-        border-bottom: 1px solid @drawer-border-color;
     }
 
     .drawer-toolbar .icon {
-        color: @drawer-icon-color;
+        color: @color-primary;
         padding: @navigation-padding;
         .transition-color;
 
         .no-touch &:hover {
-            color: @drawer-icon-color-hover;
+            color: @color-accent;
         }
     }
     
@@ -27,11 +27,9 @@
     }
 
     .drawer-inner {
-        border-left: 5px solid @drawer-border-color;
 
         .dir-rtl & {
-            border-left: inherit;
-            border-right: 5px solid @drawer-border-color;
+
         }
     }
 
@@ -46,14 +44,14 @@
         }
         
         .drawer-item-open {
-            border-bottom: 1px solid @drawer-item-color;
-            color: @drawer-item-text-color;
+            color: @color-primary;
             text-decoration: none;
             width: 100%;
+            font-weight:500;
             
             .no-touch &:hover {
-                background-color: @drawer-item-color-hover;
-                color: @drawer-item-text-color-hover;
+                background-color: @color-primary;
+                color: @color-background;
             }
         }
     }
@@ -64,7 +62,7 @@
 
         //stops rollover of drawar items on touch devices    
         .no-touch &:hover {
-             background-color: @drawer-color;
+             background-color: @color-background;
        }
     }
 }

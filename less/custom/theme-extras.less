@@ -35,84 +35,142 @@
 // ====================================================================
 
 // boxmenu
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
+
 .boxmenu-menu {
     .menu-header {
-        background-color:@esdc-dark-blue;
+        background-color: @color-primary;
     }
-    .menu-header, .page .page-header{
-        background-color: @esdc-dark-blue;
+
+    background-color: unset;
+
+
+
+    .menu-header,
+
+    .menu-item-inner {
+        background-color: @color-secondary;
+        color: @color-primary;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26);
+
     }
-    .menu-item-inner{
-        background-color: @esdc-lightgrey;
-        color: @esdc-dark-blue;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.26);
-    }
+
     .pagelevelprogress-indicator-inner {
-        background-color:@esdc-white;
-        border-color:@esdc-interactive-blue;
+        background-color: @color-background;
+        border-color: @color-accent;
     }
+
     .pagelevelprogress-indicator {
-        background-color:@esdc-interactive-blue;
-   }
-   .pagelevelprogress-indicator-bar{
-        background-color:@esdc-interactive-blue;
+        background-color: @color-background;
+    }
+
+    .pagelevelprogress-indicator-bar {
+        background-color: @color-background;
     }
 }
-.menu-item-body-inner p{
-    color: @esdc-dark-blue;
+
+.menu-item-body-inner p {
+    color: @color-primary;
     font-weight: 100;
 }
+
 .menu-item-button button {
-    background-color: @esdc-interactive-blue !important;
-    color: @esdc-white;
-    font-weight: 400;
-    max-width: 20em;;
-    &:hover{
-        background-color: @esdc-int-hover-color !important;
+    background-color: @color-secondary !important;
+    color: @color-text;
+    font-weight: 500;
+    max-width: 20em;
+    ;
+
+    &:hover {
+        background-color: @color-accent !important;
+        color:@color-background;
     }
-    
-    &.visited
-    {
-        background-color:@esdc-disabled !important;
-        color: @esdc-disabled-text !important;
-        &:hover
-        {
-            background-color:darken(@esdc-disabled, 30%) !important;
-            color: @esdc-disabled-text !important;
+
+    &.visited {
+        background-color: @color-accent !important;
+        color: @color-background !important;
+
+        &:hover {
+            background-color: @color-accent !important;
+            color: @color-background !important;
         }
     }
 }
 
 // Progress bar
-.drawer .pagelevelprogress-item-title .pagelevelprogress-indicator
-{
-    border-color:@esdc-purple;
+.drawer .pagelevelprogress-item-title .pagelevelprogress-indicator {
+    border-color: @color-primary;
 }
 
 // Block background color - used to apply variable based background colors on blocks
 .block {
-    .block-inner{
-        background-color:@esdc-lightgrey;
-    }
+
     .primary-color {
-        background-color: @primary-color;
+        background-color: @color-primary;
     }
 
     .secondary-color {
-        background-color: @secondary-color;
+        background-color: @color-secondary;
     }
 
     .tertiary-color {
-        background-color: @tertiary-color;
-    }
-
-    .background-color {
-        background-color: @background-color;
+        background-color: @color-background;
     }
 
     .background-color-inverted {
-        background-color: @background-color-inverted;
-        color: @font-color-inverted;
+        background-color: @color-primary;
+        color: @color-text;
+
         .component-inner {
             background-color: transparent;
         }
@@ -121,18 +179,20 @@
 
 // Class applies alternative background color and component styling
 .divider-block {
-    background-color: @background-color-inverted;
-    color: @foreground-color-inverted;
+    background-color: @color-primary;
+    color: @color-text-inverted;
     text-align: center;
+
     .block-title,
     .block-body,
     .block-instruction,
     .component-title,
     .component-body,
     .component-instruction {
-        color: @foreground-color-inverted;
+        color: @color-text-inverted;
         text-align: center;
     }
+
     .component-inner {
         background-color: transparent;
     }
@@ -140,28 +200,29 @@
 
 // Component background - used to apply variable based background color and padding on components
 .component-background {
-    background-color: @component-background-color;
     padding: @component-padding;
 }
-.component-container {background-color:@esdc-white};
 
 // Button state styles
-.button[disabled="disabled"], button[disabled="disabled"] {
-    color: @esdc-disabled-text;
-    background-color: @esdc-disabled;
-    &:hover
-    {
-        background-color: @esdc-disabled-hover;
+.button[disabled="disabled"],
+button[disabled="disabled"] {
+    color: @color-secondary-text;
+    background-color: @color-secondary;
+
+    &:hover {
+        background-color: @color-secondary-hover;
     }
 }
-.no-touch .button:hover, .no-touch button:hover {
-    background-color:@esdc-int-hover-color;
+
+.no-touch .button:hover,
+.no-touch button:hover {
+    background-color: @color-accent;
 }
 
 /*.buttons .buttons-marking-icon {
     left:unset !important;
     right:25px;
-} removed as per issue #60*/ 
+} removed as per issue #60*/
 
 // ====================================================================
 //
@@ -169,171 +230,193 @@
 //
 // ====================================================================
 
-html{
-    margin:0;
+html {
+    margin: 0;
     padding: 0;
 }
 
 // NAVIGATION
 .navigation-inner.clearfix {
-    display: flex; 
+    display: flex;
+
     button:not(.skip-nav-link) {
         margin: 20px;
     }
 }
+
 .navigation {
     min-height: 64px;
+
     .icon {
-        padding:0 !important;
-    }   
-} 
+        padding: 0 !important;
+    }
+}
 
 // PAGE LEVEL PROGRESS
 .pagelevelprogress-navigation.base {
     height: 24px !important;
-    padding:0 !important;
+    padding: 0 !important;
 }
 
-@media screen and (max-width: 600px)
-{
-    .navigation
-    {
-        height:34px;
+@media screen and (max-width: 600px) {
+    .navigation {
+        height: 34px;
     }
-    
+
     .navigation .icon {
-    padding:5px !important; 
+        padding: 5px !important;
     }
-    
-    .pagelevelprogress-navigation.base
-    {
-        padding:5px !important; 
-        height:36px;
+
+    .pagelevelprogress-navigation.base {
+        padding: 5px !important;
+        height: 36px;
     }
-    
+
     .pagelevelprogress-navigation .pagelevelprogress-indicator {
-        width:13vw !important;
+        width: 13vw !important;
     }
-    
-    #wrapper
-    {
-        padding-top:34px;
+
+    #wrapper {
+        padding-top: 34px;
     }
 }
 
 // MARGINS
 // Option to remove max-width on blocks
-.block .block-inner when (@margin-control = noMargin) {
-    max-width: 100%;  
+.block .block-inner when (@margin-control =noMargin) {
+    max-width: 100%;
 }
- 
-.article .article-header when (@margin-control = noMargin) {
+.block:nth-child(odd) {
+  background-color: @color-primary;
+  color:@color-background;
+
+  
+  .component-title {
+    color:@color-background;
+  }
+  .block-title {
+    color:@color-background;
+  }
+
+}
+
+.block:nth-child(even) {
+  background-color: @color-background;
+  color:@color-text;
+  .component-title {
+    color:@color-text;
+  }
+  .block-title {
+    color:@color-text;
+  }
+}
+
+.article .article-header when (@margin-control =noMargin) {
     max-width: calc(100% - 150px);
 }
 
 
 // ARTICLE LEVEL 
 .article {
-    .article-inner{
+    .article-inner {
         padding-bottom: 0;
     }
-    .article-body{
+
+    .article-body {
         margin-bottom: 0;
     }
-    .article-title-inner, .block-title-inner{
+
+    .article-title-inner,
+    .block-title-inner {
         font-size: 36px;
-    }  
-    &.nth-child-1, &.nth-child-4, &.nth-child-7, &.nth-child-10, &.nth-child-13, &.nth-child-16
-    {
-        .article-title:before
-        {
+        font-weight:600
+    }
+
+    &.nth-child-2,
+    &.nth-child-5,
+    &.nth-child-8,
+    &.nth-child-11,
+    &.nth-child-14,
+    &.nth-child-17 {
+        .article-title:before {
             content: '';
             height: 29px;
             width: 29px;
             margin-top: 6px;
             margin-left: -1 * 60px;
             float: left;
-            background: -ms-linear-gradient(-45deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
-            background: linear-gradient(135deg, @esdc-purple 0%, @esdc-purple 49%, transparent 49%, transparent 51%, lighten(@esdc-purple, 20%) 51%, lighten(@esdc-purple, 20%) 100%);
+            background: -ms-linear-gradient(-45deg, @color-accent 0%, @color-accent 49%, transparent 49%, transparent 51%, lighten(@color-accent, 20%) 51%, lighten(@color-accent, 20%) 100%);
+            background: linear-gradient(135deg, @color-accent 0%, @color-accent 49%, transparent 49%, transparent 51%, lighten(@color-accent, 20%) 51%, lighten(@color-accent, 20%) 100%);
         }
     }
 
-    &.nth-child-2, &.nth-child-5, &.nth-child-8, &.nth-child-11, &.nth-child-14, &.nth-child-17
-    {
-        .article-title:before
-        {
+    &.nth-child-3,
+    &.nth-child-6,
+    &.nth-child-9,
+    &.nth-child-12,
+    &.nth-child-15,
+    &.nth-child-18 {
+        .article-title:before {
             content: '';
             height: 29px;
             width: 29px;
             margin-top: 6px;
             margin-left: -1 * 60px;
             float: left;
-            background: -ms-linear-gradient(-45deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
-            background: linear-gradient(135deg, @esdc-pink 0%, @esdc-pink 49%, transparent 49%, transparent 51%, lighten(@esdc-pink, 20%) 51%, lighten(@esdc-pink, 20%) 100%);
+            background: -ms-linear-gradient(-45deg, @color-primary 0%, @color-primary 49%, transparent 49%, transparent 51%, lighten(@color-primary, 20%) 51%, lighten(@color-primary, 20%) 100%);
+            background: linear-gradient(135deg, @color-primary 0%, @color-primary 49%, transparent 49%, transparent 51%, lighten(@color-primary, 20%) 51%, lighten(@color-primary, 20%) 100%);
         }
     }
-
-    &.nth-child-3, &.nth-child-6, &.nth-child-9, &.nth-child-12, &.nth-child-15, &.nth-child-18
-    {
-        .article-title:before
-        {
-            content: '';
-            height: 29px;
-            width: 29px;
-            margin-top: 6px;
-            margin-left: -1 * 60px;
-            float: left;
-            background: -ms-linear-gradient(-45deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
-            background: linear-gradient(135deg, @esdc-cyan 0%, @esdc-cyan 49%, transparent 49%, transparent 51%, lighten(@esdc-cyan, 20%) 51%, lighten(@esdc-cyan, 20%) 100%);
-        }
-    }  
 }
 
 // BLOCK LEVEL
-.block-padding when (@improved-block-padding = legacy) {
+.block-padding when (@improved-block-padding =legacy) {
     padding: 60px;
 }
 
-.block-padding when (@improved-block-padding = improved) {
+.block-padding when (@improved-block-padding =improved) {
     padding: 40px 60px;
 }
-        
-.block  {
-    .block-body{
+
+.block {
+    .block-body {
         margin-bottom: 0;
     }
-    .block-inner{
+
+    .block-inner {
         .block-padding;
         margin-top: 60px;
     }
 }
-.combineblock {  
+
+.combineblock {
     .block-inner {
-        margin-top:0px !important;
-        padding-top:0px !important;
-    }        
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+    }
 }
+
 // issue #36 - empty space between blocks
 .trickle-button-component {
     padding-bottom: 0px !important;
 }
 
-.block:nth-child(2n) .block-title, .block:nth-child(2n+1) .block-title{
+.block:nth-child(2n) .block-title,
+.block:nth-child(2n+1) .block-title {
     text-align: left;
 }
 
-@media screen and (max-width: 640px)
-{
-    .block { 
-        .block-inner{
+@media screen and (max-width: 640px) {
+    .block {
+        .block-inner {
             padding: 10px;
         }
     }
 }
-@media screen and (min-width: 641px)
-{
-    .block{ 
-        .block-inner{
+
+@media screen and (min-width: 641px) {
+    .block {
+        .block-inner {
             .block-padding;
             margin-top: 60px;
         }
@@ -342,82 +425,89 @@ html{
 
 // COMPONENT LEVEL 
 .component {
-    .component-body{
+    .component-body {
         margin: 0;
     }
-    .component-title-inner{
+
+    .component-title-inner {
         font-size: 24px;
-    }
-    .component-inner{
-        padding: 30px;
     }
 }
 
 .component-container {
-        @media (min-width: 760px)
-        {
-            .component-left .component-inner 
-            {
-                margin-right: 0px;
-                padding-right: 15px;
-            }
+    @media (min-width: 760px) {
+        .component-left .component-inner {
+            margin-right: 0px;
+            padding-right: 15px;
         }
-        @media (min-width: 760px)
-        {
-            .component-right .component-inner 
-            {
-                margin-left: 0px;
-                padding-left: 15px;
-            }
+    }
+
+    @media (min-width: 760px) {
+        .component-right .component-inner {
+            margin-left: 0px;
+            padding-left: 15px;
         }
+    }
 }
 
 // ELEMENT LEVEL
 
 // Table styles
-[class$="-body"] table th, [class$="-body"] table td , .openTextInput-item-modelanswer table th,  .openTextInput-item-modelanswer table td{
-    border: 2px solid @esdc-dark-blue;
+[class$="-body"] table th,
+[class$="-body"] table td,
+.openTextInput-item-modelanswer table th,
+.openTextInput-item-modelanswer table td {
+    border: 2px solid @color-primary;
     border-spacing: 0;
     padding: 10px;
 }
 
-[class$="-body"] table th , .openTextInput-item-modelanswer table th{
-    background-color: @esdc-dark-blue;
-    color: @esdc-white;
+[class$="-body"] table th,
+.openTextInput-item-modelanswer table th {
+    background-color: @color-primary;
+    color: @color-background;
     text-align: left;
 }
-[class$="-body"] table th[scope="row"] , .openTextInput-item-modelanswer table th[scope="row"]{
+
+[class$="-body"] table th[scope="row"],
+.openTextInput-item-modelanswer table th[scope="row"] {
     vertical-align: top;
 }
 
 figure.table {
-    display: table!important;
+    display: table !important;
     width: 100%;
 }
 
 .table>figcaption {
-    display: table-caption!important;
+    display: table-caption !important;
 }
+
 // ====================================================================
 //
 // [!!03] THEME - TYPOGRAPHY
 //
 // ====================================================================
 
-p{ margin: 0 0 14px 0; }
+p {
+    margin: 0 0 14px 0;
+}
 
 blockquote {
-    border-left: 2px solid @primary-color;
+    border-left: 2px solid @color-primary;
     margin-left: 20px;
     padding-left: 20px;
     font-style: normal; // issue #40
-} 
+}
 
 abbr[title] {
     text-decoration: none; // issue #59
 }
 
-.narrative-content-inner abbr, .notify-popup:not(.hotgraphic):not(.hotgrid) abbr, .menu-header abbr, .page-header abbr {
+.narrative-content-inner abbr,
+.notify-popup:not(.hotgraphic):not(.hotgrid) abbr,
+.menu-header abbr,
+.page-header abbr {
     border-color: #fff;
 }
 
@@ -428,66 +518,95 @@ ol ::marker {
     font-weight: bold;
 }
 
-[class$="-body"], .openTextInput-item-modelanswer {
-    ul, ol {
+[class$="-body"],
+.openTextInput-item-modelanswer {
+
+    ul,
+    ol {
         padding: 0;
         margin: 0;
-        margin-bottom:6px;
+        margin-bottom: 6px;
+
         li {
             padding-left: 1em;
             margin-bottom: 8px;
             list-style-position: inside;
-            ul,ol {padding-top:3px;}
+
+            ul,
+            ol {
+                padding-top: 3px;
+            }
         }
     }
+
     // nested ul bullet styles
-    ul li{
+    ul li {
         text-indent: -1.4em;
     }
+
     // first level ul
-    ul>li, ol>li>ul>li{list-style-type: disc;}
+    ul>li,
+    ol>li>ul>li {
+        list-style-type: disc;
+    }
+
     // second level ul
-    ul>li>ul>li{list-style-type:circle;}
+    ul>li>ul>li {
+        list-style-type: circle;
+    }
+
     // third level ul 
-    ul>li>ul>li>ul>li {list-style-type:square;}
-    
+    ul>li>ul>li>ul>li {
+        list-style-type: square;
+    }
+
     // simple ol under ul
-    ul>li>ol>li, ul>li>ol>li>ol>li{
+    ul>li>ol>li,
+    ul>li>ol>li>ol>li {
         text-indent: -1.1em;
     }
-    
+
     // first level ol
-    ol>li{text-indent: -1.2em;}
+    ol>li {
+        text-indent: -1.2em;
+    }
+
     // second level ol
-    ol>li>ol>li {text-indent: -2em;}
+    ol>li>ol>li {
+        text-indent: -2em;
+    }
+
     // third level ol
-    ol>li>ol>li>ol>li {text-indent: -3em;}
+    ol>li>ol>li>ol>li {
+        text-indent: -3em;
+    }
+
     // fourth level ol
-    ol>li>ol>li>ol>li>ol>li {text-indent: -3.7em;}
+    ol>li>ol>li>ol>li>ol>li {
+        text-indent: -3.7em;
+    }
 }
 
 // TITLES
-.component .component-title{
+.component .component-title {
     margin-bottom: 10px;
 }
 
-.block-title-margin when (@improved-block-padding = Legacy) {
+.block-title-margin when (@improved-block-padding =Legacy) {
     margin-bottom: 10px;
- }
- 
-.block-title-margin when (@improved-block-padding = Improved) {
+}
+
+.block-title-margin when (@improved-block-padding =Improved) {
     margin-bottom: 30px;
 }
 
-@media screen and (max-width: 640px)
-{
+@media screen and (max-width: 640px) {
     .block .block-title {
         margin-bottom: 10px;
     }
 }
 
-@media screen and (min-width: 641px)
-{
+@media screen and (min-width: 641px) {
     .block .block-title {
         .block-title-margin;
     }
@@ -497,8 +616,9 @@ ol ::marker {
 .drawer-item-title-inner {
     font-weight: 700;
 }
-.drawer-item-description-inner{
-    font-weight:100;
+
+.drawer-item-description-inner {
+    font-weight: 100;
 }
 
 // COMPONENT LEVEL
@@ -510,17 +630,22 @@ ol ::marker {
 .component .component-instruction-inner.validation-error {
     color: #000000 !important;
     background: #f3e9e8;
-    border-top: none!important;
-    border-bottom: none!important;
-    border-right: none!important;
-    border-left: 4px solid #d3080c!important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: 4px solid #d3080c !important;
 }
 
 // Link styles
 // default
 [class$="-body"] a {
-    &:link{color: blue }
-    &:visited{color: purple }
+    &:link {
+        color: blue
+    }
+
+    &:visited {
+        color: purple
+    }
 }
 
 // ====================================================================
@@ -529,21 +654,33 @@ ol ::marker {
 //
 // ====================================================================
 // dark blue bg
-.notify-popup-body-inner, .narrative-content-inner, .stacklist-items-inner, .page-body-inner {
+.notify-popup-body-inner,
+.narrative-content-inner,
+.stacklist-items-inner,
+.page-body-inner {
+
     // a styles with dark blue background
     a {
-        &:link { color: #9EC3FF !important; }
-        &:visited { color: #DEADFF !important; }
+        &:link {
+            color: #9EC3FF !important;
+        }
+
+        &:visited {
+            color: #DEADFF !important;
+        }
     }
+
     // white table border
-    table th, table td {
-        border: 1px solid @esdc-white;
+    table th,
+    table td {
+        border: 1px solid @color-background;
         border-spacing: 0;
-        padding:10px;
+        padding: 10px;
     }
+
     table th {
-        background-color: @esdc-white;
-        color: @esdc-dark-blue;
+        background-color: @color-background;
+        color: @color-primary;
     }
 }
 
@@ -555,54 +692,67 @@ ol ::marker {
 // ====================================================================
 
 // pop up
-.notify  {
+.notify {
     .notify-popup {
-        background-color:@esdc-dark-blue;
+        background-color: @color-primary;
     }
+
     .notify-popup-done:hover {
-        border-color: lighten(@esdc-pink,20%) !important;
+        border-color: lighten(@color-accent, 20%) !important;
     }
+
     .notify-popup-icon-close:hover {
-        color:lighten(@esdc-pink,20%) !important;
+        color: lighten(@color-accent, 20%) !important;
     }
+
     a {
-        text-decoration: underline!important;
+        text-decoration: underline !important;
     }
 }
 
 // non interactive box
-div, p
-{
-    &:focus
-    {
-        outline:1px dotted rgba(170,170,170, 0.7) !important;
+div,
+p {
+    &:focus {
+        outline: 1px dotted rgba(170, 170, 170, 0.7) !important;
     }
 }
 
 // interactive box
-button, label, input, .mcq-item input:focus + label {
-    &:focus
-    {
-        outline:3px solid @esdc-pink !important;
+button,
+label,
+input,
+.mcq-item input:focus+label {
+    &:focus {
+        outline: 3px solid @color-accent !important;
     }
 }
 
 //visible focus indicator on all interactive elements
-html *:focus, body div:focus, body p:focus, body button:focus, body label:focus, body input:focus, body *:focus {
-    outline:3px solid #CD1C6A !important;
+html *:focus,
+body div:focus,
+body p:focus,
+body button:focus,
+body label:focus,
+body input:focus,
+body *:focus {
+    outline: 3px solid #CD1C6A !important;
 }
 
 //fixed visible focus indicator on titles (previously on invisible aria-label)
 html:not(.a11y-disable-focusoutline) {
     .js-heading {
         &:focus-within {
+
             //focus indicator visible on component title when child aria-label is focused
             ~.component-title-inner {
-                outline: 3px solid @esdc-pink !important;
+                outline: 3px solid @color-accent !important;
             }
         }
     }
+
     .js-heading-inner {
+
         // visible focus indicator outline on visible title instead of not visible aria-label
         &:focus {
             outline: none !important;
@@ -617,19 +767,19 @@ html:not(.a11y-disable-focusoutline) {
 //
 // ====================================================================
 html:lang(fr) {
-    .loader-gif
-    {
-        div { 
-            visibility: hidden; 
-            position: relative; 
-        } 
-        div:after { 
-            visibility: visible; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            content: "Chargement..."; 
-        } 
+    .loader-gif {
+        div {
+            visibility: hidden;
+            position: relative;
+        }
+
+        div:after {
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "Chargement...";
+        }
     }
 }
 
@@ -638,15 +788,28 @@ html:lang(fr) {
 // [&&02] SPECIFIC - TEXT COMPONENT - ICONBOX
 //
 // ====================================================================
-.iconbox{
+.iconbox {
     .text-title.component-title {
-        background-color: @esdc-dark-blue;
+        background-color: @color-primary;
         padding: 0.2em 0.6em;
-        color: @esdc-white;
+        color: @color-background;
     }
-    .text-header-inner.component-header-inner { border: 1px solid @esdc-dark-blue; }
-    .text-body.component-body { padding: 1em; } .text-instruction { padding: 0 1em; }
-    .text-inner { padding: 0; }
+
+    .text-header-inner.component-header-inner {
+        border: 1px solid @color-primary;
+    }
+
+    .text-body.component-body {
+        padding: 1em;
+    }
+
+    .text-instruction {
+        padding: 0 1em;
+    }
+
+    .text-inner {
+        padding: 0;
+    }
 }
 
 // ====================================================================
@@ -668,6 +831,7 @@ html:lang(fr) {
 .assessment {
     .graphic-component {
         display: block;
+
         @media all and (max-width: @device-width-medium) {
             display: none;
         }
@@ -684,42 +848,50 @@ html:lang(fr) {
     clip-path: unset !important;
     overflow: unset;
 }
+
 .mejs-overlay-button {
-    background-color:rgba(0,0,0,0.8);
-    border-radius:999px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 999px;
 }
+
 // FIX FOR MEDIA CC SELECTOR
 .mejs-controls .mejs-captions-button .mejs-captions-selector {
     width: 120px !important;
-    right:-120px;
-    label
-    {
-        margin-left: 18px;    
-        width:48px !important;
+    right: -120px;
+
+    label {
+        margin-left: 18px;
+        width: 48px !important;
     }
 }
+
 // fix captions button keypresses
 .mejs-captions-text {
     font-size: 2vw;
     line-height: 1.2;
 }
+
 .mejs-captions-position-hover {
     bottom: 0 !important;
 }
+
 .mejs-controls .mejs-captions-button .mejs-captions-selector {
     visibility: visible;
     overflow: unset !important;
 }
+
 span.mejs-offscreen {
     overflow: hidden;
 }
+
 .media-transcript-container {
     margin-top: 30px !important;
 }
 
 .mejs-controls {
-    margin-bottom:-30px !important;
+    margin-bottom: -30px !important;
 }
+
 // fix for cc overlap
 video::cue {
     line-height: 160%;
@@ -731,44 +903,46 @@ video::cue {
 //
 // ====================================================================
 //Fix for MCQ colored X and check
-.component .question-component .mcq-component .buttons-marking-icon .icon 
-{
-    .icon-tick, .icon-cross
-    {
-        color:black !important;
+.component .question-component .mcq-component .buttons-marking-icon .icon {
+
+    .icon-tick,
+    .icon-cross {
+        color: black !important;
     }
-    
+
 }
+
 /* DUPLICATE
 .buttons-marking-icon .icon
 {
     .icon-cross, .icon-tick
     {
-        color:@esdc-black;
+        color:@color-text;
     }
 }*/
 
-.correct, .show-correct-answer
-{
-    .slider-scale-marker
-    {
-        color:black !important;
-        font-weight:bold !important;
+.correct,
+.show-correct-answer {
+    .slider-scale-marker {
+        color: black !important;
+        font-weight: bold !important;
     }
 }
+
 // focus outline
-.mcq-widget[role="radiogroup"]:focus-within, .mcq-widget[role="group"]>.mcq-item:focus-within {
-    outline: 3px solid @esdc-pink;
+.mcq-widget[role="radiogroup"]:focus-within,
+.mcq-widget[role="group"]>.mcq-item:focus-within {
+    outline: 3px solid @color-accent;
 }
 
 
 // secondary focus for radio buttons
 .mcq-component div[role="radiogroup"] {
-    outline: none!important;
+    outline: none !important;
 }
 
 .mcq-component div[role="radiogroup"] .highlighted {
-    outline: 3px solid @esdc-pink;
+    outline: 3px solid @color-accent;
 }
 
 // ====================================================================
@@ -776,23 +950,25 @@ video::cue {
 // [&&06] SPECIFIC - STACKLIST COMPONENT
 //
 // ====================================================================
-.stacklist-item{
-    background-color:@esdc-dark-blue;
+.stacklist-item {
+    background-color: @color-primary;
 }
 
 .stacklist-next {
-    background-color:@esdc-interactive-blue;
+    background-color: @color-accent;
 }
+
 // ====================================================================
 //
 // [&&07] SPECIFIC - NARRATIVE COMPONENT
 //
 // ====================================================================
-.narrative-component .narrative-text-controls .narrative-content .narrative-content-inner .narrative-controls-container .narrative-indicators .narrative-progress
-{ background-color:grey; }
+.narrative-component .narrative-text-controls .narrative-content .narrative-content-inner .narrative-controls-container .narrative-indicators .narrative-progress {
+    background-color: grey;
+}
 
-.narrative-content-inner{
-    background-color: @esdc-dark-blue; 
+.narrative-content-inner {
+    background-color: @color-primary;
 }
 
 // ====================================================================
@@ -802,14 +978,14 @@ video::cue {
 // ====================================================================
 /*.narrative-content-inner, .stacklist-items-inner {
     a {
-        color:#00E9FA !important; // @esdc-cyan-text
+        color:#00E9FA !important; // @color-text
         &:visited
         {
-            color:#e9e9f8 !important; // @esdc-white
+            color:#e9e9f8 !important; // @color-background
         }
         &:hover
         {
-              color:#BDFFEB !important; // @esdc-cyan
+              color:#BDFFEB !important; // @color-primary
         }
     }
 }*/
@@ -820,13 +996,11 @@ video::cue {
 //
 // ====================================================================
 //visited pins not using the default pin icon
-.hotgraphic-graphic-pin-list-item .hotgraphic-graphic-pin 
-{
-    &.visited img
-    {
-       -webkit-filter:  drop-shadow(0px 0px 2px purple);
+.hotgraphic-graphic-pin-list-item .hotgraphic-graphic-pin {
+    &.visited img {
+        -webkit-filter: drop-shadow(0px 0px 2px purple);
     }
-}    
+}
 
 // ====================================================================
 //
@@ -834,13 +1008,15 @@ video::cue {
 //
 // ====================================================================
 // Hot grid item title style - issue #45
-button.hotgrid-grid-item .hotgrid-item-title{
+button.hotgrid-grid-item .hotgrid-item-title {
     color: #333;
     font-weight: 500;
 }
+
 .hotgrid-component .visited:after {
-    background-color: rgba(172,172,172,0.2);
-    button.hotgrid-grid-item .hotgrid-item-title{
+    background-color: rgba(172, 172, 172, 0.2);
+
+    button.hotgrid-grid-item .hotgrid-item-title {
         color: #000;
     }
 }
@@ -852,37 +1028,49 @@ button.hotgrid-grid-item .hotgrid-item-title{
 //
 // ====================================================================
 // Hotgraphic and hot grid distinct title styles
-.hotgraphic-content-title, .hotgrid-content-title {
+.hotgraphic-content-title,
+.hotgrid-content-title {
     font-size: 22px;
     line-height: @component-title-line-height;
     margin-bottom: 10px;
-    color: @esdc-cyan-text;
+    color: @color-text;
 }
-// overflow for hotspots & hotgrid
-.hotgraphic-popup, .hotgrid-popup {
-    overflow-y:auto;
-    height:400px !important;
- }
 
- // hotgrapgic and hotgrid focus indicator fixes for new popup focus
+// overflow for hotspots & hotgrid
+.hotgraphic-popup,
+.hotgrid-popup {
+    overflow-y: auto;
+    height: 400px !important;
+}
+
+// hotgrapgic and hotgrid focus indicator fixes for new popup focus
 html:not(.a11y-disable-focusoutline) {
     .notify-popup {
+
         /* adds focus indicator to hotgrid-popup instead of notify-popup when hotgrid or hotgraphic */
         &:focus {
-            .hotgrid-popup , .hotgraphic-popup {
-                outline: 3px solid @esdc-pink !important;
+
+            .hotgrid-popup,
+            .hotgraphic-popup {
+                outline: 3px solid @color-accent !important;
             }
         }
+
         /* removes focus indicator from notify-popup when hotgrid or hotgraphic */
-        &:has(.hotgrid-popup):focus, &:has(.hotgraphic-popup):focus {
+        &:has(.hotgrid-popup):focus,
+        &:has(.hotgraphic-popup):focus {
             outline: none !important;
         }
+
         /* adds focus indicator to hotgrid-popup instead of title when hotgrid or hotgraphic */
-        .hotgrid-popup:has(.hotgrid-content-title:focus), .hotgraphic-popup:has(.hotgraphic-content-title:focus) {
-            outline: 3px solid @esdc-pink !important;
+        .hotgrid-popup:has(.hotgrid-content-title:focus),
+        .hotgraphic-popup:has(.hotgraphic-content-title:focus) {
+            outline: 3px solid @color-accent !important;
         }
+
         /* removes focus indicator from content-title when hotgrid or hotgraphic */
-        .hotgrid-content-title:focus,.hotgraphic-content-title:focus {
+        .hotgrid-content-title:focus,
+        .hotgraphic-content-title:focus {
             outline: none !important;
         }
     }
@@ -893,10 +1081,10 @@ html:not(.a11y-disable-focusoutline) {
 // [&&12] SPECIFIC - IMAGE SLIDER
 //
 // ====================================================================
-.slider-widget input:focus + div .rangeslider__handle {
-    background-color: 3px solid @esdc-cyan !important;
-    border:2px solid @esdc-pink !important;
-    top:-12px;
+.slider-widget input:focus+div .rangeslider__handle {
+    background-color: 3px solid @color-primary !important;
+    border: 2px solid @color-accent !important;
+    top: -12px;
 }
 
 // ====================================================================
@@ -904,19 +1092,19 @@ html:not(.a11y-disable-focusoutline) {
 // [&&13] SPECIFIC - EXPOSE COMPONENT
 //
 // ====================================================================
-.expose-item-inner .expose-item-cover  {
+.expose-item-inner .expose-item-cover {
     .front {
-        background-color:@esdc-interactive-blue;
-        &:hover
-        {
-            background-color:@esdc-int-hover-color;
+        background-color: @color-accent;
+
+        &:hover {
+            background-color: @color-accent;
         }
-    }    
-    .text
-    {
-        width:90% !important;
-        line-height:28px !important;
-    }   
+    }
+
+    .text {
+        width: 90% !important;
+        line-height: 28px !important;
+    }
 }
 
 
@@ -927,7 +1115,7 @@ html:not(.a11y-disable-focusoutline) {
 // ====================================================================
 // MATCHING LI STYLES
 .dropdown>li {
-    padding-left: 0em; 
+    padding-left: 0em;
     text-indent: 0em;
 }
 
@@ -936,15 +1124,19 @@ html:not(.a11y-disable-focusoutline) {
 // [&&15] SPECIFIC - OPEN TEXT COMPONENT
 //
 // ====================================================================
-.openTextInput-component{
-    .openTextInput-item-textbox, .openTextInput-answer-container{
-        border:1px solid @esdc-dark-blue;
+.openTextInput-component {
+
+    .openTextInput-item-textbox,
+    .openTextInput-answer-container {
+        border: 1px solid @color-primary;
     }
-    .openTextInput-count-characters{
+
+    .openTextInput-count-characters {
         background-color: transparent;
-        color: @esdc-black;
+        color: @color-text;
         padding: 0;
     }
+
     .buttons .buttons-marking-icon {
         left: 90% !important;
     }
@@ -982,15 +1174,37 @@ html:not(.a11y-disable-focusoutline) {
 // [^^] - UTILITY
 //
 // ====================================================================
-.important-box { border:6px solid @esdc-dark-blue !important; }
-.biggerfont { font-size:22px; }
+.important-box {
+    border: 6px solid @color-primary !important;
+}
+
+.menu-item-graphic img {
+        border-radius: 5px;
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.biggerfont {
+    font-size: 22px;
+}
+
 .center-image {
-    img{
-        display:block;
-        margin-left:auto;
-        margin-right:auto;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
+.component img {
+    border-radius: 5px;
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
 /* duplicate 
 //Image styles
 .image img{
@@ -998,22 +1212,24 @@ html:not(.a11y-disable-focusoutline) {
     margin-left: auto;
     margin-right: auto;
 }*/
-    
+
 .invert-link {
     a {
-        color:#00E9FA !important; // @esdc-cyan-text
+        color: #00E9FA !important; // @color-text
+
         &:visited {
-            color:#e9e9f8 !important; // @esdc-white
+            color: #e9e9f8 !important; // @color-background
         }
+
         &:hover {
-            color:#BDFFEB !important; // @esdc-cyan
+            color: #BDFFEB !important; // @color-primary
         }
     }
 }
 
 //margin for submit button - used for Open Text Input fixes
 .button-margin {
-    margin-right:.5%
+    margin-right: .5%
 }
 
 // ====================================================================
@@ -1023,121 +1239,111 @@ html:not(.a11y-disable-focusoutline) {
 // ====================================================================
 
 // SPEECHBUBBLES
-.speechbubbles
-{
-    .component-container
-    {
-        display:flex
+.speechbubbles {
+    .component-container {
+        display: flex
     }
-    
-    .component
-    {
+
+    .component {
         align-self: flex-end;
-        
-        p
-        {
-            margin:0px;
+
+        p {
+            margin: 0px;
         }
-        
-        .component-body-inner
-        {
-            background-color:@esdc-dark-blue;
-            color:white;
-            padding:20px;
-            border-radius:30px;
-            margin-bottom:40px;
+
+        .component-body-inner {
+            background-color: @color-primary;
+            color: white;
+            padding: 20px;
+            border-radius: 30px;
+            margin-bottom: 40px;
         }
-        .component-body:after 
-        {
+
+        .component-body:after {
             content: '';
             position: relative;
             bottom: 0px;
             width: 0;
             height: 0;
             border: 40px solid transparent;
-            border-top-color: @esdc-dark-blue;
+            border-top-color: @color-primary;
         }
-        
-        &.component-left
-        {
-            img
-            {
-                margin-right:-150px;
+
+        &.component-left {
+            img {
+                margin-right: -150px;
                 -webkit-transform: scaleX(-1);
                 transform: scaleX(-1);
             }
         }
-        &.component-right
-        {
-            img
-            {
-                margin-left:-150px;
+
+        &.component-right {
+            img {
+                margin-left: -150px;
             }
         }
-        &.component-left .component-body:after
-        {
-            left: 10%;  
+
+        &.component-left .component-body:after {
+            left: 10%;
             border-bottom: 0;
             border-right: 0;
         }
-        
-        &.component-right .component-body:after
-        {
-            left: 80%;   
+
+        &.component-right .component-body:after {
+            left: 80%;
             border-bottom: 0;
             border-left: 0;
-        } 
-        
-        
-        &.component-left.thoughtbubble
-        {
-           .component-body:after {
+        }
+
+
+        &.component-left.thoughtbubble {
+            .component-body:after {
                 content: "OO";
-                background-color: @esdc-dark-blue;
+                background-color: @color-primary;
                 width: 20px;
                 height: 20px;
                 left: 10%;
                 bottom: 47px;
                 border-radius: 50%;
-                border-left: 2px solid @esdc-dark-blue;
-                border-top:2px solid @esdc-dark-blue;
-                border-right: 2px solid @esdc-dark-blue;
-                border-bottom:2px solid @esdc-dark-blue;
-                box-shadow: 20px 20px  @esdc-dark-blue;
+                border-left: 2px solid @color-primary;
+                border-top: 2px solid @color-primary;
+                border-right: 2px solid @color-primary;
+                border-bottom: 2px solid @color-primary;
+                box-shadow: 20px 20px @color-primary;
             }
         }
-        &.component-right.thoughtbubble
-        {
-           .component-body:after {
+
+        &.component-right.thoughtbubble {
+            .component-body:after {
                 content: "OO";
-                background-color: @esdc-dark-blue;
+                background-color: @color-primary;
                 width: 20px;
                 height: 20px;
                 right: 10%;
                 bottom: 47px;
                 border-radius: 50%;
-                border-left: 2px solid @esdc-dark-blue;
-                border-top:2px solid @esdc-dark-blue;
-                border-right: 2px solid @esdc-dark-blue;
-                border-bottom:2px solid @esdc-dark-blue;
-                box-shadow: -20px 20px  @esdc-dark-blue;
+                border-left: 2px solid @color-primary;
+                border-top: 2px solid @color-primary;
+                border-right: 2px solid @color-primary;
+                border-bottom: 2px solid @color-primary;
+                box-shadow: -20px 20px @color-primary;
             }
         }
-        &.component-full.thoughtbubble
-        {
-           .component-body:after {
+
+        &.component-full.thoughtbubble {
+            .component-body:after {
                 content: "OO";
-                background-color: @esdc-dark-blue;
+                background-color: @color-primary;
                 width: 20px;
                 height: 20px;
                 left: 20%;
                 bottom: 47px;
                 border-radius: 50%;
-                border-left: 2px solid @esdc-dark-blue;
-                border-top:2px solid @esdc-dark-blue;
-                border-right: 2px solid @esdc-dark-blue;
-                border-bottom:2px solid @esdc-dark-blue;
-                box-shadow: 20px 20px  @esdc-dark-blue;
+                border-left: 2px solid @color-primary;
+                border-top: 2px solid @color-primary;
+                border-right: 2px solid @color-primary;
+                border-bottom: 2px solid @color-primary;
+                box-shadow: 20px 20px @color-primary;
             }
         }
     }
@@ -1162,9 +1368,9 @@ html:not(.a11y-disable-focusoutline) {
 
 // THIS IS TO FIX THE WORD COPY-PASTE FEATURE ON CKEDITOR5 THAT MIGHT CONTAIN SOME UNWANTED P TAGS IN BULLET LIST
 li p {
-  display: inline;
+    display: inline;
 }
 
 a:not(a[href]) {
-  text-decoration: none !important;
+    text-decoration: none !important;
 }

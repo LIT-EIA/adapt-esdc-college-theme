@@ -4,23 +4,23 @@
 
 .navigation {
     overflow: hidden;
-    background-color: @navigation-color;
+    background-color: @color-background;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 
     .icon {
         padding: @navigation-padding;
-        color: @navigation-icon-color;
+        color: @color-text;
         .transition-color;
 
         .no-touch &:hover {
-            color: @navigation-icon-color-hover;
+            color: @color-accent;
         }
     }
 
     .skip-nav-link {
-        background-color: @button-color;
+        background-color: @color-accent;
         border-radius: 0;
-        color: @button-text-color;
+        color: @color-background;
         display: none;
         left: 0;
         margin-top: 0;

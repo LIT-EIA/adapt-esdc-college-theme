@@ -13,38 +13,38 @@
     .no-touch &:hover {
 
         .pagelevelprogress-indicator {
-            background-color: @navigation-progress-background-color-hover;
-            border-color: @navigation-progress-border-color;
+            background-color: @color-background;
+            border-color: @color-accent;
         }
 
         .pagelevelprogress-indicator-inner {
-            border-color: @navigation-progress-background-color-hover;
+            border-color: @color-background;
         }
 
         .pagelevelprogress-indicator-bar {
-            background-color: @navigation-progress-color-hover;
+            background-color: @color-accent;
         }
 
         .page-level-progress-plus-icon {
-            color: @navigation-progress-color;
+            color: @color-accent;
         }
     }
 
     .pagelevelprogress-indicator {
         transition: all 0.3s ease-in;
-        background-color: @navigation-progress-background-color;
-        border: 2px solid @navigation-progress-border-color;
+        background-color: @color-background;
+        border: 2px solid @color-primary;
         border-radius: 50px;
     }
 
     .pagelevelprogress-indicator-inner {
-        border: 1px solid @navigation-progress-background-color;
+        border: 1px solid @color-background;
 
     }
 
     .pagelevelprogress-indicator-bar {
         left: 0;
-        background-color: @navigation-progress-color;
+        background-color: @color-primary;
 
 
         .dir-rtl & {
@@ -59,18 +59,18 @@
 
 .drawer {
     .pagelevelprogress-item-title {
-        background-color: @drawer-item-color;
-        color: @drawer-item-text-color;
+        background-color: @color-background;
+        color: @color-accent;
 
         &.drawer-item-open.disabled {
-            background-color: @drawer-item-color-disabled;
-            color: @drawer-item-text-color-disabled;
+            background-color: @color-secondary;
+            color: @color-accent;
             font-size: @button-text-font-size;
             font-weight: @font-weight-light;
 
             .no-touch &:hover {
-                background-color: @drawer-item-color-disabled;
-                color: @drawer-item-text-color-disabled;
+                background-color: @color-secondary;
+                color: @color-accent;
                 .page-level-progress-indicator {
                     background-color: transparent;
                 }
@@ -79,33 +79,33 @@
 
         .pagelevelprogress-indicator {
             width: 15%;
-            background-color: @drawer-item-color;
-            border-color: @drawer-progress-color;
+            background-color: @color-background;
+            border-color: @color-primary;
         }
 
         .pagelevelprogress-indicator-inner {
-            border-color: @drawer-item-color;
+            border-color: @color-background;
         }
 
         .pagelevelprogress-indicator-bar {
-            background-color: @drawer-progress-color;
+            background-color: @color-primary;
         }
 
         .no-touch &:hover {
-            background-color: @drawer-item-color-hover;
-            color: @drawer-item-text-color-hover;
+            background-color: @color-accent;
+            color: @color-accent;
 
             .pagelevelprogress-indicator {
-                background-color: @drawer-item-color-hover;
-                border-color: @drawer-progress-color-hover;
+                background-color: @color-background;
+                border-color: @color-primary;
             }
 
             .pagelevelprogress-indicator-inner {
-                border-color: @drawer-item-color-hover;
+                border-color: @color-primary;
             }
 
             .pagelevelprogress-indicator-bar {
-                background-color: @drawer-progress-color-hover;
+                background-color: @color-primary;
             }
 
         }
@@ -118,16 +118,16 @@
 .page-header {
 
     .pagelevelprogress-indicator {
-        background-color: @background-color-inverted;
-        border-color: @navigation-progress-background-color;
+        background-color: @color-primary;
+        border-color: @color-background;
     }
 
     .pagelevelprogress-indicator-inner {
-        border-color: @background-color-inverted;
+        border-color: @color-background;
     }
 
     .pagelevelprogress-indicator-bar {
-        background-color: @navigation-progress-background-color;
+        background-color: @color-background;
     }
 }
 
@@ -139,15 +139,15 @@
 .component {
 
     .pagelevelprogress-indicator {
-        background-color: @navigation-progress-background-color;
-        border-color: @navigation-progress-border-color;
+        background-color: @color-background;
+        border-color: @color-primary;
     }
 
     .pagelevelprogress-indicator-inner {
-        border-color: @navigation-progress-background-color;
+        border-color: @color-background;
     }
 
     .pagelevelprogress-indicator-bar {
-        background-color: @navigation-progress-color;
+        background-color: @color-accent;
     }
 }

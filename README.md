@@ -16,16 +16,16 @@
 | Color Name | Hex | Variable name |
 | :------------- | :------------- | :------------- |
 |Main blue color|![#26374A](https://placehold.co/15x15/26374A/26374A.png) `#26374A`| `@esdc-blue` |
-|Accent blue|![#1C578A](https://placehold.co/15x15/1C578A/1C578A.png) `#1C578A`| `@esdc-interactive-blue` |
-|Accent blue hover|![#1C578A](https://placehold.co/15x15/1C578A/1C578A.png) `#1C578A`| `@esdc-int-hover-color` |
-|Bright highlights pink|![#CD1C6A](https://placehold.co/15x15/CD1C6A/CD1C6A.png) `#CD1C6A`| `@esdc-pink` |
-|Lesser highlights purple|![#69459C](https://placehold.co/15x15/69459C/69459C.png) `#69459C`| `@esdc-purple` |
-|Background alternate|![#E6E6E6](https://placehold.co/15x15/E6E6E6/E6E6E6.png) `#E6E6E6`| `@esdc-lightgrey` |
-|White|![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) `#FFFFFF`| `@esdc-white` |
-|White Hover|![#DEDEDE](https://placehold.co/15x15/DEDEDE/DEDEDE.png) `#DEDEDE`| `@esdc-white-hover` |
-|Black|![#000000](https://placehold.co/15x15/000000/000000.png) `#000000`| `@esdc-black` |
-|Correct color|![#56cdb0](https://placehold.co/15x15/56cdb0/56cdb0.png) `#56cdb0`| `@esdc-correct` |
-|Incorrect color|![#CD1C6A](https://placehold.co/15x15/CD1C6A/CD1C6A.png) `#CD1C6A`| `@esdc-incorrect` |
+|Accent blue|![#1C578A](https://placehold.co/15x15/1C578A/1C578A.png) `#1C578A`| `@color-accent` |
+|Accent blue hover|![#1C578A](https://placehold.co/15x15/1C578A/1C578A.png) `#1C578A`| `@color-accent` |
+|Bright highlights pink|![#CD1C6A](https://placehold.co/15x15/CD1C6A/CD1C6A.png) `#CD1C6A`| `@color-accent` |
+|Lesser highlights purple|![#69459C](https://placehold.co/15x15/69459C/69459C.png) `#69459C`| `@color-accent` |
+|Background alternate|![#E6E6E6](https://placehold.co/15x15/E6E6E6/E6E6E6.png) `#E6E6E6`| `@color-secondary` |
+|White|![#FFFFFF](https://placehold.co/15x15/FFFFFF/FFFFFF.png) `#FFFFFF`| `@color-background` |
+|White Hover|![#DEDEDE](https://placehold.co/15x15/DEDEDE/DEDEDE.png) `#DEDEDE`| `@color-secondary` |
+|Black|![#000000](https://placehold.co/15x15/000000/000000.png) `#000000`| `@color-text` |
+|Correct color|![#56cdb0](https://placehold.co/15x15/56cdb0/56cdb0.png) `#56cdb0`| `@color-success` |
+|Incorrect color|![#CD1C6A](https://placehold.co/15x15/CD1C6A/CD1C6A.png) `#CD1C6A`| `@color-accent` |
 
 ## Settings overview
 

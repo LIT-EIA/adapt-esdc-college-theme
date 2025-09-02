@@ -2,16 +2,17 @@
 // =============
 
 .block {
-    background-color: @background-color;
-
     .block-inner {
-        max-width: @device-width-large;
         margin: auto;
-        padding: @block-padding-top 0 @block-padding-bottom;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+
         // reduce padding as screen width decreases
         @media all and (max-width: (@device-width-large + 20px)) {
             padding: (@block-padding-top / 2) 20px (@block-padding-bottom / 2);
         }
+
         @media all and (max-width: (@device-width-small + 20px)) {
             padding: (@block-padding-top / 3) 10px (@block-padding-bottom / 3);
         }
@@ -19,7 +20,6 @@
 
     .block-title {
         margin-bottom: @block-title-margin-bottom;
-        color: @title-color;
         text-align: left;
 
         .dir-rtl & {
@@ -27,7 +27,7 @@
         }
     }
 
-    .block-body{
+    .block-body {
         margin-bottom: @block-body-margin-bottom;
     }
 

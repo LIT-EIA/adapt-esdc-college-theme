@@ -32,7 +32,7 @@
           background-color: @item-color;
         }
         .rangeslider {
-          background-color: @background-color;
+          background-color: @color-background;
         }
 
         input[type="range"]:focus + .rangeslider .rangeslider__handle {
@@ -49,13 +49,13 @@
 .slider-widget.show-user-answer.correct {
   .slider-scale-marker,
   .rangeslider__fill {
-    background-color: @validation-success;
+    background-color: @color-success;
   }
 }
 .slider-widget.show-user-answer.incorrect {
   .slider-scale-marker,
   .rangeslider__fill {
-    background-color: @validation-error;
+    background-color: @color-accent;
   }
 }
 
@@ -63,7 +63,7 @@
   .slider-scale-marker,
   .slider-model-answer,
   .rangeslider__fill {
-    background-color: @validation-success;
+    background-color: @color-success;
   }
 }
 

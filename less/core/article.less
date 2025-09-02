@@ -2,20 +2,21 @@
 // ===============
 
 .article {
-    background-color: @background-color;
+    background-color: @color-background;
 
     .article-inner {
         padding: @article-padding-top 0 @article-padding-bottom;
+
         @media all and (max-width: (@device-width-large + 20px)) {
             padding: (@article-padding-top / 2) 0 (@article-padding-bottom / 2);
         }
+
         @media all and (max-width: (@device-width-small + 20px)) {
             padding: (@article-padding-top / 3) 0 (@article-padding-bottom / 3);
         }
     }
 
     .article-header {
-        max-width: @device-width-large;
         margin: auto;
         padding: 0;
 
@@ -30,8 +31,9 @@
 
     .article-title {
         margin-bottom: @article-title-margin-bottom;
-        color: @title-color;
-        text-align: left;
+        color: @color-primary;
+        text-align: center;
+        
 
         .dir-rtl & {
             text-align: right;

@@ -1,7 +1,7 @@
 .resources {
     .resources-filter button {
-        color: @drawer-item-text-color;
-        border-bottom: 1px solid @drawer-border-color;
+        color: @color-accent;
+        border-bottom: 1px solid @color-primary;
         .transition-all-colors;
         padding: 0px; 
         font-size: @body-text-font-size;
@@ -13,15 +13,15 @@
         }
 
         &.selected {
-            color: @drawer-item-text-color-selected;
-            background-color: @drawer-item-color-selected;
-            border-bottom: 1px solid @drawer-item-color-selected;
+            color: @color-accent;
+            background-color: @color-accent;
+            border-bottom: 1px solid @color-accent;
         }
 
         .no-touch &:hover {
-            color:  @drawer-item-text-color-hover;
-            background-color: @drawer-item-color-hover;
-            border-bottom: 1px solid @drawer-item-color-hover;
+            color:  @color-accent;
+            background-color: @color-accent;
+            border-bottom: 1px solid @color-accent;
         }
     }
 }

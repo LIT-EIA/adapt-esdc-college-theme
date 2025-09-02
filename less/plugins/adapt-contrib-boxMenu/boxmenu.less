@@ -1,5 +1,4 @@
 .boxmenu-menu {
-	background: @background-color;
 
 	.menu-container {
 		width: 100%;
@@ -11,7 +10,6 @@
 
 	.menu-header {
 		margin-bottom: -30px;
-		background-color: @background-color-inverted;
 	}
 
 	.menu-header-inner {
@@ -31,42 +29,46 @@
 
 	.menu-title {
 		margin: @menu-block-title-margin-top 0 @menu-block-title-margin-bottom;
-		color: @foreground-color-inverted;
+		color: @color-text-inverted;
 	}
 
 	.menu-body {
 		margin: @menu-block-body-margin-bottom 0;
-		color: @foreground-color-inverted;
+		color: @color-text-inverted;
 
 		a {
-			color: @foreground-color-inverted;
+			color: @color-text-inverted;
 		}
 	}
 
 	.menu-item {
 		margin: 0 auto 30px;
 
-		&.nth-child-even{
-			.menu-item-inner{
-				margin-left:2%;
+		&.nth-child-even {
+			.menu-item-inner {
+				margin-left: 2%;
+				
 				.dir-rtl & {
-					margin-right:2%;
+					margin-right: 2%;
 				}
 			}
 		}
 
 		&.nth-child-odd {
 			.menu-item-inner {
-				margin-right:2%;
+				margin-right: 2%;
+				border-radius:10px;
+
+
 				.dir-rtl & {
-					margin-left:2%;
+					margin-left: 2%;
 				}
 			}
 		}
 	}
 
 	.menu-item-inner {
-		position:relative;
+		position: relative;
 		max-width: (@device-width-large / 2) - (@item-padding * 2);
 		margin: auto;
 		padding: @menu-block-padding-top @menu-block-padding-right @menu-block-padding-bottom @menu-block-padding-left;
@@ -105,16 +107,16 @@
 	}
 
 	.pagelevelprogress-indicator {
-		background-color: @menu-item-progress-color;
-		border-color: @menu-item-progress-border-color;
+		background-color: @color-background;
+		border-color: @color-background;
 	}
 
 	.pagelevelprogress-indicator-inner {
-		border-color: @menu-item-progress-color;
+		border-color: @color-background;
 	}
 
 	.pagelevelprogress-indicator-bar {
-		background-color: @menu-item-progress-fill-color;
+		background-color: @color-primary;
 	}
 
 	.menu-item-duration {
@@ -131,20 +133,21 @@
 
 	.menu-item-button {
 		padding: 0;
+		
 
 		button {
 			padding: @button-padding-top (@button-padding-right*2) @button-padding-bottom (@button-padding-left*2);
-			background-color:@button-color;
-			color:@button-text-color;
+			background-color: @color-accent;
+			color: @color-text;
 
 			&:hover {
-				background-color:@button-color-hover;
-				color:@button-text-color-hover;
+				background-color: @color-accent;
+				color: @color-background;
 			}
 
 			&.visited {
-				background-color:@button-color-disabled;
-				color:@button-text-color-disabled;
+				background-color: @color-accent;
+				color: @color-background-disabled;
 			}
 		}
 	}
@@ -152,22 +155,24 @@
 
 @media all and (max-width: @device-width-medium) {
 
-	.boxmenu-menu{
+	.boxmenu-menu {
 		.menu-inner {
-			padding:0;
-		}
-
-		.menu-title-inner{
 			padding: 0;
 		}
 
-		.menu-body-inner{
+		.menu-title-inner {
 			padding: 0;
 		}
 
-		.menu-item{
+		.menu-body-inner {
+			padding: 0;
+		}
+
+		.menu-item {
+
 			&.nth-child-even,
 			&.nth-child-odd {
+
 				.menu-item-inner,
 				.dir-rtl & .menu-item-inner {
 					margin: 0 auto;
