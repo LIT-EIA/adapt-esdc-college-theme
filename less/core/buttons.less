@@ -3,8 +3,8 @@
 
 .button, button {
     font-family: @font-family;
-    background-color: @color-accent;
-    color: @color-background;
+    background-color: @danger-color;
+    color: @white;
     padding: @button-padding-top @button-padding-right+10 @button-padding-bottom @button-padding-left+10; // Added left / right padding in case buttons aren't centrally aligned
     text-decoration: none;
     text-align: center;
@@ -14,9 +14,9 @@
     .button-text;
 
     .no-touch &:hover {
-        background-color: @color-accent;
-        color: @color-background;
-        border-color: @color-accent;
+        background-color: @danger-color;
+        color: @white;
+        border-color: @danger-color;
     }
 
     &.base { 
@@ -40,13 +40,13 @@
     }
 
     .disabled-style() {
-        background-color: @color-accent!important;
-        border-color: @color-accent!important;
-        color: @color-background!important;
+        background-color: @danger-color!important;
+        border-color: @danger-color!important;
+        color: @white!important;
         cursor:default;
 
         .no-touch &:hover {
-            border-color: @color-accent;
+            border-color: @danger-color;
         }
     }
 
@@ -90,8 +90,8 @@
         position:relative;
         border: @button-border;
         border-top:none;
-        background-color: @color-primary;
-        color: @color-text-inverted;
+        background-color: @primary-color;
+        color: @black-inverted;
     }
 
     .buttons-marking-icon {
@@ -106,7 +106,7 @@
         border-radius: 50%;
         margin-left: -21px;
         margin-top: -21px;
-        color: @color-background;
+        color: @white;
         border: @button-border;
         box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 
@@ -118,11 +118,11 @@
         }
         
         &.icon-tick {
-            background-color: @color-success;
+            background-color: @success-color;
         }
 
         &.icon-cross {
-            background-color: @color-accent;
+            background-color: @danger-color;
         }
 
         @media all and (max-width: @device-width-small) {

@@ -29,15 +29,15 @@
 
 	.menu-title {
 		margin: @menu-block-title-margin-top 0 @menu-block-title-margin-bottom;
-		color: @color-text-inverted;
+		color: @black-inverted;
 	}
 
 	.menu-body {
 		margin: @menu-block-body-margin-bottom 0;
-		color: @color-text-inverted;
+		color: @black-inverted;
 
 		a {
-			color: @color-text-inverted;
+			color: @black-inverted;
 		}
 	}
 
@@ -57,7 +57,6 @@
 		&.nth-child-odd {
 			.menu-item-inner {
 				margin-right: 2%;
-				border-radius:10px;
 
 
 				.dir-rtl & {
@@ -74,6 +73,13 @@
 		padding: @menu-block-padding-top @menu-block-padding-right @menu-block-padding-bottom @menu-block-padding-left;
 		background-color: @menu-item-color;
 		color: @menu-item-text-color;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		border-radius:10px;
+
+		&:hover{
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		}
 	}
 
 	.menu-item-title {
@@ -107,16 +113,16 @@
 	}
 
 	.pagelevelprogress-indicator {
-		background-color: @color-background;
-		border-color: @color-background;
+		background-color: @white;
+		border-color: @white;
 	}
 
 	.pagelevelprogress-indicator-inner {
-		border-color: @color-background;
+		border-color: @white;
 	}
 
 	.pagelevelprogress-indicator-bar {
-		background-color: @color-primary;
+		background-color: @primary-color;
 	}
 
 	.menu-item-duration {
@@ -137,17 +143,17 @@
 
 		button {
 			padding: @button-padding-top (@button-padding-right*2) @button-padding-bottom (@button-padding-left*2);
-			background-color: @color-accent;
-			color: @color-text;
+			background-color: @danger-color;
+			color: @black;
 
 			&:hover {
-				background-color: @color-accent;
-				color: @color-background;
+				background-color: @danger-color;
+				color: @white;
 			}
 
 			&.visited {
-				background-color: @color-accent;
-				color: @color-background-disabled;
+				background-color: @danger-color;
+				color: @white-disabled;
 			}
 		}
 	}

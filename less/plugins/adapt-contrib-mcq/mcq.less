@@ -1,6 +1,6 @@
 .mcq-component {
     .mcq-item {
-        background-color:@item-color;
+        background-color:@primary-color;
         position:relative;
     }
 
@@ -10,7 +10,7 @@
         margin-bottom:@item-margin-bottom;
         position:relative;
         z-index:1;
-        background-color:@item-color;
+        background-color:@primary-color;
         cursor:pointer;
 
         &.selected {
@@ -41,11 +41,11 @@
                 color:@item-text-color-selected;
 
                 &.mcq-correct-icon {
-                    color:@color-success;
+                    color:@success-color;
                 }
 
                 &.mcq-incorrect-icon {
-                    color:@color-accent;
+                    color:@danger-color;
                 }
             }
         }
@@ -99,10 +99,10 @@
 
             .mcq-item-icon {
                 &.mcq-correct-icon {
-                    color:@color-success;
+                    color:@success-color;
                 }
                 &.mcq-incorrect-icon {
-                    color:@color-accent;
+                    color:@danger-color;
                 }
             }
         }
@@ -132,10 +132,10 @@
                 }
                 .mcq-item-icon {
                     &.mcq-correct-icon {
-                        color:@color-success;
+                        color:@success-color;
                     }
                     &.mcq-incorrect-icon {
-                        color:@color-accent;
+                        color:@danger-color;
                     }
                 }
             }

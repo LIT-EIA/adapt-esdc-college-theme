@@ -19,7 +19,8 @@
     }
 
     .block-title {
-        margin-bottom: @block-title-margin-bottom;
+        //margin-bottom: @block-title-margin-bottom;
+        position:relative;
         text-align: left;
 
         .dir-rtl & {
@@ -35,4 +36,28 @@
         margin-bottom: @block-instruction-margin-bottom;
         .instruction-text;
     }
+}
+
+.block-title::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: 100%;
+    transform: translateX(-10px);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, fade(@third-color, 90%), fade(@third-color, 20%));
+    border-radius: 50%;
+}
+
+.block-title::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    right: 100%;
+    transform: translateX(-20px);
+    width: 13px;
+    height: 13px;
+    background: radial-gradient(circle at center, fade(@warning-color, 90%), fade(@warning-color, 20%));
+    border-radius: 50%;
 }

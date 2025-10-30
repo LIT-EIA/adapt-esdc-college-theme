@@ -89,87 +89,89 @@
 
 .boxmenu-menu {
     .menu-header {
-        background-color: @color-primary;
+        background-color: @primary-color;
     }
 
     background-color: unset;
 
 
-
     .menu-header,
 
     .menu-item-inner {
-        background-color: @color-primary;
-        color: @color-primary;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26);
-
+        background-color: @primary-color;
+        color: @primary-color;
     }
 
     .pagelevelprogress-indicator-inner {
-        background-color: @color-background;
-        border-color: @color-accent;
+        background-color: @white;
+        border-color: @danger-color;
     }
 
     .pagelevelprogress-indicator {
-        background-color: @color-background;
+        background-color: @white;
     }
 
     .pagelevelprogress-indicator-bar {
-        background-color: @color-background;
+        background-color: @white;
     }
 }
 
 .menu-item-body-inner p {
-    color: @color-primary;
+    color: @primary-color;
     font-weight: 100;
 }
 
 .menu-item-button button {
-    background-color: @color-secondary !important;
-    color: @color-text;
+    background-color: @secondary-color !important;
+    color: @primary-color;
     font-weight: 500;
     max-width: 20em;
-    ;
+    box-shadow: 0px 3px 3px -1px lighten(@black, 40%);
+    border-radius: 10px;
 
     &:hover {
-        background-color: @color-accent !important;
-        color:@color-background;
+        background-color: @primary-color !important;
+        color:@white;
+        box-shadow: 0px 5px 5px -1px lighten(@black, 40%);
+        transition: box-shadow 0.3s ease;
     }
 
     &.visited {
-        background-color: @color-accent !important;
-        color: @color-background !important;
+        background-color: @secondary-color !important;
+        color: @primary-color !important;
 
         &:hover {
-            background-color: @color-accent !important;
-            color: @color-background !important;
+            background-color: @primary-color !important;
+            color: @white !important;
+            box-shadow: 0px 5px 5px -1px lighten(@black, 40%);
+            transition: box-shadow 0.3s ease;
         }
     }
 }
 
 // Progress bar
 .drawer .pagelevelprogress-item-title .pagelevelprogress-indicator {
-    border-color: @color-primary;
+    border-color: @primary-color;
 }
 
 // Block background color - used to apply variable based background colors on blocks
 .block {
 
     .primary-color {
-        background-color: @color-primary;
+        background-color: @primary-color;
     }
 
     .secondary-color {
-        background-color: @color-secondary;
+        background-color: @secondary-color;
     }
 
     .tertiary-color {
-        background-color: @color-background;
+        background-color: @white;
     }
 
     .background-color-inverted {
-        background-color: @color-primary;
-        color: @color-text;
+        background-color: @primary-color;
+        color: @black;
 
         .component-inner {
             background-color: transparent;
@@ -179,8 +181,8 @@
 
 // Class applies alternative background color and component styling
 .divider-block {
-    background-color: @color-primary;
-    color: @color-text-inverted;
+    background-color: @primary-color;
+    color: @black-inverted;
     text-align: center;
 
     .block-title,
@@ -189,7 +191,7 @@
     .component-title,
     .component-body,
     .component-instruction {
-        color: @color-text-inverted;
+        color: @black-inverted;
         text-align: center;
     }
 
@@ -206,17 +208,17 @@
 // Button state styles
 .button[disabled="disabled"],
 button[disabled="disabled"] {
-    color: @color-secondary-text;
-    background-color: @color-secondary;
+    color: @secondary-color-text;
+    background-color: @secondary-color;
 
     &:hover {
-        background-color: @color-secondary-hover;
+        background-color: @secondary-color-hover;
     }
 }
 
 .no-touch .button:hover,
 .no-touch button:hover {
-    background-color: @color-accent;
+    background-color: @danger-color;
 }
 
 /*.buttons .buttons-marking-icon {
@@ -287,27 +289,27 @@ html {
     max-width: 100%;
 }
 .block:nth-child(odd) {
-  background-color: @color-primary;
-  color:@color-background;
+    background: linear-gradient(90deg, fade(@secondary-color, 50%), @white);
+    color:@black;
 
   
   .component-title {
-    color:@color-background;
+    color:@black;
   }
   .block-title {
-    color:@color-background;
+    color:@black;
   }
 
 }
 
 .block:nth-child(even) {
-  background-color: @color-background;
-  color:@color-text;
+  background-color: @white;
+  color:@black;
   .component-title {
-    color:@color-text;
+    color:@black;
   }
   .block-title {
-    color:@color-text;
+    color:@black;
   }
 }
 
@@ -329,7 +331,8 @@ html {
     .article-title-inner,
     .block-title-inner {
         font-size: 36px;
-        font-weight:600
+        font-weight:600;
+        margin-bottom:5px;
     }
 
     &.nth-child-2,
@@ -345,8 +348,8 @@ html {
             margin-top: 6px;
             margin-left: -1 * 60px;
             float: left;
-            background: -ms-linear-gradient(-45deg, @color-accent 0%, @color-accent 49%, transparent 49%, transparent 51%, lighten(@color-accent, 20%) 51%, lighten(@color-accent, 20%) 100%);
-            background: linear-gradient(135deg, @color-accent 0%, @color-accent 49%, transparent 49%, transparent 51%, lighten(@color-accent, 20%) 51%, lighten(@color-accent, 20%) 100%);
+            background: -ms-linear-gradient(-45deg, @danger-color 0%, @danger-color 49%, transparent 49%, transparent 51%, lighten(@danger-color, 20%) 51%, lighten(@danger-color, 20%) 100%);
+            background: linear-gradient(135deg, @danger-color 0%, @danger-color 49%, transparent 49%, transparent 51%, lighten(@danger-color, 20%) 51%, lighten(@danger-color, 20%) 100%);
         }
     }
 
@@ -363,8 +366,8 @@ html {
             margin-top: 6px;
             margin-left: -1 * 60px;
             float: left;
-            background: -ms-linear-gradient(-45deg, @color-primary 0%, @color-primary 49%, transparent 49%, transparent 51%, lighten(@color-primary, 20%) 51%, lighten(@color-primary, 20%) 100%);
-            background: linear-gradient(135deg, @color-primary 0%, @color-primary 49%, transparent 49%, transparent 51%, lighten(@color-primary, 20%) 51%, lighten(@color-primary, 20%) 100%);
+            background: -ms-linear-gradient(-45deg, @primary-color 0%, @primary-color 49%, transparent 49%, transparent 51%, lighten(@primary-color, 20%) 51%, lighten(@primary-color, 20%) 100%);
+            background: linear-gradient(135deg, @primary-color 0%, @primary-color 49%, transparent 49%, transparent 51%, lighten(@primary-color, 20%) 51%, lighten(@primary-color, 20%) 100%);
         }
     }
 }
@@ -385,7 +388,7 @@ html {
 
     .block-inner {
         .block-padding;
-        margin-top: 60px;
+        //margin-top: 60px;
     }
 }
 
@@ -418,7 +421,7 @@ html {
     .block {
         .block-inner {
             .block-padding;
-            margin-top: 60px;
+            //margin-top: 60px;
         }
     }
 }
@@ -457,15 +460,15 @@ html {
 [class$="-body"] table td,
 .openTextInput-item-modelanswer table th,
 .openTextInput-item-modelanswer table td {
-    border: 2px solid @color-primary;
+    border: 2px solid @primary-color;
     border-spacing: 0;
     padding: 10px;
 }
 
 [class$="-body"] table th,
 .openTextInput-item-modelanswer table th {
-    background-color: @color-primary;
-    color: @color-background;
+    background-color: @primary-color;
+    color: @white;
     text-align: left;
 }
 
@@ -494,7 +497,7 @@ p {
 }
 
 blockquote {
-    border-left: 2px solid @color-primary;
+    border-left: 2px solid @primary-color;
     margin-left: 20px;
     padding-left: 20px;
     font-style: normal; // issue #40
@@ -673,14 +676,14 @@ ol ::marker {
     // white table border
     table th,
     table td {
-        border: 1px solid @color-background;
+        border: 1px solid @white;
         border-spacing: 0;
         padding: 10px;
     }
 
     table th {
-        background-color: @color-background;
-        color: @color-primary;
+        background-color: @white;
+        color: @primary-color;
     }
 }
 
@@ -694,15 +697,15 @@ ol ::marker {
 // pop up
 .notify {
     .notify-popup {
-        background-color: @color-primary;
+        background-color: @primary-color;
     }
 
     .notify-popup-done:hover {
-        border-color: lighten(@color-accent, 20%) !important;
+        border-color: lighten(@danger-color, 20%) !important;
     }
 
     .notify-popup-icon-close:hover {
-        color: lighten(@color-accent, 20%) !important;
+        color: lighten(@danger-color, 20%) !important;
     }
 
     a {
@@ -724,7 +727,7 @@ label,
 input,
 .mcq-item input:focus+label {
     &:focus {
-        outline: 3px solid @color-accent !important;
+        outline: 3px solid @danger-color !important;
     }
 }
 
@@ -746,7 +749,7 @@ html:not(.a11y-disable-focusoutline) {
 
             //focus indicator visible on component title when child aria-label is focused
             ~.component-title-inner {
-                outline: 3px solid @color-accent !important;
+                outline: 3px solid @danger-color !important;
             }
         }
     }
@@ -790,13 +793,13 @@ html:lang(fr) {
 // ====================================================================
 .iconbox {
     .text-title.component-title {
-        background-color: @color-primary;
+        background-color: @primary-color;
         padding: 0.2em 0.6em;
-        color: @color-background;
+        color: @white;
     }
 
     .text-header-inner.component-header-inner {
-        border: 1px solid @color-primary;
+        border: 1px solid @primary-color;
     }
 
     .text-body.component-body {
@@ -818,7 +821,7 @@ html:lang(fr) {
 //
 // ====================================================================
 .graphic-widget.component-widget {
-    text-align: center;
+    //text-align: center;
 }
 
 
@@ -917,7 +920,7 @@ video::cue {
 {
     .icon-cross, .icon-tick
     {
-        color:@color-text;
+        color:@black;
     }
 }*/
 
@@ -932,7 +935,7 @@ video::cue {
 // focus outline
 .mcq-widget[role="radiogroup"]:focus-within,
 .mcq-widget[role="group"]>.mcq-item:focus-within {
-    outline: 3px solid @color-accent;
+    outline: 3px solid @danger-color;
 }
 
 
@@ -942,7 +945,7 @@ video::cue {
 }
 
 .mcq-component div[role="radiogroup"] .highlighted {
-    outline: 3px solid @color-accent;
+    outline: 3px solid @danger-color;
 }
 
 // ====================================================================
@@ -951,11 +954,11 @@ video::cue {
 //
 // ====================================================================
 .stacklist-item {
-    background-color: @color-primary;
+    background-color: @primary-color;
 }
 
 .stacklist-next {
-    background-color: @color-accent;
+    background-color: @danger-color;
 }
 
 // ====================================================================
@@ -968,7 +971,7 @@ video::cue {
 }
 
 .narrative-content-inner {
-    background-color: @color-primary;
+    background-color: @primary-color;
 }
 
 // ====================================================================
@@ -978,14 +981,14 @@ video::cue {
 // ====================================================================
 /*.narrative-content-inner, .stacklist-items-inner {
     a {
-        color:#00E9FA !important; // @color-text
+        color:#00E9FA !important; // @black
         &:visited
         {
-            color:#e9e9f8 !important; // @color-background
+            color:#e9e9f8 !important; // @white
         }
         &:hover
         {
-              color:#BDFFEB !important; // @color-primary
+              color:#BDFFEB !important; // @primary-color
         }
     }
 }*/
@@ -1033,7 +1036,7 @@ button.hotgrid-grid-item .hotgrid-item-title {
     font-size: 22px;
     line-height: @component-title-line-height;
     margin-bottom: 10px;
-    color: @color-text;
+    color: @black;
 }
 
 // overflow for hotspots & hotgrid
@@ -1052,7 +1055,7 @@ html:not(.a11y-disable-focusoutline) {
 
             .hotgrid-popup,
             .hotgraphic-popup {
-                outline: 3px solid @color-accent !important;
+                outline: 3px solid @danger-color !important;
             }
         }
 
@@ -1065,7 +1068,7 @@ html:not(.a11y-disable-focusoutline) {
         /* adds focus indicator to hotgrid-popup instead of title when hotgrid or hotgraphic */
         .hotgrid-popup:has(.hotgrid-content-title:focus),
         .hotgraphic-popup:has(.hotgraphic-content-title:focus) {
-            outline: 3px solid @color-accent !important;
+            outline: 3px solid @danger-color !important;
         }
 
         /* removes focus indicator from content-title when hotgrid or hotgraphic */
@@ -1082,8 +1085,8 @@ html:not(.a11y-disable-focusoutline) {
 //
 // ====================================================================
 .slider-widget input:focus+div .rangeslider__handle {
-    background-color: 3px solid @color-primary !important;
-    border: 2px solid @color-accent !important;
+    background-color: 3px solid @primary-color !important;
+    border: 2px solid @danger-color !important;
     top: -12px;
 }
 
@@ -1094,10 +1097,10 @@ html:not(.a11y-disable-focusoutline) {
 // ====================================================================
 .expose-item-inner .expose-item-cover {
     .front {
-        background-color: @color-accent;
+        background-color: @danger-color;
 
         &:hover {
-            background-color: @color-accent;
+            background-color: @danger-color;
         }
     }
 
@@ -1128,12 +1131,12 @@ html:not(.a11y-disable-focusoutline) {
 
     .openTextInput-item-textbox,
     .openTextInput-answer-container {
-        border: 1px solid @color-primary;
+        border: 1px solid @primary-color;
     }
 
     .openTextInput-count-characters {
         background-color: transparent;
-        color: @color-text;
+        color: @black;
         padding: 0;
     }
 
@@ -1175,7 +1178,7 @@ html:not(.a11y-disable-focusoutline) {
 //
 // ====================================================================
 .important-box {
-    border: 6px solid @color-primary !important;
+    border: 6px solid @primary-color !important;
 }
 
 .menu-item-graphic img {
@@ -1199,10 +1202,6 @@ html:not(.a11y-disable-focusoutline) {
 }
 .component img {
     border-radius: 5px;
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
 }
 
 /* duplicate 
@@ -1215,14 +1214,14 @@ html:not(.a11y-disable-focusoutline) {
 
 .invert-link {
     a {
-        color: #00E9FA !important; // @color-text
+        color: #00E9FA !important; // @black
 
         &:visited {
-            color: #e9e9f8 !important; // @color-background
+            color: #e9e9f8 !important; // @white
         }
 
         &:hover {
-            color: #BDFFEB !important; // @color-primary
+            color: #BDFFEB !important; // @primary-color
         }
     }
 }
@@ -1252,9 +1251,8 @@ html:not(.a11y-disable-focusoutline) {
         }
 
         .component-body-inner {
-            background-color: @color-primary;
+            background-color: @primary-color;
             color: white;
-            padding: 20px;
             border-radius: 30px;
             margin-bottom: 40px;
         }
@@ -1266,7 +1264,7 @@ html:not(.a11y-disable-focusoutline) {
             width: 0;
             height: 0;
             border: 40px solid transparent;
-            border-top-color: @color-primary;
+            border-top-color: @primary-color;
         }
 
         &.component-left {
@@ -1299,51 +1297,51 @@ html:not(.a11y-disable-focusoutline) {
         &.component-left.thoughtbubble {
             .component-body:after {
                 content: "OO";
-                background-color: @color-primary;
+                background-color: @primary-color;
                 width: 20px;
                 height: 20px;
                 left: 10%;
                 bottom: 47px;
                 border-radius: 50%;
-                border-left: 2px solid @color-primary;
-                border-top: 2px solid @color-primary;
-                border-right: 2px solid @color-primary;
-                border-bottom: 2px solid @color-primary;
-                box-shadow: 20px 20px @color-primary;
+                border-left: 2px solid @primary-color;
+                border-top: 2px solid @primary-color;
+                border-right: 2px solid @primary-color;
+                border-bottom: 2px solid @primary-color;
+                box-shadow: 20px 20px @primary-color;
             }
         }
 
         &.component-right.thoughtbubble {
             .component-body:after {
                 content: "OO";
-                background-color: @color-primary;
+                background-color: @primary-color;
                 width: 20px;
                 height: 20px;
                 right: 10%;
                 bottom: 47px;
                 border-radius: 50%;
-                border-left: 2px solid @color-primary;
-                border-top: 2px solid @color-primary;
-                border-right: 2px solid @color-primary;
-                border-bottom: 2px solid @color-primary;
-                box-shadow: -20px 20px @color-primary;
+                border-left: 2px solid @primary-color;
+                border-top: 2px solid @primary-color;
+                border-right: 2px solid @primary-color;
+                border-bottom: 2px solid @primary-color;
+                box-shadow: -20px 20px @primary-color;
             }
         }
 
         &.component-full.thoughtbubble {
             .component-body:after {
                 content: "OO";
-                background-color: @color-primary;
+                background-color: @primary-color;
                 width: 20px;
                 height: 20px;
                 left: 20%;
                 bottom: 47px;
                 border-radius: 50%;
-                border-left: 2px solid @color-primary;
-                border-top: 2px solid @color-primary;
-                border-right: 2px solid @color-primary;
-                border-bottom: 2px solid @color-primary;
-                box-shadow: 20px 20px @color-primary;
+                border-left: 2px solid @primary-color;
+                border-top: 2px solid @primary-color;
+                border-right: 2px solid @primary-color;
+                border-bottom: 2px solid @primary-color;
+                box-shadow: 20px 20px @primary-color;
             }
         }
     }
@@ -1374,3 +1372,8 @@ li p {
 a:not(a[href]) {
     text-decoration: none !important;
 }
+
+.component-full .component-body-inner {
+    max-width: 80%;
+}
+

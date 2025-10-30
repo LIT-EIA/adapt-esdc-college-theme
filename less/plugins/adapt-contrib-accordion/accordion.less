@@ -12,11 +12,32 @@
     }
 
     .accordion-item-title {
-        color: @item-text-color;
-        background-color: @item-color;
+        /*color: @black;
+        background-color: @white;
         padding-top: @item-padding-top;
         padding-bottom: @item-padding-bottom;
         padding-left: (@icon-size+(@item-padding-left*2));
+        border-radius:35px;
+        box-shadow: 0px 2px 4px -2px lighten(@black, 30%);
+        border: 1px solid lighten(@black, 90%);*/
+        -webkit-appearance: none;
+        //background: -webkit-gradient(to right,@white 20%,@primary-color 50%,lighten(@primary-color, 10%) 100%);
+        //background: linear-gradient(to right,@white 20%,@primary-color 50%,lighten(@primary-color, 10%) 100%);
+        background: linear-gradient(107deg,@primary-color 0%, lighten(@primary-color, 4%) 17%,@primary-color 37%, lighten(@primary-color, 4%) 71%);
+        background-size: 300%;
+        border: none;
+        border-radius: 5rem;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        color: @white;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color:@white;
         .item-title;
         
         .dir-rtl & {
@@ -25,41 +46,49 @@
         }
 
         &.visited {
-            color: @item-text-color-visited;
-            background-color: @item-color-visited;
-            border-color: @item-border-color-visited;
+            color: @white;
+            background: linear-gradient(107deg,@primary-color 0%, lighten(@primary-color, 4%) 17%,@primary-color 37%, lighten(@primary-color, 4%) 71%);
+            background-position:left;
 
             .accordion-item-title-icon {
-                color: @item-text-color-visited;
+                color: @white;
             }
         }
 
         &.selected {
             color: @item-text-color-selected;
             background-color: @item-color-selected;
-            border-color: @item-border-color-selected;
+            border: 1px solid lighten(@black, 90%);
 
             .accordion-item-title-icon {
-                color: @item-text-color-selected;
+                color: @white;
             }
         }
         .no-touch & {
             &:hover {
-                color: @item-text-color-hover;
+                /*color: @item-text-color-hover;
                 background-color: @item-color-hover;
-                border-color: @item-border-color-hover;
+                border: 1px solid lighten(@black, 90%);*/
+                animation-name: gradient;
+                -webkit-animation-name: gradient;
+                animation-duration: 1.5s;
+                -webkit-animation-duration: s;
+                animation-iteration-count: 1;
+                -webkit-animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+                -webkit-animation-fill-mode: forwards;
 
                 .accordion-item-title-icon {
-                    color: @item-text-color-hover;
+                    color: @white;
                 }
             }
             &.visited:hover {
                 color: @item-text-color-hover;
                 background-color: @item-color-hover;
-                border-color: @item-border-color-hover;
+                border: 1px solid lighten(@black, 90%);
 
                 .accordion-item-title-icon {
-                    color: @item-text-color-hover;
+                    color: @white;
                 }
             }
             &.selected:hover {
@@ -70,11 +99,12 @@
     }
 
     .accordion-item-body {
-        color: @item-body-text-color;
-        background-color: @item-body-color;
-        border: @item-border;
-        border-color: @item-border-color-selected;
+        color: @black;
+        background-color: @white;
+        border: 1px solid fade(@primary-color, 30%);
         border-top: 0;
+        border-radius: 0px 0px 35px 35px;
+        margin: -15px 5px 0px 5px;
     }
 
     .accordion-item-body-inner {
@@ -83,5 +113,9 @@
         padding-left: @item-padding-left;
         padding-right: @item-padding-right;
     }
+}
 
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  100%{background-position: 100%;}
 }

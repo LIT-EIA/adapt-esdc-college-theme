@@ -40,7 +40,7 @@
         background-color: transparent;
 
         .gmcq-answer-icon {
-            color: @item-color;
+            color: @primary-color;
         }
 
         &.selected {
@@ -51,11 +51,11 @@
                 color: @item-color-selected;
 
                 &.gmcq-correct-icon {
-                    color:@color-success;
+                    color:@success-color;
                 }
 
                 &.gmcq-incorrect-icon {
-                    color:@color-accent;
+                    color:@danger-color;
                 }
             }
             
@@ -76,7 +76,7 @@
 
     .gmcq-item-inner {
         margin-left: @icon-size * 2;
-        color: @item-color;
+        color: @primary-color;
         padding-bottom: @item-padding-bottom;
         padding-top: @item-padding-top;
         padding-left: 0;
@@ -93,11 +93,11 @@
     }
 
     .gmcq-correct-icon {
-        color: @color-success;
+        color: @success-color;
     }
 
     .gmcq-incorrect-icon {
-        color: @color-accent;
+        color: @danger-color;
     }
 
     .gmcq-widget {
@@ -122,10 +122,10 @@
                 background-color: transparent;
                 .gmcq-item-icon {
                     &.gmcq-correct-icon {
-                        color:@color-success;
+                        color:@success-color;
                     }
                     &.gmcq-incorrect-icon {
-                        color:@color-accent;
+                        color:@danger-color;
                     }
                 }
             }

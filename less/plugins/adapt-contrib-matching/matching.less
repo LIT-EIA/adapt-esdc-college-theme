@@ -1,6 +1,6 @@
 .matching-component {
 	.matching-select-container {
-		background-color: @item-color;
+		background-color: @primary-color;
 	}
 
 	.matching-select-state {
@@ -9,18 +9,18 @@
 		}
 
 		.matching-correct-icon {
-			color: @color-success;
+			color: @success-color;
 		}
 
 		.matching-incorrect-icon {
-			color: @color-accent;
+			color: @danger-color;
 		}
 	}
 
 	.select2-container {
 		.select2-selection--single {
 			padding: @item-padding-top 0 @item-padding-bottom 0;
-			background-color: @item-color;
+			background-color: @primary-color;
 			color: @item-text-color;
 
 
@@ -66,7 +66,7 @@
 	}
 	.matching-select-container {
 		&:hover {
-			color: @color-background;
+			color: @white;
 			background-color: @item-color-hover;
 		}
 	}
@@ -75,7 +75,7 @@
 .select2-container--default,
 .dir-rtl .select2-container--default {
 	span.select2-dropdown {
-		background-color: @item-color;
+		background-color: @primary-color;
 		color: @item-text-color;
 	}
 
