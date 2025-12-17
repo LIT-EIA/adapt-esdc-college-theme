@@ -117,34 +117,55 @@
 }
 
 .menu-item-body-inner p {
-    color: @primary-color;
-    font-weight: 100;
+    color: @black;
+    font-weight: 300;
 }
 
 .menu-item-button button {
-    background-color: @secondary-color !important;
-    color: @primary-color;
     font-weight: 500;
     max-width: 20em;
-    box-shadow: 0px 3px 3px -1px lighten(@black, 40%);
     border-radius: 10px;
+
+    -webkit-appearance: none;
+    background: linear-gradient(107deg,@primary-color 0%, lighten(@primary-color, 4%) 17%,@primary-color 37%, lighten(@primary-color, 4%) 71%);
+    background-size: 300%;
+    border: none;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    color: @white !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
     &:hover {
         background-color: @primary-color !important;
         color:@white;
-        box-shadow: 0px 5px 5px -1px lighten(@black, 40%);
-        transition: box-shadow 0.3s ease;
+        animation-name: gradient;
+        -webkit-animation-name: gradient;
+        animation-duration: 1.5s;
+        -webkit-animation-duration: s;
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+    }
+    @keyframes gradient {
+    0% {background-position: 0% 50%;}
+    100%{background-position: 100%;}
     }
 
     &.visited {
-        background-color: @secondary-color !important;
-        color: @primary-color !important;
+        background:none;
+        background-color: darken(@secondary-color, 50%) !important;
+        color: @white !important;
 
         &:hover {
-            background-color: @primary-color !important;
             color: @white !important;
-            box-shadow: 0px 5px 5px -1px lighten(@black, 40%);
-            transition: box-shadow 0.3s ease;
+            background-color:@primary-color !important;
         }
     }
 }
@@ -208,17 +229,17 @@
 // Button state styles
 .button[disabled="disabled"],
 button[disabled="disabled"] {
-    color: @secondary-color-text;
-    background-color: @secondary-color;
+    color: @white;
+    background-color: @button-disabled-color;
 
     &:hover {
-        background-color: @secondary-color-hover;
+        //background-color: @secondary-color-hover;
     }
 }
 
 .no-touch .button:hover,
 .no-touch button:hover {
-    background-color: @danger-color;
+    //background-color: @danger-color;
 }
 
 /*.buttons .buttons-marking-icon {
@@ -301,7 +322,6 @@ html {
   }
 
 }
-
 .block:nth-child(even) {
   background-color: @white;
   color:@black;
@@ -627,7 +647,7 @@ ol ::marker {
 // COMPONENT LEVEL
 
 .component .component-instruction-inner {
-    padding: 5px;
+    //padding: 5px;
 }
 
 .component .component-instruction-inner.validation-error {
@@ -665,11 +685,11 @@ ol ::marker {
     // a styles with dark blue background
     a {
         &:link {
-            color: #9EC3FF !important;
+            color: @danger-color !important;
         }
 
         &:visited {
-            color: #DEADFF !important;
+            color: @primary-color !important;
         }
     }
 
@@ -697,15 +717,19 @@ ol ::marker {
 // pop up
 .notify {
     .notify-popup {
-        background-color: @primary-color;
+        background-color: @white;
+        color:@black;
     }
 
     .notify-popup-done:hover {
-        border-color: lighten(@danger-color, 20%) !important;
+        border-color: darken(@primary-color, 20%) !important;
     }
 
     .notify-popup-icon-close:hover {
-        color: lighten(@danger-color, 20%) !important;
+        color: darken(@primary-color, 20%) !important;
+    }
+    .notify-popup-icon-close {
+        color:@white;
     }
 
     a {
@@ -1044,6 +1068,8 @@ button.hotgrid-grid-item .hotgrid-item-title {
 .hotgrid-popup {
     overflow-y: auto;
     height: 400px !important;
+    border:none !important;
+    box-shadow:0px 0px 10px 1px lighten(@black, 70%) !important;
 }
 
 // hotgrapgic and hotgrid focus indicator fixes for new popup focus
@@ -1055,7 +1081,7 @@ html:not(.a11y-disable-focusoutline) {
 
             .hotgrid-popup,
             .hotgraphic-popup {
-                outline: 3px solid @danger-color !important;
+                outline: 2px solid @danger-color !important;
             }
         }
 
@@ -1068,7 +1094,7 @@ html:not(.a11y-disable-focusoutline) {
         /* adds focus indicator to hotgrid-popup instead of title when hotgrid or hotgraphic */
         .hotgrid-popup:has(.hotgrid-content-title:focus),
         .hotgraphic-popup:has(.hotgraphic-content-title:focus) {
-            outline: 3px solid @danger-color !important;
+            outline: 2px solid @danger-color !important;
         }
 
         /* removes focus indicator from content-title when hotgrid or hotgraphic */
@@ -1377,3 +1403,52 @@ a:not(a[href]) {
     max-width: 80%;
 }
 
+
+button.base.notify-popup-done {
+    background-color:@black;
+}
+
+.shepherd-has-cancel-icon.shepherd-has-title.shepherd-element.border { 
+    border-width:2px;
+}
+
+.border .shepherd-arrow:before {
+    outline-width:2px;
+}
+
+.notify.hotgraphic .notify-popup-content-inner .hotgraphic-popup-toolbar {
+    background-color: @primary-color !important;
+}
+
+.notify.hotgraphic .notify-popup-content-inner .hotgraphic-popup-count {
+    color:@white;
+}
+
+.dropdown button:disabled, .dropdown button[disabled] {
+    color:@white;
+}
+
+video {
+    border-radius: 25px;
+}
+
+.media-widget.component-widget.a11y-ignore-aria {
+    text-align: center;
+}
+
+
+/* For screens wider than 840px */
+@media (min-width: 840px) {
+    .video, #video {
+        width: 60% !important;
+        height: auto !important;
+    }
+}
+
+/* For screens smaller than 840px */
+@media (max-width: 839px) {
+    .video, #video {
+        width: 80% !important;
+        height: auto !important; /* optional, but keeps aspect ratio */
+    }
+}

@@ -12,14 +12,14 @@
 }
 
 .shepherd-button:hover {
-    background-color: @secondary-color !important;
-    color: @danger-color !important;
+    background-color: darken(@primary-color, 20%) !important;
+    color: @white !important;
 }
 
 .shepherd-button {
-    background-color: @white;
-    color: @danger-color;
-    border-radius: 0;
+    background-color: @primary-color;
+    color: @white;
+    border-radius: 15px;
     padding: 10px;
     text-decoration: none;
     display: inline-block;
@@ -50,6 +50,7 @@
 .start-tour {
     color: @white !important;
     background-color: @danger-color !important;
+    border-radius: 15px;
     &:hover {
         background-color: @danger-color !important;
     }

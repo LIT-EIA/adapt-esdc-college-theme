@@ -9,20 +9,11 @@
 	        left:inherit;
 	        right:@item-padding-left; 
         }
+        color:@white;
     }
 
     .accordion-item-title {
-        /*color: @black;
-        background-color: @white;
-        padding-top: @item-padding-top;
-        padding-bottom: @item-padding-bottom;
-        padding-left: (@icon-size+(@item-padding-left*2));
-        border-radius:35px;
-        box-shadow: 0px 2px 4px -2px lighten(@black, 30%);
-        border: 1px solid lighten(@black, 90%);*/
         -webkit-appearance: none;
-        //background: -webkit-gradient(to right,@white 20%,@primary-color 50%,lighten(@primary-color, 10%) 100%);
-        //background: linear-gradient(to right,@white 20%,@primary-color 50%,lighten(@primary-color, 10%) 100%);
         background: linear-gradient(107deg,@primary-color 0%, lighten(@primary-color, 4%) 17%,@primary-color 37%, lighten(@primary-color, 4%) 71%);
         background-size: 300%;
         border: none;
@@ -37,7 +28,6 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        color:@white;
         .item-title;
         
         .dir-rtl & {
@@ -47,8 +37,10 @@
 
         &.visited {
             color: @white;
-            background: linear-gradient(107deg,@primary-color 0%, lighten(@primary-color, 4%) 17%,@primary-color 37%, lighten(@primary-color, 4%) 71%);
+            //background: linear-gradient(107deg,@primary-color 0%, lighten(@primary-color, 4%) 17%,@primary-color 37%, lighten(@primary-color, 4%) 71%);
             background-position:left;
+            background:none;
+            background-color:darken(@secondary-color, 40%);
 
             .accordion-item-title-icon {
                 color: @white;
@@ -58,7 +50,7 @@
         &.selected {
             color: @item-text-color-selected;
             background-color: @item-color-selected;
-            border: 1px solid lighten(@black, 90%);
+            //border: 1px solid lighten(@black, 90%);
 
             .accordion-item-title-icon {
                 color: @white;
@@ -66,9 +58,6 @@
         }
         .no-touch & {
             &:hover {
-                /*color: @item-text-color-hover;
-                background-color: @item-color-hover;
-                border: 1px solid lighten(@black, 90%);*/
                 animation-name: gradient;
                 -webkit-animation-name: gradient;
                 animation-duration: 1.5s;
@@ -85,7 +74,7 @@
             &.visited:hover {
                 color: @item-text-color-hover;
                 background-color: @item-color-hover;
-                border: 1px solid lighten(@black, 90%);
+                //border: 1px solid lighten(@black, 90%);
 
                 .accordion-item-title-icon {
                     color: @white;

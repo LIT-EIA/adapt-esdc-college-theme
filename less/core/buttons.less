@@ -3,7 +3,7 @@
 
 .button, button {
     font-family: @font-family;
-    background-color: @danger-color;
+    background-color: @primary-color;
     color: @white;
     padding: @button-padding-top @button-padding-right+10 @button-padding-bottom @button-padding-left+10; // Added left / right padding in case buttons aren't centrally aligned
     text-decoration: none;
@@ -40,13 +40,13 @@
     }
 
     .disabled-style() {
-        background-color: @danger-color!important;
-        border-color: @danger-color!important;
-        color: @white!important;
+        background-color: @button-disabled-color !important;
+        //border-color: @secondary-color !important;
+        //color: @black !important;
         cursor:default;
 
         .no-touch &:hover {
-            border-color: @danger-color;
+            //border-color: @secondary-color;
         }
     }
 

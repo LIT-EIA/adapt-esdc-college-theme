@@ -40,6 +40,7 @@
 @item-border-color: @primary-color;
 @drawer-item-hover-color:@danger-color;
 @item-text-color-visited:@secondary-color;
+ @item-border-color-disabled:@secondary-color;
 
 @foreground-color-inverted: @primary-color;
 @inverted-foreground-color:@primary-color;
@@ -47,7 +48,7 @@
 
 @button-hover-color:@primary-color;
 @button-text-hover-color: @white;
-@button-disabled-color: @secondary-color;
+@button-disabled-color: lighten(@black, 40%);
 @button-text-disabled-color:@secondary-color;
 
 @notify-color:@primary-color;
@@ -70,3 +71,17 @@
 @menu-item-progress-color: @primary-color;
 @menu-item-progress-border-color: @black;
 @menu-item-progress-fill-color: @primary-color;
+
+@component-background-color: @black;
+@button-color-hover: @primary-color;
+@button-text-color-hover: @white;
+@button-color-disabled: lighten(@black, 40%);
+@button-border-color-disabled: lighten(@black, 40%);
+@button-text-color-disabled: lighten(@black, 40%);
+@background-color-inverted: lighten(@primary-color, 20%);
+@font-color: @black;
+@foreground-color: @primary-color;
+@quaternary-color:@black;
+
+@validation-success:@success-color;
+@validation-error:@danger-color;
