@@ -20,6 +20,9 @@
 @drawer-item-color:@secondary-color;
 @drawer-item-text-color:@black;
 @drawer-item-text-hover-color:@white;
+@drawer-icon-color: @white;
+@drawer-color: @primary-color;
+@drawer-icon-hover-color: @white;
 @item-color:@secondary-color;
 @item-color-visited:@primary-color;
 @item-color-visited:@black;
@@ -40,7 +43,12 @@
 @item-border-color: @primary-color;
 @drawer-item-hover-color:@danger-color;
 @item-text-color-visited:@secondary-color;
- @item-border-color-disabled:@secondary-color;
+@item-border-color-disabled:@secondary-color;
+@item-hover-color: @primary-color;
+@icon-correct-color : @primary-color;
+@icon-incorrect-color: @danger-color;
+@item-text-disabled-color: lighten(@black, 40%);
+@item-disabled-color: lighten(@black, 40%);
 
 @foreground-color-inverted: @primary-color;
 @inverted-foreground-color:@primary-color;
@@ -78,10 +86,13 @@
 @button-color-disabled: lighten(@black, 40%);
 @button-border-color-disabled: lighten(@black, 40%);
 @button-text-color-disabled: lighten(@black, 40%);
+@button-border-color-hover: @primary-color;
 @background-color-inverted: lighten(@primary-color, 20%);
 @font-color: @black;
 @foreground-color: @primary-color;
 @quaternary-color:@black;
+@primary-color-inverted: invert(@primary-color);
 
 @validation-success:@success-color;
 @validation-error:@danger-color;
+@disabled-color: lighten(@black, 40%);

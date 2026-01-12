@@ -231,16 +231,8 @@
 button[disabled="disabled"] {
     color: @white;
     background-color: @button-disabled-color;
-
-    &:hover {
-        //background-color: @secondary-color-hover;
-    }
 }
 
-.no-touch .button:hover,
-.no-touch button:hover {
-    //background-color: @danger-color;
-}
 
 /*.buttons .buttons-marking-icon {
     left:unset !important;
@@ -310,7 +302,7 @@ html {
     max-width: 100%;
 }
 .block:nth-child(odd) {
-    background: linear-gradient(90deg, fade(@secondary-color, 50%), @white);
+    background: fade(@secondary-color, 50%);
     color:@black;
 
   
@@ -646,10 +638,6 @@ ol ::marker {
 
 // COMPONENT LEVEL
 
-.component .component-instruction-inner {
-    //padding: 5px;
-}
-
 .component .component-instruction-inner.validation-error {
     color: #000000 !important;
     background: #f3e9e8;
@@ -844,10 +832,6 @@ html:lang(fr) {
 // [&&02] SPECIFIC - GRAPHIC COMPONENT
 //
 // ====================================================================
-.graphic-widget.component-widget {
-    //text-align: center;
-}
-
 
 // ====================================================================
 //
