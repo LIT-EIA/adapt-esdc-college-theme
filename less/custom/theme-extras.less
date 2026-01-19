@@ -252,7 +252,7 @@ html {
 
 // NAVIGATION
 .navigation-inner.clearfix {
-    display: flex;
+    //display: flex;
 
     button:not(.skip-nav-link) {
         margin: 20px;
@@ -413,7 +413,15 @@ html {
 
 // issue #36 - empty space between blocks
 .trickle-button-component {
-    padding-bottom: 0px !important;
+    padding-bottom: 15px !important;
+}
+
+.tooltip.show {
+    color:@white;
+}
+
+.trickle-button-inner.component-inner.locking button {
+    border-radius:10px;
 }
 
 .block:nth-child(2n) .block-title,
@@ -427,6 +435,10 @@ html {
             padding: 10px;
         }
     }
+}
+
+.quicknav button {
+    border-radius:10px
 }
 
 @media screen and (min-width: 641px) {
@@ -1435,4 +1447,7 @@ video {
         width: 80% !important;
         height: auto !important; /* optional, but keeps aspect ratio */
     }
+}
+.search-drawer:hover {
+    background-color:@primary-color;
 }
