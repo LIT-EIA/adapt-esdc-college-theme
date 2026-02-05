@@ -1,29 +1,35 @@
-// Page styling
-// ============
+// Page styling - Modern & Minimal
+// ================================
 
 .page {
     background-color: @white;
 
     .page-header {
-        background-color: @primary-color
+        background: linear-gradient(135deg, @primary-color 0%, @secondary-color 100%);
+        position: relative;
+        overflow: visible;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .page-header-inner {
         padding: @page-padding-top 0 @page-padding-bottom;
+        position: relative;
+        z-index: 2;
 
         @media all and (max-width: (@device-width-large + 20px)) {
             padding: @page-padding-top 20px @page-padding-bottom;
         }
 
         @media all and (max-width: (@device-width-small + 20px)) {
-            padding: @page-padding-top 10px @page-padding-bottom;
+            padding: (@page-padding-top * 0.7) 10px (@page-padding-bottom * 0.7);
         }
     }
 
     .page-header-content {
         max-width: @device-width-large;
         margin: auto;
-        color: @black-inverted;
+        color: @white;
     }
 
     .page-header-content-inner {
@@ -32,14 +38,18 @@
 
     .page-title {
         margin-bottom: @page-title-margin-bottom;
+        font-weight: @font-weight-light;
+        letter-spacing: -0.02em;
     }
 
     .page-body {
         margin-bottom: @page-body-margin-bottom;
+        color: @white;
     }
 
     .page-instruction {
         margin-bottom: @page-instruction-margin-bottom;
+        color: @white;
         .instruction-text;
     }
 }

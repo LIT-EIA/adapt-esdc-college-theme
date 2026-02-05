@@ -39,8 +39,9 @@
     position: relative;
     width: 100%;
     height: 15vh;
-    margin-bottom: -7px;
-    /*Fix for safari gap*/
+    margin-bottom: -10px;
+    margin-top: -2px;
+    /*Fix for safari gap and gradient artifact*/
     min-height: 100px;
     max-height: 150px;
 }
@@ -102,17 +103,58 @@
         color: @primary-color;
     }
 
-    .pagelevelprogress-indicator-inner {
-        background-color: @white;
-        border-color: @danger-color;
+    // Modern, sleek page level progress indicator in menu items
+    .menu-item-indicator.pagelevelprogress-indicator,
+    .pagelevelprogress-indicator.menu-item-indicator {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        float: none;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 200px;
+        height: 8px;
+        background: linear-gradient(to right, @neutral-light 0%, darken(@neutral-light, 5%) 100%);
+        border: none;
+        border-radius: 12px;
+        padding: 0;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(51, 226, 175, 0.2);
+            transform: scaleY(1.1);
+        }
     }
 
-    .pagelevelprogress-indicator {
-        background-color: @white;
+    .pagelevelprogress-indicator-inner {
+        background-color: transparent;
+        border: none;
+        height: 100%;
     }
 
     .pagelevelprogress-indicator-bar {
-        background-color: @white;
+        background: linear-gradient(90deg, @accent-color 0%, @success-color 100%);
+        border-radius: 12px;
+        height: 100%;
+        box-shadow: 0 0 8px rgba(51, 226, 175, 0.4);
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, transparent 50%, rgba(0, 0, 0, 0.1) 100%);
+            border-radius: 12px;
+        }
     }
 }
 
@@ -302,27 +344,29 @@ html {
     max-width: 100%;
 }
 .block:nth-child(odd) {
-    background: fade(@secondary-color, 50%);
-    color:@black;
-
+    background: #f5f5f5;
+    color: @black;
+    padding-top:25px;
   
-  .component-title {
-    color:@black;
-  }
-  .block-title {
-    color:@black;
-  }
-
+    .component-title {
+        color: @black;
+    }
+    .block-title {
+        color: @black;
+    }
 }
+
 .block:nth-child(even) {
-  background-color: @white;
-  color:@black;
-  .component-title {
-    color:@black;
-  }
-  .block-title {
-    color:@black;
-  }
+    background-color: @white;
+    color: @black;
+    padding-top:25px;
+    
+    .component-title {
+        color: @black;
+    }
+    .block-title {
+        color: @black;
+    }
 }
 
 .article .article-header when (@margin-control =noMargin) {
@@ -337,7 +381,9 @@ html {
     }
 
     .article-body {
-        margin-bottom: 0;
+        margin:60px;
+        text-align:left;
+
     }
 
     .article-title-inner,
@@ -1053,31 +1099,249 @@ button.hotgrid-grid-item .hotgrid-item-title {
 // Hotgraphic and hot grid distinct title styles
 .hotgraphic-content-title,
 .hotgrid-content-title {
-    font-size: 22px;
-    line-height: @component-title-line-height;
-    margin-bottom: 10px;
-    color: @black;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    color: @primary-color;
+    letter-spacing: -0.3px;
 }
 
-// overflow for hotspots & hotgrid
-.hotgraphic-popup,
+// Modern Hotgrid Popup Design
 .hotgrid-popup {
+    //overflow-y: auto;
+    height: auto !important;
+    max-height: 85vh !important;
+    border: none !important;
+    border-radius: 24px !important;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    background-color: @white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: @neutral-light;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @primary-color;
+        border-radius: 10px;
+        
+        &:hover {
+            background: @secondary-color;
+        }
+    }
+}
+
+.hotgrid-popup-inner {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+// Individual hotgrid items
+.hotgrid-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 36px;
+    border-bottom: 1px solid @neutral-light;
+    transition: all 0.3s ease;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+
+    &.active {
+        background-color: rgba(11, 80, 141, 0.02);
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 32px;
+    }
+}
+
+.hotgrid-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.hotgrid-item-content-inner {
+    padding: 0;
+}
+
+.hotgrid-content-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: @font-color;
+
+    p {
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    strong {
+        color: @primary-color;
+        font-weight: 700;
+    }
+
+    em {
+        color: @secondary-color;
+    }
+}
+
+.hotgrid-item-graphic {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 280px;
+    //align-self: center;
+}
+
+.hotgrid-item-graphic-inner {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .no-touch &:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Modern Toolbar Design
+.hotgrid-popup-toolbar {
+    background: linear-gradient(135deg, @primary-color 0%, darken(@primary-color, 5%) 100%) !important;
+    //padding: 16px 24px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0 !important;
+    position: sticky;
+    bottom: 0;
+}
+
+.hotgrid-popup-nav {
+    background:transparent !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.hotgrid-popup-controls {
+    background: none;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    color: @white;
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    .no-touch &:not(:disabled):hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        transform: scale(1.1);
+    }
+
+    &:active:not(:disabled) {
+        transform: scale(0.95);
+    }
+}
+
+.hotgrid-popup-arrow-l,
+.hotgrid-popup-arrow-r {
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.hotgrid-popup-count {
+    padding: 8px 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    color: @white !important;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.hotgrid-popup-done {
+    background: none;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+
+    .no-touch &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        
+        .hotgrid-popup-close {
+            color: @accent-color;
+            transform: rotate(90deg) scale(1.1);
+        }
+    }
+}
+
+.hotgrid-popup-close {
+    color: @white;
+    font-size: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Hotgraphic popup - keep overflow setting
+.hotgraphic-popup {
     overflow-y: auto;
     height: 400px !important;
-    border:none !important;
-    box-shadow:0px 0px 10px 1px lighten(@black, 70%) !important;
 }
 
-// hotgrapgic and hotgrid focus indicator fixes for new popup focus
+// Modern focus indicators for hotgrid and hotgraphic
 html:not(.a11y-disable-focusoutline) {
     .notify-popup {
 
-        /* adds focus indicator to hotgrid-popup instead of notify-popup when hotgrid or hotgraphic */
+        /* adds modern focus indicator to hotgrid-popup instead of notify-popup */
         &:focus {
-
             .hotgrid-popup,
             .hotgraphic-popup {
-                outline: 2px solid @danger-color !important;
+                outline: 3px solid @accent-color !important;
+                outline-offset: 2px;
+                box-shadow:
+                    0 20px 60px rgba(0, 0, 0, 0.15),
+                    0 8px 24px rgba(0, 0, 0, 0.1),
+                    0 0 0 3px @accent-color !important;
             }
         }
 
@@ -1087,13 +1351,14 @@ html:not(.a11y-disable-focusoutline) {
             outline: none !important;
         }
 
-        /* adds focus indicator to hotgrid-popup instead of title when hotgrid or hotgraphic */
+        /* adds focus indicator to hotgrid-popup instead of title */
         .hotgrid-popup:has(.hotgrid-content-title:focus),
         .hotgraphic-popup:has(.hotgraphic-content-title:focus) {
-            outline: 2px solid @danger-color !important;
+            outline: 3px solid @accent-color !important;
+            outline-offset: 2px;
         }
 
-        /* removes focus indicator from content-title when hotgrid or hotgraphic */
+        /* removes focus indicator from content-title */
         .hotgrid-content-title:focus,
         .hotgraphic-content-title:focus {
             outline: none !important;
@@ -1396,7 +1661,7 @@ a:not(a[href]) {
 }
 
 .component-full .component-body-inner {
-    max-width: 80%;
+    //max-width: 80%;
 }
 
 

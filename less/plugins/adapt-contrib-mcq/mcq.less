@@ -1,24 +1,35 @@
+// MCQ - Modern & Minimal
+// =======================
+
 .mcq-component {
     .mcq-item {
-        background-color:@primary-color;
-        position:relative;
+        background-color: @white;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
     }
 
     .mcq-item label {
-        color:@white;
-        display:block;
-        margin-bottom:@item-margin-bottom;
-        position:relative;
-        z-index:1;
-        background-color:@primary-color;
-        cursor:pointer;
+        color: @black;
+        display: block;
+        margin-bottom: @item-margin-bottom;
+        position: relative;
+        z-index: 1;
+        background-color: @white;
+        border: 2px solid @neutral-light;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
         &.selected {
-            color:@item-text-color-selected;
-            background-color:@item-color-selected;
-            border-color:@item-border-color-selected;
+            color: @white;
+            background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
+            border-color: @accent-color;
+            box-shadow: 0 4px 12px rgba(51, 226, 175, 0.25);
+            
             .mcq-answer-icon {
-                color:@item-text-color-selected;
+                color: @white;
 
                  &.radio {
                     &:before {
@@ -29,23 +40,23 @@
                     &:before {
                         content: "\e633";
                     }
-                    border: 3px solid @item-text-color-selected;
-                    width:18px;
-                    height:18px;
-                    font-size:18px;
+                    border: 3px solid @white;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 20px;
                     font-weight: bold;
-                    border-radius: 2px;
+                    border-radius: 4px;
                 }
             }
             .mcq-item-icon {
-                color:@item-text-color-selected;
+                color: @white;
 
                 &.mcq-correct-icon {
-                    color:@success-color;
+                    color: @success-color;
                 }
 
                 &.mcq-incorrect-icon {
-                    color:@danger-color;
+                    color: @error-color;
                 }
             }
         }
@@ -59,26 +70,26 @@
     }
 
     .mcq-correct-icon {
-        display:none;
+        display: none;
     }
 
     .mcq-incorrect-icon {
-        display:none;
+        display: none;
     }
 
     .mcq-item-state {
-        background:none;
-        position:absolute;
-        left:@item-padding-left;
+        background: none;
+        position: absolute;
+        left: @item-padding-left;
         .dir-rtl & {
-            left:inherit;
-            right:@item-padding-left;
+            left: inherit;
+            right: @item-padding-left;
         }
-        width:@icon-size;
-        height:@icon-size;
-        top:50%;
-        margin-top:-(@icon-size/2);
-        z-index:0;
+        width: @icon-size;
+        height: @icon-size;
+        top: 50%;
+        margin-top: -(@icon-size/2);
+        z-index: 0;
     }
 }
 
@@ -86,23 +97,25 @@
 
     &.disabled {
         .mcq-item label.selected.disabled {
-            color:@item-text-color-selected;
-            background-color:@item-color-selected;
-            border-color:@item-border-color-selected;
-            cursor:default;
+            color: @white;
+            background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
+            border-color: @accent-color;
+            cursor: default;
+            opacity: 0.8;
         }
         .mcq-item label.disabled {
-            color:@item-text-color-disabled;
-            background-color:@item-color-disabled;
-            border-color:@item-border-color-disabled;
-            cursor:default;
+            color: @item-text-color-disabled;
+            background-color: @neutral-light;
+            border-color: @neutral-light;
+            cursor: default;
+            opacity: 0.6;
 
             .mcq-item-icon {
                 &.mcq-correct-icon {
-                    color:@success-color;
+                    color: @success-color;
                 }
                 &.mcq-incorrect-icon {
-                    color:@danger-color;
+                    color: @error-color;
                 }
             }
         }
@@ -114,28 +127,33 @@
     .mcq-widget {
         &:not(.disabled) {
             .mcq-item label:hover {
-                color:@item-text-color-hover;
-                background-color:@item-color-hover;
-                border-color:@item-border-color-hover;
+                color: @white;
+                background: linear-gradient(135deg, @secondary-color 0%, @accent-color 100%);
+                border-color: @secondary-color;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(21, 154, 208, 0.25);
+                
                 .mcq-item-icon {
-                    color: none;
+                    color: @white;
                 }
             }
             .mcq-item label.disabled {
-                color:@item-text-color-disabled;
-                background-color:@item-color-disabled;
-                border-color:@item-border-color-disabled;
+                color: @item-text-color-disabled;
+                background-color: @neutral-light;
+                border-color: @neutral-light;
+                
                 &:hover {
-                    color:@item-text-color-disabled;
-                    background-color:@item-color-disabled;
-                    border-color:@item-border-color-disabled;
+                    color: @item-text-color-disabled;
+                    background-color: @neutral-light;
+                    border-color: @neutral-light;
+                    transform: none;
                 }
                 .mcq-item-icon {
                     &.mcq-correct-icon {
-                        color:@success-color;
+                        color: @success-color;
                     }
                     &.mcq-incorrect-icon {
-                        color:@danger-color;
+                        color: @error-color;
                     }
                 }
             }

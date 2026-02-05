@@ -1,41 +1,50 @@
-// Navigation styling
-// ==================
+// Navigation styling - Modern & Minimal
+// ======================================
 @navigation-height: (@navigation-padding * 2) + @icon-size;
 
 .navigation {
     overflow: hidden;
     background-color: @white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid @neutral-light;
 
     .icon {
         padding: @navigation-padding;
-        color: @black;
+        color: @primary-color;
         .transition-color;
+        font-size: @icon-size;
 
         .no-touch &:hover {
-            color: @danger-color;
+            color: @accent-color;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
         }
     }
 
     .skip-nav-link {
-        background-color: @danger-color;
-        border-radius: 0;
+        background-color: @primary-color;
+        border-radius: 4px;
         color: @white;
         display: none;
-        left: 0;
-        margin-top: 0;
-        padding: 10px 20px;
-        position: absolute;
-        top: -46px;
-        -webkit-transition: top .2s ease-out;
-        transition: top .2s ease-out;
+        left: 10px;
+        margin-top: -10px;
+        padding: 12px 24px;
+        position: fixed;
+        top: -60px;
+        font-weight: @font-weight-bold;
+        -webkit-transition: top .3s ease-out;
+        transition: top .3s ease-out;
         width: auto;
         z-index: 100;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        
         .accessibility & {
             display: inline-block;
         }
+        
         &:focus {
-            top: 0;
+            top: 15px;
+            background-color: @accent-color;
         }
     }
 }

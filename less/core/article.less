@@ -1,5 +1,5 @@
-// Article styling
-// ===============
+// Article styling - Modern & Minimal
+// ===================================
 
 .article {
     background-color: @white;
@@ -8,17 +8,18 @@
         padding: @article-padding-top 0 @article-padding-bottom;
 
         @media all and (max-width: (@device-width-large + 20px)) {
-            padding: (@article-padding-top / 2) 0 (@article-padding-bottom / 2);
+            padding: (@article-padding-top * 0.6) 0 (@article-padding-bottom * 0.6);
         }
 
         @media all and (max-width: (@device-width-small + 20px)) {
-            padding: (@article-padding-top / 3) 0 (@article-padding-bottom / 3);
+            padding: (@article-padding-top * 0.4) 0 (@article-padding-bottom * 0.4);
         }
     }
 
     .article-header {
         margin: auto;
         padding: 0;
+        text-align: center;
 
         @media all and (max-width: (@device-width-large + 20px)) {
             padding: 0 20px;
@@ -33,10 +34,25 @@
         margin-bottom: @article-title-margin-bottom;
         color: @primary-color;
         text-align: center;
-        
+        font-weight: @font-weight-light;
+        letter-spacing: -0.01em;
+        position: relative;
+        padding-bottom: 15px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, @accent-color, @secondary-color);
+            border-radius: 2px;
+        }
 
         .dir-rtl & {
-            text-align: right;
+            text-align: center;
         }
     }
 

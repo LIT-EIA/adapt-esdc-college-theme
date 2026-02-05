@@ -1,38 +1,41 @@
-// Font setup
-// ==========
+// Modern Minimalist Font Setup - Aptos
+// =====================================
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vend+Sans:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@font-family: "Roboto", serif;
-@font-family-titles: "Raleway", serif;
+// Aptos is a system font available on Windows 11+, Office 365
+// Fallback to similar modern sans-serif fonts
+@font-family: Aptos, "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+@font-family-titles: Aptos, "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 
-@font-weight-light: 100;
-@font-weight-regular: 300;
-@font-weight-bold: 500;
+@font-weight-light: 300;
+@font-weight-regular: 400;
+@font-weight-bold: 600;
 
-@menu-title-font-size: 48px;
-@page-title-font-size: 48px;
-@component-title-font-size: 36px;
-@item-title-font-size: 24px;
-@sub-title-font-size: 18px;
+// Font Sizes (converted from points to pixels: 1pt = 1.333px)
+// h1 = 35pt = 47px, h2 = 32pt = 43px, h3 = 28pt = 37px, h4 = 25pt = 33px, h5 = 23pt = 31px, body = 18pt = 24px
+@menu-title-font-size: 47px;        // h1 - 35pt
+@page-title-font-size: 47px;         // h1 - 35pt
+@component-title-font-size: 37px;    // h3 - 28pt
+@item-title-font-size: 31px;         // h5 - 23pt
+@sub-title-font-size: 33px;          // h4 - 25pt
 
-@body-text-font-size: 16px;
-@instruction-text-font-size: 16px;
-@button-text-font-size: 18px;
+@body-text-font-size: 24px;          // body - 18pt
+@instruction-text-font-size: 24px;   // body - 18pt
+@button-text-font-size: 24px;        // body - 18pt
 
-@title-line-height: 120%;
-@body-line-height: 140%;
+// Line Heights - improved for readability
+@title-line-height: 1.3;
+@body-line-height: 1.6;
 
-@icon-size: 24px;
+@icon-size: 28px;
 
 
-// Detailed Font setup
+// Detailed Font Setup
 // ===================
 
-@menu-title-font-weight: @font-weight-regular;
+@menu-title-font-weight: @font-weight-light;
 @menu-title-line-height: @title-line-height;
 
-@page-title-font-weight: @font-weight-regular;
+@page-title-font-weight: @font-weight-light;
 @page-title-line-height: @title-line-height;
 
 @component-title-font-weight: @font-weight-regular;
@@ -41,7 +44,7 @@
 @item-title-font-weight: @font-weight-regular;
 @item-title-line-height: @title-line-height;
 
-@sub-title-font-weight: @font-weight-light;
+@sub-title-font-weight: @font-weight-regular;
 @sub-title-line-height: @title-line-height;
 
 @body-text-font-weight: @font-weight-regular;
@@ -50,5 +53,5 @@
 @instruction-text-font-weight: @font-weight-bold;
 @instruction-text-line-height: @body-line-height;
 
-@button-text-font-weight: @font-weight-light;
+@button-text-font-weight: @font-weight-regular;
 @button-text-line-height: @body-line-height;

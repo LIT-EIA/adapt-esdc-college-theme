@@ -24,49 +24,87 @@
 	.hotgraphic-popup {
 		background-color: @white;
 		border: none !important;
-		box-shadow: 0px 0px 3px 1px lighten(@black, 30%) !important;
-		border-radius:30px !important;
+		box-shadow:
+			0 10px 40px rgba(0, 0, 0, 0.12),
+			0 4px 16px rgba(0, 0, 0, 0.08),
+			0 1px 4px rgba(0, 0, 0, 0.06) !important;
+		border-radius: 24px !important;
+		overflow: hidden;
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	.hotgraphic-popup-toolbar {
-		background-color: @primary-color !important;
+		background: linear-gradient(135deg, @primary-color 0%, darken(@primary-color, 5%) 100%) !important;
+		padding: 16px 20px !important;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 0 !important;
 	}
 
 	.hotgraphic-popup-nav {
-		background-color: @primary-color;
+		background: linear-gradient(135deg, @primary-color 0%, darken(@primary-color, 5%) 100%);
+		padding: 12px 16px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.hotgraphic-popup-done {
+		display: flex;
+		align-items: center;
+		
 		.no-touch &:hover {
 			.hotgraphic-popup-close {
-				color: @white;
+				color: @accent-color;
+				transform: rotate(90deg) scale(1.1);
 			}
 		}
 	}
 
-	.hotgraphic-popup-arrow-l, 
+	.hotgraphic-popup-arrow-l,
 	.hotgraphic-popup-arrow-r,
 	.hotgraphic-popup-close {
-		padding: @item-padding;
+		padding: 10px 14px;
 		color: @white;
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		cursor: pointer;
+		border-radius: 8px;
+		
+		.no-touch &:hover {
+			background-color: rgba(255, 255, 255, 0.15);
+			transform: scale(1.1);
+		}
+		
+		&:active {
+			transform: scale(0.95);
+		}
 	}
 
 	.hotgraphic-popup-count {
-		padding: @item-padding;
-		color: @item-text-color;
+		padding: 8px 16px;
+		color: @white;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 20px;
+		font-size: 14px;
 	}
 
 	.hotgraphic-popup-controls {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		
 		.no-touch &:hover {
 			.hotgraphic-popup-arrow-l,
 			.hotgraphic-popup-arrow-r {
-				color: @white;
+				color: @accent-color;
 			}
 		}
 	}
 
 	.hotgraphic-popup-inner {
-		padding: @item-padding;
+		padding: 24px 28px;
+		line-height: 1.6;
 	}
 
 	.hotgraphic-content-title {

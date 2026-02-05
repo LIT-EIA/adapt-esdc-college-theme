@@ -1,3 +1,6 @@
+// Box Menu - Modern & Minimal
+// ============================
+
 .boxmenu-menu {
 
 	.menu-container {
@@ -10,6 +13,7 @@
 
 	.menu-header {
 		margin-bottom: -30px;
+		background: linear-gradient(135deg, @primary-color 0%, @secondary-color 100%);
 	}
 
 	.menu-header-inner {
@@ -19,7 +23,7 @@
 		text-align: center;
 
 		@media all and (max-width: (@device-width-large + 20px)) {
-			padding: (@menu-header-padding-top / 2) 20px @menu-header-padding-bottom;
+			padding: (@menu-header-padding-top * 0.6) 20px @menu-header-padding-bottom;
 		}
 
 		@media all and (max-width: (@device-width-small + 20px)) {
@@ -29,15 +33,23 @@
 
 	.menu-title {
 		margin: @menu-block-title-margin-top 0 @menu-block-title-margin-bottom;
-		color: @black-inverted;
+		color: @white;
+		font-weight: @font-weight-light;
+		letter-spacing: -0.02em;
 	}
 
 	.menu-body {
 		margin: @menu-block-body-margin-bottom 0;
-		color: @black-inverted;
+		color: @white;
 
 		a {
-			color: @black-inverted;
+			color: @white;
+			text-decoration: none;
+			border-bottom: 2px solid transparent;
+			
+			&:hover {
+				border-bottom-color: @accent-color;
+			}
 		}
 	}
 
@@ -58,7 +70,6 @@
 			.menu-item-inner {
 				margin-right: 2%;
 
-
 				.dir-rtl & {
 					margin-left: 2%;
 				}
@@ -73,24 +84,30 @@
 		padding: @menu-block-padding-top @menu-block-padding-right @menu-block-padding-bottom @menu-block-padding-left;
 		background-color: @white;
 		color: @menu-item-text-color;
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-		border-radius:10px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  		transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+		border-radius: 12px;
+		border: 2px solid transparent;
 
-		&:hover{
-			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		&:hover {
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+			border-color: @accent-color;
+			transform: translateY(-4px);
 		}
 	}
 
 	.menu-item-title {
 		margin: @menu-block-title-margin-top 0 @menu-block-title-margin-bottom;
 		padding: 0;
+		color: @primary-color;
+		font-weight: @font-weight-regular;
 		.item-title;
 	}
 
 	.menu-item-body {
 		margin-bottom: @menu-block-body-margin-bottom;
 		padding: 0;
+		color: @black;
 	}
 
 	.menu-item-instruction {
@@ -113,22 +130,24 @@
 	}
 
 	.pagelevelprogress-indicator {
-		background-color: @white;
-		border-color: @white;
+		background-color: @neutral-light;
+		border-color: @neutral-light;
 	}
 
 	.pagelevelprogress-indicator-inner {
-		border-color: @white;
+		border-color: @neutral-light;
 	}
 
 	.pagelevelprogress-indicator-bar {
-		background-color: @primary-color;
+		background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
 	}
 
 	.menu-item-duration {
 		position: absolute;
 		right: @menu-block-padding-right;
 		float: none;
+		color: @primary-color;
+		font-weight: @font-weight-bold;
 
 		.dir-rtl & {
 			float: none;
@@ -139,21 +158,23 @@
 
 	.menu-item-button {
 		padding: 0;
-		
 
 		button {
 			padding: @button-padding-top (@button-padding-right*2) @button-padding-bottom (@button-padding-left*2);
-			background-color: @danger-color;
-			color: @black;
+			background-color: @primary-color;
+			color: @white;
+			border: 2px solid @primary-color;
 
 			&:hover {
-				background-color: @danger-color;
+				background-color: @accent-color;
+				border-color: @accent-color;
 				color: @white;
 			}
 
 			&.visited {
-				background-color: @danger-color;
-				color: @white-disabled;
+				background-color: @secondary-color;
+				border-color: @secondary-color;
+				color: @white;
 			}
 		}
 	}

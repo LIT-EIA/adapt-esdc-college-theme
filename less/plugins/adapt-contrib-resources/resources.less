@@ -1,27 +1,175 @@
+// Modern Resources Drawer Styling
+// =================================
 .resources {
-    .resources-filter button {
-        color: @danger-color;
-        border-bottom: 1px solid @primary-color;
-        .transition-all-colors;
-        padding: 0px; 
-        font-size: @body-text-font-size;
-        text-align: center;
+    .resources-filter {
+        display: flex;
+        gap: 8px;
+        padding: 16px;
+        background-color: @neutral-light;
+        border-radius: 8px;
+        margin: 0 16px 20px 16px;
 
-        span {
-            border: none;
-            padding: 15px 0px;
+        @media (max-width: 768px) {
+            gap: 6px;
+            padding: 12px;
+            margin: 0 12px 16px 12px;
         }
 
-        &.selected {
-            color: @danger-color;
-            background-color: @danger-color;
-            border-bottom: 1px solid @danger-color;
+        button {
+            flex: 1 1 auto;
+            min-width: 0;
+            color: @primary-color;
+            background-color: @white;
+            border: 2px solid @neutral-light;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.3;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+
+            @media (min-width: 480px) {
+                padding: 12px 14px;
+                font-size: 15px;
+            }
+
+            @media (min-width: 768px) {
+                padding: 12px 16px;
+            }
+
+            span {
+                border: none;
+                padding: 0;
+                display: block;
+                word-break: break-word;
+                hyphens: auto;
+            }
+
+            &.selected {
+                color: @white;
+                background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
+                border-color: @accent-color;
+                box-shadow: 0 4px 12px rgba(51, 226, 175, 0.3);
+                transform: translateY(-2px);
+            }
+
+            .no-touch &:hover:not(.selected) {
+                color: @white;
+                background-color: @primary-color;
+                border-color: @primary-color;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(11, 80, 141, 0.2);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .resources-item-container {
+        padding: 0 16px 16px 16px;
+
+        @media (max-width: 768px) {
+            padding: 0 12px 12px 12px;
+        }
+    }
+
+    .resources-item {
+        margin-bottom: 12px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: none;
+        background-color: @white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .resources-item-open {
+            display: block;
+            padding: 16px 20px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            @media (max-width: 768px) {
+                padding: 14px 16px;
+            }
+
+            .drawer-item-title {
+                margin-bottom: 6px;
+
+                .drawer-item-title-inner {
+                    font-size: 17px;
+                    font-weight: 700;
+                    color: @primary-color;
+                    line-height: 1.4;
+                    transition: color 0.3s ease;
+
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .drawer-item-description {
+                .drawer-item-description-inner {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: lighten(@black, 30%);
+                    transition: color 0.3s ease;
+
+                    @media (max-width: 768px) {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .no-touch &:hover {
+                background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
+
+                .drawer-item-title-inner,
+                .drawer-item-description-inner {
+                    color: @white;
+                }
+            }
+        }
+
+        // Type indicators
+        &.document .resources-item-open::before,
+        &.link .resources-item-open::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: width 0.3s ease;
+        }
+
+        &.document .resources-item-open::before {
+            background-color: @success-color;
+        }
+
+        &.link .resources-item-open::before {
+            background-color: @secondary-color;
         }
 
         .no-touch &:hover {
-            color:  @danger-color;
-            background-color: @danger-color;
-            border-bottom: 1px solid @danger-color;
+            &.document .resources-item-open::before,
+            &.link .resources-item-open::before {
+                width: 6px;
+            }
         }
     }
 }

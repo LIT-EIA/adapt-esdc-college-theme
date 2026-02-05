@@ -1,74 +1,141 @@
-// Drawer styling
-// ==============
+// Drawer styling - Modern & Minimal
+// ==================================
 
 .drawer {
-    background-color: @white;
+    background-color: #fafafa;
     color: @primary-color;
-    box-shadow: 0px 0px 20px lighten(@black, 70%);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+    border-left: none;
 
     .drawer-toolbar {
         position: absolute;
-        width:100%;
-        top:0;
+        width: 100%;
+        top: 0;
+        background: linear-gradient(135deg, @primary-color 0%, darken(@primary-color, 5%) 100%);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
     }
 
     .drawer-toolbar .icon {
-        color: @primary-color;
+        color: @white;
         padding: @navigation-padding;
-        .transition-color;
+        font-size: 22px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         .no-touch &:hover {
-            color: @danger-color;
+            color: @accent-color;
+            transform: scale(1.15);
+        }
+    }
+
+    .drawer-back-button,
+    .drawer-close-button {
+        button {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+
+            .no-touch &:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+            }
         }
     }
     
     .drawer-holder {
         padding-top: ((@navigation-padding * 2) + @icon-size + 1);
+        padding-bottom: 20px;
     }
 
     .drawer-inner {
-
+        min-height: 100%;
+        
         .dir-rtl & {
-
         }
     }
 
     .drawer-item {
+        border-bottom: none;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: @white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
         .drawer-item-title {
-            .sub-title;
+            font-size: 17px;
+            font-weight: @font-weight-bold;
+            color: @primary-color;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
         }
         
         .drawer-item-description {
-        	font-size: @body-text-font-size;
-        	line-height: @body-text-line-height;
+            font-size: 14px;
+            line-height: 1.6;
+            color: lighten(@black, 30%);
+            transition: color 0.3s ease;
+
+            @media (max-width: 768px) {
+                font-size: 13px;
+            }
         }
         
         .drawer-item-open {
             color: @primary-color;
             text-decoration: none;
             width: 100%;
-            font-weight:500;
+            display: block;
+            font-weight: @font-weight-regular;
+            padding: 16px 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+
+            @media (max-width: 768px) {
+                padding: 14px 16px;
+            }
             
             .no-touch &:hover {
-                background-color: @primary-color;
+                background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
                 color: @white;
-                .pagelevelprogress-indicator-inner {
-                    border: @white;
+                
+                .drawer-item-title,
+                .drawer-item-description {
+                    color: @white;
                 }
+                
+                .pagelevelprogress-indicator-inner {
+                    border-color: @white;
+                }
+                
                 .pagelevelprogress-indicator {
-                    border-color:@white;
+                    border-color: @white;
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+
+                .pagelevelprogress-indicator-bar {
+                    background-color: @white;
                 }
             }
         }
     }
 
-    .drawer-item-open {
+    // Generic drawer items that aren't part of resources
+    .drawer-item-open:not(.resources-item-open) {
         padding: @drawer-item-padding-top @drawer-item-padding-right @drawer-item-padding-bottom @drawer-item-padding-left;
-        .transition-background-color;
-
-        //stops rollover of drawar items on touch devices    
-        .no-touch &:hover {
-             background-color: @white;
-       }
     }
 }

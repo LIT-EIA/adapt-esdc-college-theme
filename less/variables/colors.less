@@ -1,98 +1,115 @@
-// Custom Colors
-// =============
-@primary-color: #0B508D;
-@secondary-color: #E6E6E6;
-@third-color: #33e2af;
-@success-color: #63BC46;
-@danger-color: #CD1C6C;
+// Modern Minimalist Color Palette
+// ================================
+// Primary Colors
+@primary-color: #0b508d;        // Deep Blue - primary actions, headers
+@secondary-color: #159ad0;      // Bright Blue - secondary elements
+@accent-color: #33e2af;         // Turquoise - highlights, active states
+@highlight-color: #cd1c6c;      // Magenta - important accents, alerts
 
+// Accent Colors
+@neutral-light: #e6e6e6;        // Light Gray - backgrounds, borders
+@success-color: #63bc46;        // Green - success states
+@warning-color: #f7c025;        // Yellow - warnings
+@error-color: #ee574b;          // Coral Red - errors
 
-@warning-color: #F7C025;
-@info-color: #159AD0;
-
-
+// Base Colors
 @white: #ffffff;
-@black: #000;
+@black: #000000;
 
-@transparency: rgba(255, 255, 255, 0.8);
+// Transparency
+@transparency: rgba(255, 255, 255, 0.9);
 @transparency-fallback-png: url('assets/transparency-light.png');
 
-@drawer-item-color:@secondary-color;
-@drawer-item-text-color:@black;
-@drawer-item-text-hover-color:@white;
-@drawer-icon-color: @white;
-@drawer-color: @primary-color;
-@drawer-icon-hover-color: @white;
-@item-color:@secondary-color;
-@item-color-visited:@primary-color;
-@item-color-visited:@black;
-@item-color-selected:@primary-color;
-@item-body-color:@secondary-color;
-@item-border-color-hover:@secondary-color;
-@item-body-text-color:@secondary-color;
-@item-text-color-hover:@secondary-color;
-@item-border-color-selected:@primary-color;
-@item-text-color-selected:@white;
-@item-border-color-visited:@primary-color;
-@item-border-color-visited:@primary-color;
-@item-text-color-selected:@secondary-color;
-@item-color-hover:@primary-color;
-@item-color-disabled:@secondary-color;
-@item-text-color-disabled:@secondary-color;
-@item-text-color: @black;
-@item-border-color: @primary-color;
-@drawer-item-hover-color:@danger-color;
-@item-text-color-visited:@secondary-color;
-@item-border-color-disabled:@secondary-color;
-@item-hover-color: @primary-color;
-@icon-correct-color : @primary-color;
-@icon-incorrect-color: @danger-color;
-@item-text-disabled-color: lighten(@black, 40%);
-@item-disabled-color: lighten(@black, 40%);
-
-@foreground-color-inverted: @primary-color;
-@inverted-foreground-color:@primary-color;
-@background-color:@white;
-
-@button-hover-color:@primary-color;
-@button-text-hover-color: @white;
-@button-disabled-color: lighten(@black, 40%);
-@button-text-disabled-color:@secondary-color;
-
-@notify-color:@primary-color;
-@notify-text-color:@black;
-@notify-icon-color:@white;
-@notify-button-color: @white;
-@notify-button-text-color: @primary-color;
-@notify-button-color-hover:@danger-color;
-@notify-button-text-color-hover:@white;
-@notify-icon-color-hover: @white;
-
-@secondary-color-text:@secondary-color;
-@secondary-color-hover: @white;
-@danger-color-disabled:@secondary-color;
-@white-disabled: @secondary-color;
-@black-inverted: @white;
-
-@menu-item-color:@secondary-color;
-@menu-item-text-color: @primary-color;
-@menu-item-progress-color: @primary-color;
-@menu-item-progress-border-color: @black;
-@menu-item-progress-fill-color: @primary-color;
-
-@component-background-color: @black;
-@button-color-hover: @primary-color;
-@button-text-color-hover: @white;
-@button-color-disabled: lighten(@black, 40%);
-@button-border-color-disabled: lighten(@black, 40%);
-@button-text-color-disabled: lighten(@black, 40%);
-@button-border-color-hover: @primary-color;
-@background-color-inverted: lighten(@primary-color, 20%);
+// Background & Foreground
+@background-color: @white;
+@background-color-inverted: @primary-color;
 @font-color: @black;
 @foreground-color: @primary-color;
-@quaternary-color:@black;
-@primary-color-inverted: invert(@primary-color);
+@foreground-color-inverted: @white;
+@inverted-foreground-color: @white;
+@quaternary-color: @neutral-light;
 
-@validation-success:@success-color;
-@validation-error:@danger-color;
-@disabled-color: lighten(@black, 40%);
+// Button Colors - Modern & Minimal
+@button-color: @primary-color;
+@button-text-color: @white;
+@button-hover-color: @accent-color;
+@button-color-hover: @accent-color;
+@button-text-hover-color: @white;
+@button-text-color-hover: @white;
+@button-border-color-hover: @accent-color;
+@button-disabled-color: lighten(@black, 60%);
+@button-color-disabled: lighten(@black, 60%);
+@button-border-color-disabled: lighten(@black, 60%);
+@button-text-disabled-color: lighten(@black, 40%);
+@button-text-color-disabled: lighten(@black, 40%);
+
+// Navigation & Drawer
+@drawer-color: @primary-color;
+@drawer-item-color: @neutral-light;
+@drawer-item-text-color: @black;
+@drawer-item-hover-color: @accent-color;
+@drawer-item-text-hover-color: @white;
+@drawer-icon-color: @white;
+@drawer-icon-hover-color: @white;
+
+// Item States
+@item-color: @neutral-light;
+@item-text-color: @black;
+@item-border-color: @primary-color;
+@item-hover-color: @secondary-color;
+@item-color-hover: @secondary-color;
+@item-text-color-hover: @white;
+@item-border-color-hover: @secondary-color;
+@item-color-selected: @accent-color;
+@item-text-color-selected: @white;
+@item-border-color-selected: @accent-color;
+@item-color-visited: darken(@neutral-light, 5%);
+@item-text-color-visited: @black;
+@item-border-color-visited: @secondary-color;
+@item-color-disabled: @neutral-light;
+@item-text-color-disabled: lighten(@black, 50%);
+@item-text-disabled-color: lighten(@black, 50%);
+@item-disabled-color: lighten(@black, 60%);
+@item-border-color-disabled: lighten(@black, 50%);
+@item-body-color: @white;
+@item-body-text-color: @black;
+
+// Menu Items
+@menu-item-color: @white;
+@menu-item-text-color: @primary-color;
+@menu-item-progress-color: @accent-color;
+@menu-item-progress-border-color: @neutral-light;
+@menu-item-progress-fill-color: @accent-color;
+
+// Notifications
+@notify-color: @primary-color;
+@notify-text-color: @white;
+@notify-icon-color: @white;
+@notify-icon-color-hover: @white;
+@notify-button-color: @white;
+@notify-button-text-color: @primary-color;
+@notify-button-color-hover: @accent-color;
+@notify-button-text-color-hover: @white;
+
+// Component Colors
+@component-background-color: @white;
+
+// Icons
+@icon-correct-color: @success-color;
+@icon-incorrect-color: @error-color;
+
+// Validation
+@validation-success: @success-color;
+@validation-error: @error-color;
+
+// Deprecated/Legacy
+@third-color: @accent-color;
+@danger-color: @highlight-color;
+@info-color: @secondary-color;
+@secondary-color-text: @neutral-light;
+@secondary-color-hover: @white;
+@danger-color-disabled: @neutral-light;
+@white-disabled: @neutral-light;
+@black-inverted: @white;
+@primary-color-inverted: @white;
+@disabled-color: lighten(@black, 60%);
