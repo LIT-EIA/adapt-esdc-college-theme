@@ -10,20 +10,20 @@
     text-align: center;
     display: inline-block;
     border: 2px solid @primary-color;
-    border-radius: 6px;
+    border-radius: 0;
     font-weight: @font-weight-regular;
     font-size: @button-text-font-size;
     cursor: pointer;
     .transition-all-colors;
     .button-text;
-    box-shadow: 0 2px 8px rgba(11, 80, 141, 0.2);
+    box-shadow: 0 2px 8px fade(@primary-color, 20%);
     transition: all 0.3s ease;
 
     .no-touch &:hover {
         background-color: @accent-color;
         color: @white;
         border-color: @accent-color;
-        box-shadow: 0 4px 12px rgba(51, 226, 175, 0.3);
+        //box-shadow: 0 4px 12px fade(@accent-color, 30%);
         transform: translateY(-2px);
     }
 
@@ -43,7 +43,7 @@
     		background-color: transparent;
     		transform: none;
     	}
-    	
+
     	.dir-rtl & {
     		text-align: right;
     	}
@@ -106,7 +106,7 @@
         border-top: none;
         background: linear-gradient(135deg, @primary-color 0%, @secondary-color 100%);
         color: @white;
-        border-radius: 6px;
+        border-radius: 0;
         margin-top: 10px;
         padding: 15px;
     }
@@ -133,7 +133,7 @@
             margin-right: -24px;
             right: 50%;
         }
-        
+
         &.icon-tick {
             background-color: @success-color;
         }

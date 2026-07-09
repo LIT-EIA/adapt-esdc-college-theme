@@ -1,12 +1,12 @@
 // Modern Narrative Styling
 // =========================
 .narrative-component {
-    
+
     // Instruction text
     .narrative-instruction {
         margin-bottom: 20px;
         padding: 14px 16px;
-        background: linear-gradient(135deg, rgba(11, 80, 141, 0.05) 0%, rgba(21, 154, 208, 0.05) 100%);
+        background: linear-gradient(135deg, fade(@primary-color, 5%) 0%, fade(@secondary-color, 5%) 100%);
         border-left: 4px solid @accent-color;
         border-radius: 8px;
         font-size: 14px;
@@ -91,7 +91,7 @@
 
             li {
                 margin-bottom: 6px;
-                
+
                 @media (min-width: 768px) {
                     margin-bottom: 8px;
                 }
@@ -125,8 +125,8 @@
         &:hover {
             background-color: @accent-color;
             transform: scale(1.15);
-            box-shadow: 0 6px 20px rgba(51, 226, 175, 0.4);
-            
+            box-shadow: 0 6px 20px fade(@accent-color, 40%);
+
             .icon {
                 color: @white;
                 transform: scale(1.1);
@@ -173,7 +173,7 @@
 
     // Text controls variant (when controls are in content area)
     .narrative-text-controls .narrative-content .narrative-content-inner {
-        
+
         .narrative-controls-container {
             top: 0;
             margin-top: 20px;
@@ -187,7 +187,7 @@
                 height: 40px;
                 margin-top: 0;
                 position: static;
-                
+
                 .icon {
                     font-size: 18px;
                 }
@@ -220,7 +220,7 @@
                 }
             }
         }
-        
+
         .narrative-content-item {
             padding-top: 0;
             margin-top: 24px;
@@ -240,7 +240,7 @@
         &.selected {
             background-color: @accent-color;
             transform: scale(1.3);
-            box-shadow: 0 2px 8px rgba(51, 226, 175, 0.4);
+            box-shadow: 0 2px 8px fade(@accent-color, 40%);
         }
 
         &.visited:not(.selected) {
@@ -307,7 +307,7 @@
             background: linear-gradient(135deg, @accent-color 0%, darken(@accent-color, 5%) 100%);
             color: @white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(51, 226, 175, 0.3);
+            box-shadow: 0 4px 12px fade(@accent-color, 30%);
 
             .icon {
                 color: @white;
@@ -324,7 +324,7 @@
             cursor: not-allowed;
         }
     }
-    
+
     .narrative-strapline-title-inner {
         padding: 14px 16px;
         padding-right: 48px;
@@ -334,7 +334,7 @@
             padding: 16px 20px;
             padding-right: 52px;
         }
-        
+
         .dir-rtl & {
             padding-right: 16px;
             padding-left: 48px;
@@ -379,11 +379,10 @@
 
     .narrative-slider-graphic {
         position: relative;
-        overflow: hidden;
-        display: flex;
         align-items: center;
         justify-content: center;
         background-color: @neutral-light;
+        max-height:15em;
 
         img {
             width: 100%;

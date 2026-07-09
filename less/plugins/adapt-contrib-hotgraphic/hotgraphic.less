@@ -2,6 +2,7 @@
 
 	.hotgraphic-graphic-pin {
 		background-color: @item-text-color;
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 		&.visited {
 			.hotgraphic-graphic-pin-icon {
@@ -10,15 +11,17 @@
 		}
 		.no-touch &:hover {
 			background-color: @item-text-color;
-			
+
 			.hotgraphic-graphic-pin-icon {
 				color: @item-color-hover;
+				transform: scale(1.2);
 			}
 		}
 	}
 
 	.hotgraphic-graphic-pin-icon {
-		color: @primary-color;
+		color: @white;
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	.hotgraphic-popup {
@@ -51,7 +54,7 @@
 	.hotgraphic-popup-done {
 		display: flex;
 		align-items: center;
-		
+
 		.no-touch &:hover {
 			.hotgraphic-popup-close {
 				color: @accent-color;
@@ -68,12 +71,12 @@
 		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		cursor: pointer;
 		border-radius: 8px;
-		
+
 		.no-touch &:hover {
 			background-color: rgba(255, 255, 255, 0.15);
 			transform: scale(1.1);
 		}
-		
+
 		&:active {
 			transform: scale(0.95);
 		}
@@ -93,7 +96,7 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		
+
 		.no-touch &:hover {
 			.hotgraphic-popup-arrow-l,
 			.hotgraphic-popup-arrow-r {

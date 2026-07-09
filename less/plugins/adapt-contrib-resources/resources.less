@@ -16,12 +16,10 @@
         }
 
         button {
-            flex: 1 1 auto;
-            min-width: 0;
             color: @primary-color;
             background-color: @white;
             border: 2px solid @neutral-light;
-            border-radius: 6px;
+            border-radius: 0;
             padding: 10px 12px;
             font-size: 14px;
             font-weight: 600;
@@ -43,8 +41,6 @@
                 border: none;
                 padding: 0;
                 display: block;
-                word-break: break-word;
-                hyphens: auto;
             }
 
             &.selected {
@@ -79,7 +75,7 @@
 
     .resources-item {
         margin-bottom: 12px;
-        border-radius: 8px;
+        border-radius: 0;
         overflow: hidden;
         border: none;
         background-color: @white;
@@ -135,11 +131,11 @@
             }
 
             .no-touch &:hover {
-                background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
+                background: linear-gradient(135deg, fade(@accent-color, 10%) 0%, fade(@secondary-color, 10%) 100%);
 
                 .drawer-item-title-inner,
                 .drawer-item-description-inner {
-                    color: @white;
+                    color: @primary-color;
                 }
             }
         }

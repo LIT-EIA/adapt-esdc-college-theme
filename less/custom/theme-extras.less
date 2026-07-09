@@ -126,7 +126,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(51, 226, 175, 0.2);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15), 0 2px 8px fade(@accent-color, 20%);
             transform: scaleY(1.1);
         }
     }
@@ -138,13 +138,13 @@
     }
 
     .pagelevelprogress-indicator-bar {
-        background: linear-gradient(90deg, @accent-color 0%, @success-color 100%);
+        background: linear-gradient(90deg, @primary-color 0%, @success-color 100%);
         border-radius: 12px;
         height: 100%;
-        box-shadow: 0 0 8px rgba(51, 226, 175, 0.4);
+        box-shadow: 0 0 8px fade(@accent-color, 40%);
         transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
-        
+
         &::after {
             content: '';
             position: absolute;
@@ -215,6 +215,10 @@
 // Progress bar
 .drawer .pagelevelprogress-item-title .pagelevelprogress-indicator {
     border-color: @primary-color;
+}
+
+.no-touch .pagelevelprogress-navigation.base:hover .pagelevelprogress-indicator:hover {
+    box-shadow: 4px 5px 10px 0px #b8b9b9;
 }
 
 // Block background color - used to apply variable based background colors on blocks
@@ -347,7 +351,7 @@ html {
     background: #f5f5f5;
     color: @black;
     padding-top:25px;
-  
+
     .component-title {
         color: @black;
     }
@@ -360,7 +364,7 @@ html {
     background-color: @white;
     color: @black;
     padding-top:25px;
-    
+
     .component-title {
         color: @black;
     }
@@ -374,7 +378,7 @@ html {
 }
 
 
-// ARTICLE LEVEL 
+// ARTICLE LEVEL
 .article {
     .article-inner {
         padding-bottom: 0;
@@ -432,7 +436,7 @@ html {
 
 // BLOCK LEVEL
 .block-padding when (@improved-block-padding =legacy) {
-    padding: 60px;
+    padding: 120px;
 }
 
 .block-padding when (@improved-block-padding =improved) {
@@ -478,7 +482,7 @@ html {
 @media screen and (max-width: 640px) {
     .block {
         .block-inner {
-            padding: 10px;
+            padding: 20px;
         }
     }
 }
@@ -496,7 +500,7 @@ html {
     }
 }
 
-// COMPONENT LEVEL 
+// COMPONENT LEVEL
 .component {
     .component-body {
         margin: 0;
@@ -628,7 +632,7 @@ ol ::marker {
         list-style-type: circle;
     }
 
-    // third level ul 
+    // third level ul
     ul>li>ul>li>ul>li {
         list-style-type: square;
     }
@@ -702,7 +706,7 @@ ol ::marker {
     border-top: none !important;
     border-bottom: none !important;
     border-right: none !important;
-    border-left: 4px solid #d3080c !important;
+    border-left: 4px solid @error-color !important;
 }
 
 // Link styles
@@ -809,7 +813,7 @@ body button:focus,
 body label:focus,
 body input:focus,
 body *:focus {
-    outline: 3px solid #CD1C6A !important;
+    //outline: 3px solid @accent-color !important;
 }
 
 //fixed visible focus indicator on titles (previously on invisible aria-label)
@@ -1133,7 +1137,7 @@ button.hotgrid-grid-item .hotgrid-item-title {
     &::-webkit-scrollbar-thumb {
         background: @primary-color;
         border-radius: 10px;
-        
+
         &:hover {
             background: @secondary-color;
         }
@@ -1154,13 +1158,13 @@ button.hotgrid-grid-item .hotgrid-item-title {
     padding: 32px 36px;
     border-bottom: 1px solid @neutral-light;
     transition: all 0.3s ease;
-    
+
     &:last-child {
         border-bottom: none;
     }
 
     &.active {
-        background-color: rgba(11, 80, 141, 0.02);
+        background-color: fade(@primary-color, 2%);
     }
 
     @media (min-width: 768px) {
@@ -1308,7 +1312,7 @@ button.hotgrid-grid-item .hotgrid-item-title {
 
     .no-touch &:hover {
         background-color: rgba(255, 255, 255, 0.15);
-        
+
         .hotgrid-popup-close {
             color: @accent-color;
             transform: rotate(90deg) scale(1.1);
@@ -1439,7 +1443,7 @@ html:not(.a11y-disable-focusoutline) {
 // ====================================================================
 .bubble-answer {
     background: #fff;
-    color: #0F2A4A;
+    color: @white;
     font-weight: bold;
     padding: 7.5px 15px;
     display: inline-block;
@@ -1491,7 +1495,7 @@ html:not(.a11y-disable-focusoutline) {
     border-radius: 5px;
 }
 
-/* duplicate 
+/* duplicate
 //Image styles
 .image img{
     display: block;
@@ -1501,14 +1505,14 @@ html:not(.a11y-disable-focusoutline) {
 
 .invert-link {
     a {
-        color: #00E9FA !important; // @black
+        color: @accent-color !important; // Cyan
 
         &:visited {
-            color: #e9e9f8 !important; // @white
+            color: @white !important; // White
         }
 
         &:hover {
-            color: #BDFFEB !important; // @primary-color
+            color: @secondary-color !important; // Light Blue
         }
     }
 }
@@ -1634,7 +1638,7 @@ html:not(.a11y-disable-focusoutline) {
     }
 }
 
-// THIS CLASS IS FOR THE PURPOSE OF THE ADAPT DEMO 
+// THIS CLASS IS FOR THE PURPOSE OF THE ADAPT DEMO
 // blank component demo - applied at block level to add a background image in place of a blank component
 .blank-background {
     background-image: url(assets/blank-bg.jpg);
@@ -1669,7 +1673,7 @@ button.base.notify-popup-done {
     background-color:@black;
 }
 
-.shepherd-has-cancel-icon.shepherd-has-title.shepherd-element.border { 
+.shepherd-has-cancel-icon.shepherd-has-title.shepherd-element.border {
     border-width:2px;
 }
 
@@ -1698,21 +1702,145 @@ video {
 }
 
 
-/* For screens wider than 840px */
+/* Modern Video Adapting */
+video, .video, #video {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto;
+    display: block;
+}
+
 @media (min-width: 840px) {
-    .video, #video {
-        width: 60% !important;
-        height: auto !important;
+    .media-widget {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+/* Modern Search Drawer Redesign */
+.search-drawer {
+    padding: 16px;
+    background-color: @white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .search-box {
+        height: 48px;
+        border: 2px solid darken(@neutral-light, 15%);
+        //border-radius: 24px;
+        padding: 0 20px;
+        font-size: 16px;
+        width: 100%;
+        color: @primary-color;
+        background-color: @neutral-light;
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: @primary-color;
+            //box-shadow: 0 0 0 3px fade(@accent-color, 30%);
+            background-color: @white;
+        }
+    }
+
+    .start-search {
+        color: @primary-color;
+        transition: all 0.3s ease;
+        right: 16px;
+        font-size: 20px;
+
+        &:hover {
+            color: @accent-color;
+            transform: scale(1.1);
+        }
     }
 }
 
-/* For screens smaller than 840px */
-@media (max-width: 839px) {
-    .video, #video {
-        width: 80% !important;
-        height: auto !important; /* optional, but keeps aspect ratio */
+.search-results {
+    margin-top: 16px;
+
+    .search-result {
+        background-color: @white;
+        border: 1px solid darken(@neutral-light, 15%);
+        border-radius: 8px;
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+        padding: 16px;
+
+        .no-touch &:hover {
+            background-color: @neutral-light;
+            border-color: @accent-color;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .result-title {
+            color: @primary-color;
+            font-size: 18px;
+            font-weight: @font-weight-bold;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .result-preview, .result-foundwords {
+            color: lighten(@primary-color, 15%);
+            font-size: 15px;
+            padding: 0;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .found {
+            background-color: fade(@highlight-color, 30%);
+            color: @primary-color;
+            font-weight: @font-weight-bold;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    }
+
+    .no-results {
+        padding: 20px;
+        text-align: center;
+        color: @primary-color;
+        background-color: @neutral-light;
+        border-radius: 8px;
+        font-weight: @font-weight-bold;
+        font-size: 16px;
     }
 }
-.search-drawer:hover {
-    background-color:@primary-color;
+
+button.base.pagelevelprogress-item-title:focus {
+    border:2px solid @primary-color;
+}
+
+button.base.resources-show-document {
+    width: auto;
+}
+
+.shepherd-has-title .shepherd-content .shepherd-header {
+    padding:11px;
+}
+
+.guidedtour-widget.tour-.component-widget.pin {
+    text-align:center;
+}
+a.base.devtools-navigation-drawer-toggle-button.icon.icon-cog {
+    margin:20px;
+}
+.devtools span {
+    color:@white;
+    border-radius:8px;
+}
+
+.stats-box ul li .stats-type {
+    color:@primary-color;
+}
+.stats-box ul li {
+    color:@primary-color;
 }

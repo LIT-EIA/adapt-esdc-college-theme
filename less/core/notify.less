@@ -42,7 +42,7 @@
             padding-left: inherit;
             padding-right: 0px;
         }
-        
+
         @media all and (max-width:(@device-width-medium - 1px)) {
             padding-left: 0px;
 
@@ -58,7 +58,7 @@
         padding-right: 70px;
         color: @primary-color;
         font-weight: @font-weight-bold;
-        
+
         .dir-rtl & {
             padding-right: inherit;
             padding-left: 70px;
@@ -74,19 +74,19 @@
             }
         }
     }
-    
+
     .notify-popup-body {
         color: @black;
-        
+
         a {
           text-decoration: none;
-          color: @secondary-color;
-          border-bottom: 2px solid transparent;
+          color: @primary-color;
+          border-bottom: 2px solid @accent-color;
           font-weight: @font-weight-bold;
-          
+          transition: all 0.3s ease;
+
           &:hover {
               color: @accent-color;
-              border-bottom-color: @accent-color;
           }
         }
     }
@@ -129,15 +129,15 @@
         font-weight: @font-weight-regular;
         .transition-all-colors;
         .button-text;
-        box-shadow: 0 2px 8px rgba(11, 80, 141, 0.2);
+        box-shadow: 0 2px 8px fade(@primary-color, 20%);
         transition: all 0.3s ease;
-        
+
         .no-touch &:hover {
             background-color: @accent-color;
             border-color: @accent-color;
             color: @white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(51, 226, 175, 0.3);
+            box-shadow: 0 4px 12px fade(@accent-color, 30%);
         }
     }
 
@@ -179,7 +179,7 @@
     }
 
     .notify-shadow {
-        background-color: rgba(11, 80, 141, 0.15);
+        background-color: fade(@primary-color, 15%);
 
         .no-opacity & {
             background-image: @transparency-fallback-png;
@@ -206,7 +206,7 @@
         right: inherit;
     }
 
-    
+
     @media all and (max-width:@device-width-medium) {
         width: 90%;
         max-width: 380px;
@@ -252,7 +252,7 @@
 
     .icon {
         color: @white;
-        
+
         .no-touch &:hover {
             color: @accent-color;
             transform: rotate(90deg);

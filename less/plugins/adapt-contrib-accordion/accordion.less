@@ -12,17 +12,16 @@
 	        left: inherit;
 	        right: @item-padding-left;
         }
-        color: @white;
+        color: @primary-color;
         transition: transform 0.3s ease;
     }
 
     .accordion-item-title {
         -webkit-appearance: none;
-        background: linear-gradient(135deg, @primary-color 0%, @secondary-color 100%);
-        border: 2px solid transparent;
+        background: @white;
+        border: 2px solid @primary-color;
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(11, 80, 141, 0.15);
-        color: @white;
+        color: @primary-color;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         outline: none;
@@ -32,8 +31,9 @@
         -ms-user-select: none;
         user-select: none;
         transition: all 0.3s ease;
+        margin-bottom:10px;
         .item-title;
-        
+
         .dir-rtl & {
             padding-left: inherit;
             padding-right: (@icon-size+(@item-padding-left*2));
@@ -59,18 +59,18 @@
                 transform: rotate(180deg);
             }
         }
-        
+
         .no-touch & {
             &:hover {
                 background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
-                box-shadow: 0 4px 12px rgba(51, 226, 175, 0.25);
+                box-shadow: 0 4px 12px fade(@accent-color, 25%);
                 transform: translateY(-2px);
 
                 .accordion-item-title-icon {
                     color: @white;
                 }
             }
-            
+
             &.visited:hover {
                 color: @white;
                 background: linear-gradient(135deg, @secondary-color 0%, @accent-color 100%);
@@ -79,7 +79,7 @@
                     color: @white;
                 }
             }
-            
+
             &.selected:hover {
 				background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
 			}

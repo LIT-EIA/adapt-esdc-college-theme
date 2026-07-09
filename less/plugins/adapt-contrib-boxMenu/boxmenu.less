@@ -46,9 +46,9 @@
 			color: @white;
 			text-decoration: none;
 			border-bottom: 2px solid transparent;
-			
+
 			&:hover {
-				border-bottom-color: @accent-color;
+				//border-bottom-color: @accent-color;
 			}
 		}
 	}
@@ -59,7 +59,7 @@
 		&.nth-child-even {
 			.menu-item-inner {
 				margin-left: 2%;
-				
+
 				.dir-rtl & {
 					margin-right: 2%;
 				}
@@ -87,11 +87,11 @@
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   		transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 		border-radius: 12px;
-		border: 2px solid transparent;
+		//border: 2px solid transparent;
 
 		&:hover {
 			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-			border-color: @accent-color;
+			//border-color: @accent-color;
 			transform: translateY(-4px);
 		}
 	}
@@ -139,7 +139,7 @@
 	}
 
 	.pagelevelprogress-indicator-bar {
-		background: linear-gradient(135deg, @accent-color 0%, @secondary-color 100%);
+		background: linear-gradient(135deg, @primary-color 0%, @secondary-color 100%);
 	}
 
 	.menu-item-duration {
@@ -163,17 +163,14 @@
 			padding: @button-padding-top (@button-padding-right*2) @button-padding-bottom (@button-padding-left*2);
 			background-color: @primary-color;
 			color: @white;
-			border: 2px solid @primary-color;
 
 			&:hover {
 				background-color: @accent-color;
-				border-color: @accent-color;
 				color: @white;
 			}
 
 			&.visited {
 				background-color: @secondary-color;
-				border-color: @secondary-color;
 				color: @white;
 			}
 		}
