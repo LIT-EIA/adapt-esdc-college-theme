@@ -348,7 +348,7 @@ html {
     max-width: 100%;
 }
 .block:nth-child(odd) {
-    background: #f5f5f5;
+    //background: #f5f5f5;
     color: @black;
     padding-top:25px;
 
@@ -361,7 +361,7 @@ html {
 }
 
 .block:nth-child(even) {
-    background-color: @white;
+    //background-color: @white;
     color: @black;
     padding-top:25px;
 
@@ -436,7 +436,7 @@ html {
 
 // BLOCK LEVEL
 .block-padding when (@improved-block-padding =legacy) {
-    padding: 120px;
+    padding: 30px 60px;
 }
 
 .block-padding when (@improved-block-padding =improved) {
@@ -460,6 +460,16 @@ html {
         padding-top: 0px !important;
     }
 }
+
+.bg-white {
+    background-color:white;
+}
+
+.bg-gray {
+    background-color:#f5f5f5;
+}
+
+
 
 // issue #36 - empty space between blocks
 .trickle-button-component {
@@ -534,7 +544,7 @@ html {
 [class$="-body"] table td,
 .openTextInput-item-modelanswer table th,
 .openTextInput-item-modelanswer table td {
-    border: 2px solid @primary-color;
+    //border: 2px solid @primary-color;
     border-spacing: 0;
     padding: 10px;
 }
@@ -555,6 +565,47 @@ figure.table {
     display: table !important;
     width: 100%;
 }
+
+figure.table table {
+    font-size: inherit;
+    overflow: hidden;
+    border-spacing: 0;
+    border-collapse: separate;
+    background: linear-gradient(120deg, #0e6a8a 0%, #138db4 60%);
+    border-radius: 10px;
+}
+
+figure.table table thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+figure.table table thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+figure.table table tbody tr:last-child th:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+figure.table table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+figure.table table tbody tr td {
+    border-bottom: 1px solid @primary-color;
+    border-right: 1px solid @primary-color;
+    background-color:@white;
+}
+
+table tbody tr:last-child > :is(th, td):first-child {
+    border-left: 1px solid @primary-color;
+    border-bottom-left-radius:10px;
+}
+
+table tbody tr:not(:last-child) td:first-child {
+    border-left: 1px solid @primary-color;
+}
+
 
 .table>figcaption {
     display: table-caption !important;
@@ -772,11 +823,11 @@ ol ::marker {
     }
 
     .notify-popup-done:hover {
-        border-color: darken(@primary-color, 20%) !important;
+        border-color: ligthen(@primary-color, 30%) !important;
     }
 
     .notify-popup-icon-close:hover {
-        color: darken(@primary-color, 20%) !important;
+        color: ligthen(@primary-color, 30%) !important;
     }
     .notify-popup-icon-close {
         color:@white;
@@ -1042,6 +1093,21 @@ video::cue {
 
 .narrative-content-inner {
     background-color: @primary-color;
+}
+.graphic-attribution {
+    text-align: center;
+    color: white;
+    background-color: @primary-color;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: -110px;
+    padding: 5px;
+    border-radius: 5px;
+
+    @media (min-width: 1024px) {
+            margin-top: -35px;
+    }
 }
 
 // ====================================================================
@@ -1473,11 +1539,16 @@ html:not(.a11y-disable-focusoutline) {
 }
 
 .menu-item-graphic img {
-        border-radius: 5px;
+    border-radius: 5px;
     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
+    height:200px;
+}
+
+.menu-item-graphic {
+    text-align:center;
 }
 
 .biggerfont {
@@ -1670,7 +1741,7 @@ a:not(a[href]) {
 
 
 button.base.notify-popup-done {
-    background-color:@black;
+    background-color:@primary-color;
 }
 
 .shepherd-has-cancel-icon.shepherd-has-title.shepherd-element.border {
@@ -1843,4 +1914,21 @@ a.base.devtools-navigation-drawer-toggle-button.icon.icon-cog {
 }
 .stats-box ul li {
     color:@primary-color;
+}
+
+button.drawer-item.open-map span {
+    color:@primary-color;
+}
+
+button.drawer-item.open-spoor-log span {
+    color:@primary-color;
+}
+
+use.waveone {
+    fill: @highlight-color;
+}
+
+.boxmenu-menu button.visited {
+    background-color: #e6e6e6 !important;
+    color: #1286ab !important;
 }

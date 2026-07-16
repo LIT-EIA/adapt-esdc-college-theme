@@ -38,7 +38,35 @@ define(function (require) {
         el: view.$el
       });
     }
-    
+
+    //manage blocks
+
+    var $blocks = $('.block');
+    var isGray = false;
+
+    for (var i = 0; i < $blocks.length; i++) {
+
+      var $block = $($blocks[i]);
+
+      $block.removeClass('bg-white bg-gray');
+
+      // Combine block inherits previous color
+      if ($block.hasClass('combineblock') && i > 0) {
+
+        var inheritedColor = isGray ? 'bg-white' : 'bg-gray';
+
+        $block.addClass(inheritedColor);
+
+        continue;
+      }
+
+      var colorClass = isGray ? 'bg-gray' : 'bg-white';
+
+      $block.addClass(colorClass);
+
+      isGray = !isGray;
+    }
+
   });
   Adapt.on('menuView:postRender', function (view) {
     const $menuHeader = view.$el.find('.menu-header');
@@ -50,8 +78,8 @@ define(function (require) {
     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
   </defs>
   <g class="parallax">
-    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" class="waveone" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" class="wavetwo" />
   </g>
 </svg>
   `;
@@ -68,13 +96,14 @@ define(function (require) {
     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
   </defs>
   <g class="parallax">
-    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" class="waveone" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" class="wavetwo" />
   </g>
 </svg>
   `;
     $pageHeader.append(svg);
   });
+
 
 
 });
