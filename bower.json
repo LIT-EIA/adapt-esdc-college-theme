@@ -1,10 +1,10 @@
 {
     "name": "adapt-contrib-esdc-college-theme",
-    "version": "1.7.5",
+    "version": "1.7.6",
     "framework": ">=4",
     "homepage": "https://github.com/MeD-DMC/adapt-esdc-college-theme",
     "issues": "https://github.com/MeD-DMC/adapt-esdc-college-theme/issues",
-    "displayName": "College@ESDC",
+    "displayName": "College@ESDC 2026",
     "theme": "College@ESDC",
     "description": "College@ESDC's official Adapt theme",
     "main": "js/esdc.js",
