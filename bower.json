@@ -5,7 +5,7 @@
     "homepage": "https://github.com/MeD-DMC/adapt-esdc-college-theme",
     "issues": "https://github.com/MeD-DMC/adapt-esdc-college-theme/issues",
     "displayName": "College@ESDC 2026",
-    "theme": "College@ESDC",
+    "theme": "College@ESDC 2026",
     "description": "College@ESDC's official Adapt theme",
     "main": "js/esdc.js",
     "keywords": [
